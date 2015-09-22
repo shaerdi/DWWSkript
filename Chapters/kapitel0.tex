@@ -1,0 +1,43 @@
+\setcounter{section}{-1}\section{Einführung}
+Bisher bekannte Gleichungen:
+\begin{outline}[enumerate]
+    \1 Algebraische Gleichung
+    \begin{equation*}
+        2x+5=-2
+    \end{equation*}
+    Gesucht: $x$ (Eine oder mehrere Zahlen)\\
+    Lösungsverfahren: Umformen (Schule)
+
+    \1 (Lineares) Gleichungssystem
+    \begin{equation*}
+        \A \x = \b
+    \end{equation*}
+    Gesucht: Vektor $\x$ (n-Zahlen)\\
+    Lösungsverfahren: z.B. Gauss (2. Semester)
+
+    \vspace{1em}\hspace*{\dimexpr\linewidth-\textwidth\relax} Jetzt neu:
+
+    \1 (Gewöhnliche) Differentialgleichung
+    \begin{equation*}
+        y''\left( x \right) +4y\left( x \right) = 0
+    \end{equation*}
+    Gesucht: Funktion $y\left( x \right)$ ($\infty$ viele Werte)\\
+    Lösungsverfahren: \emph{DWW}
+
+    Beispiel: Raten dass Lösung $y=\sin\left( 2x \right)$
+
+    Beweis:
+    \begin{IEEEeqnarray*}{lCll}
+        y &=& \sin\left( 2x \right) & \\*
+         y' &=& 2\cos\left( 2x \right)
+         &\smash{ \left. \IEEEstrut[8\jot] \right\} } 
+         \mbox{Einsetzen}\\*
+        y'' &=& -4\sin\left( 2x \right)
+    \end{IEEEeqnarray*}
+    \begin{equation*}
+        \underbrace{-4\sin\left( 2x \right)}_{y''\left( x \right)} +
+        4\underbrace{\sin\left( 2x \right)}_{y\left( x \right)} = 0
+    \end{equation*}
+\end{outline}
+
+

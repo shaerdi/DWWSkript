@@ -1,0 +1,61 @@
+\section{Lineare DGL 1. Ordnung}
+Repetition:
+\begin{equation*}
+    y' +f(x)\cdot y = \underbrace{g(x)}_{\mbox{Störfunktion}}
+\end{equation*}
+Störfunktion $=0$: homogen \\
+Störfunktion $\neq0$: inhomogen
+$f(x)=$ konstant: Mit konstanten Koeffizienten
+
+\subsection{Hauptsatz}
+\begin{center}
+    Allgemeine Lösung der linearen DGL\\
+    =\\
+    allgemeine Lösung der zugehörigen homogenen DGL\\
+    +\\
+    \underline{irgendeine} partikuläre Lösung der inhomogenen DGL
+\end{center}
+
+\textbf{Beweis:}
+
+$y_h$ ist allgemeine Lösung von $y'+f(x)\cdot y=0$ (1 Parameter)\\
+$y_p$ ist partikuläre Lösung von $y'+f(x)\cdot y=g(x)$ (0 Parameter)
+    \begin{IEEEeqnarray*}{rCl}
+        &\Rightarrow& \\
+        y_p' +f(x)y_p &=& g(x)\\
+        y_h' +f(x)y_h &=& 0 \\ 
+        &\Rightarrow& \mbox{(Summe)}\\
+        y_h' + y_p' + f(x) y_h + f(x) y_p &=& g(x)\\
+        y_h' + y_p' + f(x) \left( y_h + y_p \right) &=& g(x)\\
+        \left(y_h + y_p\right)' + f(x) \left( y_h + y_p \right) &=& g(x)
+    \end{IEEEeqnarray*}
+$\Rightarrow y_h+y_p$ ist allgemeine (weil 1 Parameter) Lösung von
+$y'+f(x)y=g(x)$
+
+\bsp{Beispiel:}
+\begin{equation*}
+    y'+y = 2e^{x}
+\end{equation*}
+
+homogen:
+\begin{equation*}
+    y'+y=0
+\end{equation*}
+Separierbar:
+\begin{IEEEeqnarray*}{rCl}
+    \frac{\dd{y}}{\dd{x}} &=&  -y \\
+    \int \frac{1}{y}\dd{y} &=& \int -1 \dd{x}\\
+    \ln(y) &=&  -x + C_1\\
+    y_h &=& C\cdot e^{-x} \hspace{3em}\mbox{(allgemeine Lösung)}
+\end{IEEEeqnarray*}
+
+inhomogen:
+\begin{equation*}
+    y'+y=2\cdot e^{x}
+\end{equation*}
+Raten: $y_p\left( x \right)=e^{x}$\\
+$\Rightarrow y(x)=y_h+h_p=Ce^{-x}+e^x$
+
+\subsection{Allgemeine Lösung der homogenen DGL}
+
+

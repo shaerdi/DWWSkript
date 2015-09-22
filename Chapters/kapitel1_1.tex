@@ -1,0 +1,127 @@
+\subsection{Klassifikation}
+%\begin{IEEEeqnarray}{rCll}
+    %\left( y'' \right)^{4} &=& 5 & \mbox{\hspace{3em}ODE, Ordnung 2} \\
+    %\frac{d^2x}{\left( d t \right)^{2}} + 2
+    %\frac{d^2x}{\left( d t \right)^{2}} &=& x\left( t \right) &
+    %\mbox{\hspace{3em}ODE, Ordnung 2} \\
+    %\frac{\partial f}{\left( \partial x \right)} - 
+    %\frac{\partial f}{\left( \partial t \right)} &=& 0 & 
+    %\mbox{\hspace{3em}PDE, Ordnung 1}
+%\end{IEEEeqnarray}
+\subsubsection*{a) elementar Lösbar}
+Eine DGL ist elementar Lösbar wenn sie als 
+\begin{equation*}
+    y^{\left( n \right)} = f(x)
+\end{equation*}
+geschrieben werden kann.
+
+\subsubsection*{b) Ordnung}
+\definition{DGL n-ter Ordnung}{Hat Ableitungen bis zur Ordnung n}
+%\begin{outline}
+    %\1 \eqref{eq:exampleKlass:1} hat eine Ableitung der Ordnung~2 $\Rightarrow$
+       %die DGL hat ebenfalls Ordnung~2.
+    %\1 \eqref{eq:exampleKlass:2} hat eine Ableitung der Ordnung~1 und eine
+       %Ableitung der Ordnung~2 $\Rightarrow$ die DGL hat Ordnung~2.
+    %\1 \eqref{eq:exampleKlass:3} hat eine Ableitungen bis zu der Ordnung~1 
+       %$\Rightarrow$ die DGL hat Ordnung~1.
+%\end{outline}
+\bemerkung{DGL n-ter Ordngung hat als allg. Lösung i.A. eine Funktion mit n
+Parametern.}
+
+\textbf{Spezialfall:} Eine Differentialgleichung 1. Ordnung, die in der Form 
+\begin{equation*}
+    y' = \frac{g(x)}{f(y)}
+\end{equation*}
+geschrieben werden kann, heisst \underline{separierbar}.
+
+\subsubsection*{c) Linearität}
+Eine Differentialgleichung ist linear, wenn die Gesuchte Funktion und alle
+Ableitungen nur mit der Potenz 1 vorkommen und wenn keine Mischterme vorhanden sind.
+
+Lineare Differentialgleichungen können immer in die Form 
+\begin{equation*}
+    g(x) = a(x)\cdot y + b(x) \cdot y' + c(x)\cdot y'' + \ldots
+\end{equation*}
+
+\textbf{Spezialfall:} Eine lineare Differentialgleichung ist
+\underline{homogen}, wenn der Anregungsterm $g(x)=0$ 
+(D.h. die Funktion oder deren Ableitungen in allen Termen vorkommen).
+
+\textbf{Spezialfall:} Eine lineare Differentialgleichung hat \underline{%
+konstante Koeffizienten}, wenn alle Koeffizienten $a,b,c\ldots$ nicht von der
+Funktionsvariablen abhängen.
+%\begin{outline}
+    %\1 In \eqref{eq:exampleKlass:1} ist $x$ die Funkionsvariable, und kommt
+       %nicht vor $\Rightarrow$ die DGL ist homogen.
+    %\1 In \eqref{eq:exampleKlass:2} ist $t$ die Funkionsvariable, und kommt
+       %nicht vor $\Rightarrow$ die DGL ist homogen.
+    %\1 \eqref{eq:exampleKlass:3} hat hat $x$ und $t$ als Funkionsvariablen,
+    %der Anregungsterm $t^{2}$ macht die DGL inhomogen.  
+%\end{outline}
+
+\subsubsection*{d) Ableitungen}
+\definition{Gewöhnliche DGL (ODE)}{Hat nur Ableitungen nach einer Variablen.}
+\definition{Partielle DGL (PDE)}{Hat Ableitungen nach mehreren Variablen.}
+%\begin{outline}
+    %\1 \eqref{eq:exampleKlass:1} hat nur Ableitungen nach $x$ $\Rightarrow$
+       %die DGL ist gewöhnlich
+    %\1 \eqref{eq:exampleKlass:2} hat nur Ableitungen nach $t$ $\Rightarrow$
+       %die DGL ist gewöhnlich
+    %\1 \eqref{eq:exampleKlass:3} hat Ableitungen nach $x$ und $t$ $\Rightarrow$
+       %es handelt sich um eine partielle DGL.
+%\end{outline}
+
+\bsp{Beispiele}
+\begin{equation*}
+    \left( y'' \right)^{4} = 5y% \label{eq:exampleKlass:1}\\
+\end{equation*}
+
+\begin{outline}
+    \1 Es ist nicht möglich, die Gleichung als $y''=f(x)$ zu schreiben, sie
+    ist nicht elementar lösbar.
+    \1 Die maximale auftretende Ableitung ist $y''\Rightarrow$ Ordnung 2.
+    \1 Die Ableitung $y''$ hat die Potenz 4 $\Rightarrow$ nichtlinear.
+    \1 nicht-linear $\Rightarrow$ nicht auf Homogenität prüfen.
+    \1 Es wird nur nach $x$ abgeleitet $\Rightarrow$ ODE.
+\end{outline}
+
+\begin{equation*}
+    \frac{d^2x}{\left( d t \right)^{2}} + 2
+    \frac{d x}{\left( d t \right)} = x\left( t \right)
+\end{equation*}
+
+\begin{outline}
+    \1 Es ist nicht möglich, die Gleichung als $\ddot{x}=f(t)$ zu schreiben, sie
+    ist nicht elementar lösbar.
+    \1 Die maximale auftretende Ableitung ist $\ddot{x}\Rightarrow$ Ordnung 2.
+    \1 Alle Ableitungen von $x$ kommen nur mit der Potenz 1 vor $\Rightarrow$ linear.
+    \1 Die Funktion $x$ oder Ableitungen davon kommen in allen Termen vor $\Rightarrow$ Homogen.
+    \1 Es wird nur nach $t$ abgeleitet $\Rightarrow$ ODE.
+\end{outline}
+
+\begin{equation*}
+    \frac{\partial f}{\left( \partial x \right)} - 
+    \frac{\partial f}{\left( \partial t \right)} = t^{2} 
+\end{equation*}
+
+\begin{outline}
+    \1 Es ist nicht möglich, die Gleichung als $f=g(t,x)$ zu schreiben, sie
+    ist nicht elementar lösbar.
+    \1 Die maximale auftretende Ableitung ist $f'$ bzw $\dot{f}\Rightarrow$ Ordnung 1.
+    \1 Alle Ableitungen von $f$ kommen nur mit der Potenz 1 vor $\Rightarrow$ linear.
+    \1 Die Funktion $f$ kommt nicht in allen Termen vor $\Rightarrow$ inhomogen.\\
+       (Anregungsterm $g(t)=t^{2}$)
+    \1 Es wird nach $t$ und nach $x$ abgeleitet $\Rightarrow$ PDE.
+\end{outline}
+%\begin{IEEEeqnarray*}{rCl}
+    %\left( y'' \right)^{4} &=& 5\\% \label{eq:exampleKlass:1}\\
+    %\frac{d^2x}{\left( d t \right)^{2}} + 2
+    %\frac{d x}{\left( d t \right)} &=& x\left( t \right)\\
+    %%\label{eq:exampleKlass:2} \\
+    %\frac{\partial f}{\left( \partial x \right)} - 
+    %\frac{\partial f}{\left( \partial t \right)} &=& t^{2} 
+    %%\label{eq:exampleKlass:3}
+%\end{IEEEeqnarray*}
+
+
+

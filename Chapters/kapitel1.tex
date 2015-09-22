@@ -1,0 +1,46 @@
+\section{Definition, Klassifikation, Beispiele}
+\definition{Differentialgleichung (DGL)}{
+Gleichung, deren Unbekannte eine Funktion ist, und die Ableitungen der gesuchten Funktion enthält.}
+
+\bsp{Beispiele}
+\begin{IEEEeqnarray*}{rCl}
+    y''\left( x \right)+2y\left( x \right) &=& 0 \\
+    y''+2y&=& x^{2} \\
+    \ddot{y}+2y &=& 0 \\
+    \frac{\partial^2f}{\left( \partial x_1 \right)^{2}} + 
+    \frac{\partial^2f}{\left( \partial x_2 \right)^{2}} &=& 0
+\end{IEEEeqnarray*}
+
+\definition{Spezielle / partikuläre Lösung}{
+\underline{Eine} Funktion, die die DGL erfüllt.}
+\definition{Allgemeine Lösung}{
+Funktion mit Parametern, die alle speziellen Lösungen parametrisiert
+(beinhaltet).}
+
+Zum Festlegen der Parameter einer allgemeinen Lösungen werden Zusatz\-bedingungen
+benötigt. Je nachdem ob diese im Ort oder in der Zeit ge\-ge\-ben sind, 
+wird eine DGL mit Zusatzbedingungen ein \emph{Anfangswertproblem} oder ein
+\emph{Randwertproblem} genannt.
+
+\bsp{Beispiel}
+\begin{equation*}
+    \ddot{y}=-y
+\end{equation*}
+\begin{IEEEeqnarray*}{rrCl}
+    \mbox{allgemeine Lsg:\hspace{2em}} & y\left( t \right) &=& A\sin\left(
+    t+\phi \right) \\
+    \mbox{Zusatzbedingungen: \hspace{2em}} & y\left( 0 \right) &=& 0
+    \mbox{ und } y\left( \pi/2 \right) = 2 \\
+    \mbox{spezielle Lsg:\hspace{2em}} & y\left( t \right) &=& 2\sin\left( t \right)
+\end{IEEEeqnarray*}
+
+Notation
+\begin{IEEEeqnarray*}{rCl}
+    y'&:& \mbox{ Ableitung der Funktion y nach der Variablen x
+    (meistens Ort)}\\ 
+    \dot{y}&:& \mbox{ Ableitung der Funktion y nach der Variablen t
+    (meistens Zeit)}\\ 
+    y^{(n)} &:& \mbox{ n-te Ableitung der Funktion y}\\
+    y^n &:& \mbox{ n-te Potenz der Funktion y}\\
+    \frac{\partial f}{\partial x} &:& \mbox{ Ableitung der Funktion f nach x}
+\end{IEEEeqnarray*}
