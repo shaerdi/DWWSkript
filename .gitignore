@@ -6,6 +6,7 @@
 .Trash/**
 
 # Latex
+*.temp
 *.aux
 *.glo
 *.idx
