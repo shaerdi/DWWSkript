@@ -1,0 +1,162 @@
+
+%% Always need these
+\usepackage[utf8]{inputenc}
+\usepackage[pagebackref,hyperindex=true]{hyperref} % load hyperref before algorithm!!!!!!!
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{siunitx}
+
+%% Set figure path
+\graphicspath{figures/}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+%% Colored links in pdf
+\usepackage{xcolor}
+%\newcommand{\blue}{ \color{blue} }
+
+%% Bibliography text
+% nicer backref links
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{%
+\ifcase #1 %
+(Not cited.)%
+\or
+(Cited on page~#2.)%
+\else
+(Cited on pages~#2.)%
+\fi}
+\renewcommand*{\backrefsep}{, }
+\renewcommand*{\backreftwosep}{ and~}
+\renewcommand*{\backreflastsep}{ and~}
+
+%% Language
+\usepackage[ngerman,english]{babel}
+\selectlanguage{ngerman}
+
+%% Fonts
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts} % need for mathbb
+\usepackage[font=footnotesize,labelfont=bf]{caption} % small captions
+%
+%% Subfigures
+\usepackage[lofdepth,lotdepth]{subfig}
+
+%% Code
+\usepackage{listings}
+\lstset{ %
+  language=matlab, % choose the language of the code
+  basicstyle=\small\ttfamily, % the size of the fonts that are used for the code
+  numbers=left, % where to put the line-numbers
+  numberstyle=\small\ttfamily\color[rgb]{0.6,0.6,0.6}, % the size of the fonts that are used for the line-numbers
+  stepnumber=1, % the step between two line-numbers. If it's 1 each line
+  xleftmargin=4mm,
+  % will be numbered
+  numbersep=5pt, % how far the line-numbers are from the code
+  backgroundcolor=\color{white}, % choose the background color. You must add \usepackage{color}
+  showspaces=false, % show spaces adding particular underscores
+  showstringspaces=false, % underline spaces within strings
+  showtabs=false, % show tabs within strings adding particular underscores
+%  frame=l, % adds a frame around the code
+  frame=single,
+  tabsize=2, % sets default tabsize to 2 spaces
+  breaklines=true, % sets automatic line breaking
+  breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace
+  % also try caption instead of title
+  escapeinside={@}{@}, % if you want to add a comment within your code
+  morekeywords={*,...}, % if you want to add more keywords to the set
+  keywordstyle=\color[rgb]{0,0,1},
+  commentstyle=\color[rgb]{0.133,0.545,0.133}\textit,
+  stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+
+% Nomenclature
+\usepackage[refpage, german]{nomencl}
+\makenomenclature
+\renewcommand{\pagedeclaration}[1]{\dotfill\makebox[4em][l]{Seite #1}}
+
+%% Customizations
+\newenvironment{packed_item}{
+\vspace{-2mm}
+\begin{itemize}
+  \setlength{\itemsep}{1.5pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\vspace{-2mm}\end{itemize}}
+
+\newenvironment{abstr}{%
+\vfill\small%
+\begin{center}%
+{\bfseries \abstractname}%
+\end{center}%
+\quotation}%
+{\vfill}%
+
+% Provide the \*matter commands in non-book classes
+\providecommand{\frontmatter}{%
+\clearpage%
+\pagenumbering{roman}%
+\setcounter{page}{1}}%
+
+\providecommand{\mainmatter}{%
+\setlength{\headheight}{45px}%
+\clearpage%
+\pagenumbering{arabic}%
+\setcounter{page}{1}%
+\pagestyle{fancy}%
+\fancyhf{}%
+\fancyhead[L]{Kurs DWW}%
+\fancyhead[R]{\includegraphics[height=40px]{figures/NTB-FHO_LOGO_2.png}}%
+\fancyfoot[R]{\thepage}%
+}%
+
+\providecommand{\backmatter}{%
+\clearpage%
+\pagenumbering{arabic}%
+\setcounter{page}{1}}%
+
+% Paragraph Intendation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2ex}
+
+%% todonotes. gives command \todo{do this thing}
+\usepackage{todonotes}
+
+%% Outlines
+\usepackage{outlines}
+
+%% TikZ
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage[europeanresistor]{circuitikz}%[americanresistor]
+
+
+%% Include macros
+\input{macros}
+
+\definecolor{citecol}{rgb}{0.5,0,0}
+\hypersetup
+{
+bookmarksopen=true,
+pdftitle=DWW Skript,
+pdfauthor=NTB ICE,
+pdfsubject=DWW Skript,
+pdfmenubar=true, 
+pdfborder={0 0 0},
+colorlinks=true, 
+pdfpagelayout=SinglePage,
+pdffitwindow=true,
+linkcolor=black,
+citecolor=citecol,
+urlcolor=blue 
+}
+
+%% Mehrzeilige Gleichungen
+\usepackage{IEEEtrantools}
+
+%% Schoene Tabellen
+\usepackage{booktabs}
+

@@ -1,0 +1,96 @@
+%% general vector style (bold or with arrow)
+\newcommand{\ve}[1]{
+    %\mathbf{#1}
+    \vec{#1}
+}
+\newcommand{\mat}[1]{
+    \mathbf{#1}
+    %\vec{#1}
+}
+
+%% common shortcuts
+\providecommand{\argmin}{\operatorname*{argmin}} % operatorname makes _{..} appear centered
+\providecommand{\argmax}{\operatorname*{argmax}} % operatorname makes _{..} appear centered
+\newcommand{\dd}[1]{\,\mathrm{d}#1} % integration: \int f(x) \dd{x}
+\newcommand{\EE}{\mathbb{E}}        % expectation value
+\newcommand{\RR}{\mathbb{R}}        % set of real numbers
+\newcommand{\CC}{\mathbb{C}}        % set of complex numbers
+\newcommand{\NN}{\mathbb{N}}        % set of natural numbers
+\newcommand{\OO}{\mathcal{O}}       % big O notation (asymptotic complexity)
+\newcommand{\TT}{\mathbb{T}}        % time interval
+
+%% Vectors (lowercase letters)
+\renewcommand{\a}{\ve{a}}
+\renewcommand{\b}{\ve{b}}
+\renewcommand{\c}{\ve{c}}
+\renewcommand{\d}{\ve{d}}
+\newcommand{\e}{\ve{e}}
+\newcommand{\f}{\ve{f}}
+\newcommand{\g}{\ve{g}}
+\newcommand{\h}{\ve{h}}
+\renewcommand{\i}{\ve{i}}
+\renewcommand{\j}{\ve{j}}
+\renewcommand{\k}{\ve{k}}
+\renewcommand{\l}{\ve{l}}
+\newcommand{\m}{\ve{m}}
+\newcommand{\n}{\ve{n}}
+\renewcommand{\o}{\ve{o}}
+\newcommand{\p}{\ve{p}}
+\newcommand{\q}{\ve{q}}
+\renewcommand{\r}{\ve{r}}
+\newcommand{\s}{\ve{s}}
+\renewcommand{\t}{\ve{t}}
+\renewcommand{\u}{\ve{u}}
+\renewcommand{\v}{\ve{v}}
+\newcommand{\w}{\ve{w}}
+\newcommand{\x}{\ve{x}}
+\newcommand{\y}{\ve{y}}
+\newcommand{\z}{\ve{z}}
+
+%% Matrices (uppercase letters)
+\newcommand{\A}{\mat{A}}
+\newcommand{\B}{\mat{B}}
+\newcommand{\C}{\mat{C}}
+\newcommand{\D}{\mat{D}}
+\newcommand{\E}{\mat{E}}
+\newcommand{\F}{\mat{F}}
+\newcommand{\G}{\mat{G}}
+\renewcommand{\H}{\mat{H}}
+\newcommand{\I}{\mat{I}}
+\newcommand{\J}{\mat{J}}
+\newcommand{\K}{\mat{K}}
+\renewcommand{\L}{\mat{L}}
+\newcommand{\M}{\mat{M}}
+\newcommand{\N}{\mat{N}}
+\renewcommand{\O}{\mat{O}}
+\renewcommand{\P}{\mat{P}}
+\newcommand{\Q}{\mat{Q}}
+\newcommand{\R}{\mat{R}}
+\renewcommand{\S}{\mat{S}}
+\newcommand{\T}{\mat{T}}
+\newcommand{\U}{\mat{U}}
+\newcommand{\V}{\mat{V}}
+\newcommand{\W}{\mat{W}}
+\newcommand{\X}{\mat{X}}
+\newcommand{\Y}{\mat{Y}}
+\newcommand{\Z}{\mat{Z}}
+
+% Macro for 'List of Symbols', 'List of Notations' etc...
+\def\listofsymbols{\input{symbols} \clearpage}
+\def\addsymbol #1: #2#3{$#1$ \> \parbox{115mm}{#2 \dotfill \pageref{#3}}\\}
+\def\newnot#1{\label{#1}}
+
+\newcommand*{\nom}[3][\empty]{%%% \empty: Standardwert des optionalen Parameters
+  \ifthenelse{\equal{#1}{\empty}}%
+    {#2\nomenclature{#2}{#3}}%
+    {#2\nomenclature[#1]{#2}{#3}}%
+}
+
+\newcommand{\changefont}[3]{\fontfamily{#1}\fontseries{#2}\fontshape{#3}\selectfont}
+\newcommand{\codeemph}[1]{{\changefont{pcr}{m}{n}#1}}
+
+\newcommand{\definition}[2]{\paragraph{#1:}{#2}}
+\newcommand{\bemerkung}[1]{\paragraph{Bemerkung:}#1}
+
+\newcommand{\bsp}[1]{\textbf{#1}}
+
