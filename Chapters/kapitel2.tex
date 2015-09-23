@@ -21,14 +21,14 @@ Zusätzliche Bedingungen: \\
 Ordnung 2 $\Rightarrow$ Es braucht 2 RB:
 $y\left( 0 \right)=1,~y'\left( 1 \right)=-2$
 
-\begin{IEEEeqnarray*}{rCl}
+\begin{eqnarr}
     y\left( 0 \right) &=& C_2 = 1 \\
     y'\left( 1 \right) &=& \frac{1}{3}\cdot 1+C_1 = -2 \\
     &\Rightarrow& \\
     C_1 &=& -2-\frac{1}{3} = -\frac{7}{3} \\
     &\Rightarrow& \\
     y\left( x \right) &=&  \frac{1}{12}x^{4} - \frac{7}{3}x +1
-\end{IEEEeqnarray*}
+\end{eqnarr}
 
 \subsection{Separierbare Differentialgleichungen}
 Eine Differentialgleichung 1.Ordnung heisst separierbar, wenn sie in der Form
@@ -53,7 +53,7 @@ Die Methode ist einfach, schwierig ist das Erkennen der Separierbarkeit (und
 das Integrieren der Funktionen)
 
 Beispiel 1:
-\begin{IEEEeqnarray*}{rCl}
+\begin{eqnarr}
     y' &=& \frac{3y}{x}\\
     \frac{dy}{dx} &=& \frac{3y}{x}\\
     \int\frac{1}{y} \dd{y}&=& \int\frac{3}{x}\dd{x}\\
@@ -65,7 +65,7 @@ Beispiel 1:
     &=&  e^{\ln(x^3)}\cdot e^{C_3}\\
     &=&  x^3 \cdot e^{C_3}\\
     &=& C \cdot x^3
-\end{IEEEeqnarray*}
+\end{eqnarr}
 
 Beispiel 2:
 \begin{equation*}
@@ -74,14 +74,14 @@ Beispiel 2:
 Ist nicht separierbar.
 
 Beispiel 3:
-\begin{IEEEeqnarray*}{rCl}
+\begin{eqnarr}
     \dot{x} &=& -6x\\
     \frac{dx}{dt} &=& -6x\\
     \int \frac{1}{x} dx &=&  \int -6 dt \\
     \ln x &=&  -6t+C_1 \\
     x &=&  e^{-6t+C_1} = e^{-6t}\cdot \underbrace{e^{C_1}}_{C}\\
     x(t) &=& C\cdot e^{-6t}
-\end{IEEEeqnarray*}
+\end{eqnarr}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Richtungsfeld}
