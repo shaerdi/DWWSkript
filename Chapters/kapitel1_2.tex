@@ -65,31 +65,31 @@ Es gibt 3 Möglichkeiten, die DGL aufzustellen:
 
 \begin{outline}
     \1[a)] Strom
-    \begin{IEEEeqnarray*}{rCl}
+    \begin{eqnarr}
         U_R + U_C &=& 0 \\
         &\Rightarrow&\\ 
         R\cdot i + \frac{1}{C}\int i dt &=& 0\hspace{2em}\left|\frac{d}{dt}\right.\\
         R\frac{\partial i}{\partial t} + \frac{1}{C} i &=& 0,\hspace{2em} i\left( 0 \right) = \frac{1}{R}U_0
-    \end{IEEEeqnarray*}
+    \end{eqnarr}
 
     \1[b)] Ladung
-    \begin{IEEEeqnarray*}{rCl}
+    \begin{eqnarr}
         U_R + U_C &=& 0 \\
         &\Rightarrow&\\ 
         R\cdot \dot{q} + \frac{1}{C}q &=& 0,\hspace{2em} q\left( 0 \right) = C\cdot U_0
-    \end{IEEEeqnarray*}
+    \end{eqnarr}
 
     \1[c)] Spannung (am Kondensator)
     \begin{equation*}
         U_R + U_C = 0
     \end{equation*}
     Ausnützen dass der Strom im Kondensator und im Widerstand gleich sind: $i_R=i_C$:
-    \begin{IEEEeqnarray*}{rCl}
+    \begin{eqnarr}
         U_R &=& R\cdot i\\
         &=& R\cdot \left( C\cdot \dot{U}_C \right) \\
         &\Rightarrow&\\
         R\cdot C\cdot \dot{U}_C + U_C &=& 0,\hspace{2em} U_C\left( 0 \right) = U_0
-    \end{IEEEeqnarray*}
+    \end{eqnarr}
         
 \end{outline}
 
@@ -108,10 +108,10 @@ Beschl. &$a(t)=\dot{v}=\ddot{s}$&$\alpha(t) = \dot{\omega}=\ddot{\varphi}$ \\
 \end{tabular}\end{center}
 
 \definition{Bewegungsgesetz von Newton}{Beschleunigung  = Summe aller \\angreifenden Kräfte geteilt durch Masse}
-\begin{IEEEeqnarray*}{rCl}
+\begin{eqnarr}
     m\a &=&  m \ddot{\vec{s}} = \sum \vec{F}_i \\
     J\vec{\alpha} &=&  m \ddot{\vec{\varphi}} = \sum \vec{M}_i \\
-\end{IEEEeqnarray*}
+\end{eqnarr}
 
 \definition{Kräftezerlegung}
 {Das Bewegungsgesetz von Newton gilt in einem \\senkrechten Koordinatensystem für alle Komponenten einzeln.}
@@ -125,12 +125,12 @@ Beschl. &$a(t)=\dot{v}=\ddot{s}$&$\alpha(t) = \dot{\omega}=\ddot{\varphi}$ \\
 
 \bsp{Beispiel}
 Freier Fall ohne Reibung
-\begin{IEEEeqnarray*}{rCl}
+\begin{eqnarr}
         m\cdot a&=& -g \cdot m\\
         \ddot{y} &=& -g\\
         \dot{y} &=& -g\cdot t + v_0\\
         y &=& -\frac{1}{2}\cdot g\cdot t^{2} + v_0 \cdot t+y_0
-\end{IEEEeqnarray*}
+\end{eqnarr}
 
 \subsubsection*{Kräfte}
 \definition{Schwerkraft}{$F_G=g\cdot m$}
@@ -160,7 +160,7 @@ Wichtig: Reibkraft immer der Geschwindigkeit entgegengerichtet.
     & &=& -\mu\cdot m\cdot g\cdot\cos\left( \varphi \right)
 \end{IEEEeqnarray*}
 In die Bewegungsgleichung einsetzen
-\begin{IEEEeqnarray*}{rCl}
+\begin{eqnarr}
     m\cdot a &=& \sum F \\
     m \cdot a &=& F_{||} + F_L + F_R\\
     &=&  m\cdot g \cdot \sin\left( \varphi \right) -k\cdot v^{2}
@@ -172,7 +172,7 @@ In die Bewegungsgleichung einsetzen
      m\cdot\dot{v} + k\cdot v^{2} &=&  m\cdot g \cdot 
      \left( \sin\left( \varphi \right) - 
          \mu\cdot\cos\left( \varphi\right)  \right)
-\end{IEEEeqnarray*}
+\end{eqnarr}
 Nichtlineare, nicht Elementar lösbare, inhomogene (mit konstanten Koeffizienten) und gewöhnliche DGL 1. Ordnung.
 
 
@@ -212,13 +212,13 @@ F = - k \cdot x
 \end{minipage}
 
 In die Bewegungsgleichung einsetzen
-\begin{IEEEeqnarray*}{rCl}
+\begin{eqnarr}
     J\cdot \ddot{\varphi} &=& \sum M \\
     &\Rightarrow& \\
     m\cdot\ell^{2}\cdot\ddot{\varphi} &=&  m\cdot g\cdot\sin\left(\varphi\right)\cdot\ell \\
     &\Rightarrow& \\
     \ell\ddot{\varphi} - g\sin\left( \varphi \right) &=& 0\\
-\end{IEEEeqnarray*}
+\end{eqnarr}
 Für kleine $\varphi$ gilt $\sin\left( \varphi \right) \approx \varphi\Rightarrow$
 \begin{equation*}
     \underbrace{\ell\ddot{\varphi} - g\varphi}_\text{Schwingungsgleichung}= 0
@@ -264,13 +264,13 @@ gleiche Menge fliesst aus.
 \end{tikzpicture}\end{center}
 
 
-\begin{IEEEeqnarray*}{rCl}
+\begin{eqnarr}
     \Delta a &=& 10 \cdot 0.6 \Delta t - 10 \cdot \frac{a(t)}{1000}\Delta t \\    
     \Delta a &=& \left( 6-\frac{a(t)}{100} \right)\Delta t \\
     \frac{\Delta a}{\Delta t} &=&  6 - \frac{a(t)}{100} \\
     \Delta t \rightarrow 0 &\Rightarrow& \\
     \dot{a}(t) &=&  6 -\frac{a(t)}{100}
-\end{IEEEeqnarray*}
+\end{eqnarr}
 
 $\Rightarrow$ Die Alkoholmenge $a(t)$ wird durch die Differentialgleichung
 $\dot{a}(t) =  6 -\frac{a(t)}{100}$ beschrieben. Zusammen mit der
@@ -281,10 +281,10 @@ Anfangsbedingung $a(0) = 800$ ergibt sich das entsprechende Anfangswertproblem.
 Eine Bakterienkultur enthält eine Menge $x(t)$ Bakterien. Sie wächst mit 
 einer Geschwindigkeit proportional zu der Anzahl bereits vorhandenen Bakterien.
 
-\begin{IEEEeqnarray*}{rCl}
+\begin{eqnarr}
     \Delta x &=&  \lambda x(t) \Delta t \\
     \frac{\Delta x}{\Delta t} &=&  \lambda x(t) \\
     \dot{x}(t) &=&  \lambda x(t)
-\end{IEEEeqnarray*}
+\end{eqnarr}
 
 Diese DGL hat die allgemeine Lösung $x(t) = Ce^{\lambda t}$
