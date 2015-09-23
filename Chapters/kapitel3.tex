@@ -20,7 +20,7 @@ $f(x)=$ konstant: Mit konstanten Koeffizienten
 
 $y_h$ ist allgemeine Lösung von $y'+f(x)\cdot y=0$ (1 Parameter)\\
 $y_p$ ist partikuläre Lösung von $y'+f(x)\cdot y=g(x)$ (0 Parameter)
-    \begin{IEEEeqnarray*}{rCl}
+    \begin{eqnarr}
         &\Rightarrow& \\
         y_p' +f(x)y_p &=& g(x)\\
         y_h' +f(x)y_h &=& 0 \\ 
@@ -28,7 +28,7 @@ $y_p$ ist partikuläre Lösung von $y'+f(x)\cdot y=g(x)$ (0 Parameter)
         y_h' + y_p' + f(x) y_h + f(x) y_p &=& g(x)\\
         y_h' + y_p' + f(x) \left( y_h + y_p \right) &=& g(x)\\
         \left(y_h + y_p\right)' + f(x) \left( y_h + y_p \right) &=& g(x)
-    \end{IEEEeqnarray*}
+    \end{eqnarr}
 $\Rightarrow y_h+y_p$ ist allgemeine (weil 1 Parameter) Lösung von
 $y'+f(x)y=g(x)$
 
@@ -42,12 +42,12 @@ homogen:
     y'+y=0
 \end{equation*}
 Separierbar:
-\begin{IEEEeqnarray*}{rCl}
+\begin{eqnarr}
     \frac{\dd{y}}{\dd{x}} &=&  -y \\
     \int \frac{1}{y}\dd{y} &=& \int -1 \dd{x}\\
     \ln(y) &=&  -x + C_1\\
     y_h &=& C\cdot e^{-x} \hspace{3em}\mbox{(allgemeine Lösung)}
-\end{IEEEeqnarray*}
+\end{eqnarr}
 
 inhomogen:
 \begin{equation*}
@@ -57,5 +57,110 @@ Raten: $y_p\left( x \right)=e^{x}$\\
 $\Rightarrow y(x)=y_h+h_p=Ce^{-x}+e^x$
 
 \subsection{Allgemeine Lösung der homogenen DGL}
+Homogene DGL:
+\begin{equation*}
+    y' + f(x) \cdot y = 0
+\end{equation*}
 
+Lineare, homogene DGL 1. Ordnung ist immer separierbar $\Rightarrow$
+\begin{eqnarr}
+    y' + f(x) \cdot y &=&  0\\
+    y' &=&  -f(x)\cdot y\\
+    \frac{\dd{y}}{\dd{x}} &=&  -f(x)\cdot y\\
+    \frac{1}{y}\dd{y}&=&  -f(x)\dd{x} \\
+    \int\frac{1}{y}\dd{y}&=& \int -f(x)\dd{x} \\
+    \ln\left( y \right)&=&  -F(x) + C_1 \\
+    y&=&  e^{-F(x) + C_1} \\
+    &=&  C\cdot e^{-F(x)} \\
+\end{eqnarr}
+
+\subsection{Partikuläre Lösung der inhomoegenen DGL}
+Methode
+\begin{outline}
+    \1 Raten (z.B. mit Richtungsfeld) und Einsetzen
+    \1 Variation der Konstanten (Kapitel \ref{variationdK})
+    \1 Spezialfälle: Tabellen (Papula)
+\end{outline}
+
+\subsection{Variation der Konstanten} \label{variationdK}
+Die Lösung der homogenen DGL hat immer die Form
+\begin{equation*}
+    y_h\left( x \right) = C\cdot e^{-F(x)}
+\end{equation*}
+Die Lösung der inhomogenen DGL \emph{sollte} so ähnlich aussehen.
+
+Idee: ersetze Konstante C durch die Funktion $C\left( x \right)$ und setze sie in die DGL ein. Dadurch kann $C\left( x \right)$ berechnet, und $y_p$ bestimmt werden.
+
+\bsp{Beispiel}
+\begin{equation*}
+    y'-\frac{y}{x} = x^{2}
+\end{equation*}
+
+Homogene Lösung $y_h$:
+\begin{eqnarr}
+    y' \underbrace{- \frac{1}{x}}_{f(x)}y &=& 0\\
+    &\Rightarrow& \\ 
+    y_h &=&  C\cdot e^{-F(x)} \\
+    &=& C\cdot e^{--\ln(x)} \\
+    &=& C\cdot x
+\end{eqnarr}
+
+Partikuläre Lösung $y_p$:
+
+Ansatz: $y_p=C(x)\cdot x$ in \underline{inhomogene} DGL einsetzen:
+\begin{eqnarr}
+    \left[ C\left( x \right)\cdot x \right]' - \frac{\left[ C(x)\cdot x \right]}{x} &=& x^2 \\
+    C\left( x \right)'\cdot x + C(x)\cdot 1 - C(x)&=& x^2 \\
+    C\left( x \right)'\cdot x &=& x^2 \\
+    C\left( x \right)'&=& x \\
+    C\left( x \right)&=& \frac{1}{2}x^2 \\
+\end{eqnarr}
+$\Rightarrow$
+\begin{equation*}
+    y_p(x) = C(x)\cdot x = \frac{1}{2}x^2\cdot x = \frac{x^3}{2}
+\end{equation*}
+$\Rightarrow$
+\begin{equation*}
+    y(x) = y_h+y_p= C\cdot x+ \frac{x^3}{2}
+\end{equation*}
+
+\bemerkung{Die Variation der Konstanten führt \underline{immer} zu einer elementar lösbaren DGL für $C(x)'$. Der Term $C(x)$ kürzt sich jeweils weg.} 
+
+\subsection{Spezialfall konstante Koeffizienten}
+Für 
+\begin{equation*}
+    y'+\underbrace{a}_{\mbox{konst. Koeff.}}\cdot y = g(x)
+\end{equation*}
+Dies ist ein einfacher Spezialfall:
+\begin{outline}
+    \1 Die homogene Lösung ist einfacher
+    \1 Für die partikuläre Lösung muss man nicht die Konstante variieren, sondern man kann (in vielen Fällen) in einer Tabelle nachschlagen
+\end{outline}
+Homoegen Lösung:
+\begin{equation*}
+    y_h = C\cdot e^{-F(x)} = C\cdot e^{-ax}
+\end{equation*}
+
+\bsp{Beispiel}
+\begin{equation*}
+    y'\underbrace{-2}_{a=-2} \cdot y = \underbrace{4x -2}_{g(x)}
+\end{equation*}
+Homogen:
+\begin{equation*}
+    y_h = C\cdot e^{--2x} = C\cdot e^{2x}
+\end{equation*}
+Inhomogen: Ansatz aus Tabelle $y_p=c_1\cdot x+c_0$
+\begin{eqnarr}
+    \left( c_1\cdot x + c_0 \right)'-2\cdot \left( c_1\cdot x+c_0 \right)&=& 4x-2\\
+    c_1 - 2\cdot c_1\cdot x-2\cdot c_0 &=& 4x-2\\
+    &\Rightarrow& \\
+    -2\cdot c_1 &=& 4\\
+    c_1 - 2\cdot c_0 &=& -2 \\
+    &\Rightarrow& \\
+    c_1 &=& -2\\
+    c_0 &=& 0\\
+    &\Rightarrow& \\
+    y_p &=&  -2\cdot x
+\end{eqnarr}
+somit $y(x) = y_h+y_p=C\cdot e^{2x}-2x$
 
