@@ -233,48 +233,66 @@ Für kleine $\varphi$ gilt $\sin\left( \varphi \right) \approx \varphi\Rightarro
     \draw (4,0.75) --++ (1,0) --++ (0,-0.1) --++ (0.5,0.35)
           --++(-0.5,0.35)--++(0,-0.1)--++(-1,0);
     \node at (-1,2) {$\Phi_{\mbox{in}}$};
-    \node at (-1,0.25) {$c_{\mbox{in}},~\varphi_{\mbox{in}}$};
+    %\node at (-1,0.25) {$c_{\mbox{in}},~\varphi_{\mbox{in}}$};
     \node at (5,2) {$\Phi_{\mbox{out}}$};
-    \node at (5.5,0.25) {$c_{\mbox{out}},~\varphi_{\mbox{out}}$};
-    \node at (2,1.5) {$Q(t)$};
-    \node at (2,0.5) {$m(t)$};
+    %\node at (5.5,0.25) {$c_{\mbox{out}},~\varphi_{\mbox{out}}$};
+    \node at (2,1) {$Q(t)$};
+    %\node at (2,0.5) {$m(t)$};
 \end{tikzpicture}\end{center}
 
 \begin{IEEEeqnarray*}{rClCl}
+    Q(t) &:& \mbox{Menge} && \\
     \Phi &:& \mbox{Fluss} &:& \left[ \frac{\mbox{Menge, Vol}}{\mbox{Zeit}}
     \right]\\
-    \varphi &:& \mbox{Volumenfluss} & & \\
-    c &:& \mbox{Konzentration} &:& \left[ \frac{\mbox{kg}}{\si{m^3}} \right]
+    %\varphi &:& \mbox{Volumenfluss} & & \\
+    %c &:& \mbox{Konzentration} &:& \left[ \frac{\mbox{kg}}{\si{m^3}} \right]
 \end{IEEEeqnarray*}
+
+Die Bilanzgleichung sagt aus, dass die Menge $Q(t)$ sich nur ändert, wenn
+etwas in das System hinein oder hinaus fliesst:
+\begin{equation*}
+    \Delta Q(t) = \left( \Phi_{\mbox{in}} -\Phi_{\mbox{out}} \right)
+    \cdot \Delta t
+\end{equation*}
+Das muss auch für unendlich kleine Zeiten gelten:
+\begin{eqnarr}
+    \frac{\Delta Q(t)}{\Delta t} &=&  \left( \Phi_{\mbox{in}}
+    -\Phi_{\mbox{out}} \right)\\
+    \Delta t \rightarrow 0 & & \\ 
+    \dot{Q}&=&  \left( \Phi_{\mbox{in}}
+    -\Phi_{\mbox{out}} \right)\\
+\end{eqnarr}
 
 \bsp{Beispiel 1 Alkoholtank}
 
 Ein \SI{1000}{l} Tank ist gefüllt mit mit 80\% Alkohol. Mit einer Füllrate
-von \SI{10}{l/min} wird 60\% Alkohol nachgefüllt und gut gemischt. Die
-gleiche Menge fliesst aus.
+von \SI{10}{l/min} wird eine Mischung mit $c_{\mbox{in}}=60\%$ Alkohol nachgefüllt und gut
+gemischt. Das gleiche Volumen fliesst aus.
 
 \begin{center}\begin{tikzpicture}[scale=2]
     \draw (0,0) -- ++(6,0);
     \draw (0,0.25) -- ++(2,0) -- ++(0,2) -- ++(2,0) -- ++(0,-2) --++(2,0);
-    \node at (0.5,0.75) {$\Phi_{\mbox{in}}=\SI{10}{l/min}$};
-    \node at (0.5,0.4) {$\dot{m}_{\mbox{in}}=c\cdot\Phi$};
-    \node at (0.5, -0.25) {60\%};
+    \node at (0.5,0.75) {$\Phi_{\mbox{in}}=\SI{10}{l/min}\cdot c_{
+    \mbox{in}}$};
+    %\node at (0.5,0.4) {$\dot{m}_{\mbox{in}}=c\cdot\Phi$};
+    %\node at (0.5, -0.25) {60\%};
     \node at (3, 1.5) {\SI{1000}{l}};
-    \node at (3, 1) {$a(t)$: Alkoholmenge};
+    \node at (3, 1) {$Q(t)$: Alkoholmenge};
+    \node[right] at (4,0.75) {$\Phi_{\mbox{out}}=\SI{10}{l/min}\cdot c_{
+    \mbox{out}}$};
 \end{tikzpicture}\end{center}
 
 
 \begin{eqnarr}
-    \Delta a &=& 10 \cdot 0.6 \Delta t - 10 \cdot \frac{a(t)}{1000}\Delta t \\    
-    \Delta a &=& \left( 6-\frac{a(t)}{100} \right)\Delta t \\
-    \frac{\Delta a}{\Delta t} &=&  6 - \frac{a(t)}{100} \\
-    \Delta t \rightarrow 0 &\Rightarrow& \\
-    \dot{a}(t) &=&  6 -\frac{a(t)}{100}
+    \Delta Q(t) &=& 10 \cdot 0.6 \Delta t - 10 \cdot \frac{Q(t)}{1000}\Delta t \\    
+    \Delta Q(t) &=& \left( 6-\frac{Q(t)}{100} \right)\Delta t \\
+    \frac{\Delta Q}{\Delta t} &=&  6 - \frac{Q(t)}{100} \\
+    \Delta t \rightarrow 0 \Rightarrow \dot{Q}(t) &=&  6 -\frac{Q(t)}{100}
 \end{eqnarr}
 
-$\Rightarrow$ Die Alkoholmenge $a(t)$ wird durch die Differentialgleichung
-$\dot{a}(t) =  6 -\frac{a(t)}{100}$ beschrieben. Zusammen mit der
-Anfangsbedingung $a(0) = 800$ ergibt sich das entsprechende Anfangswertproblem.
+Die Alkoholmenge $Q(t)$ wird durch die Differentialgleichung
+$\dot{Q}(t) =  6 -\frac{Q(t)}{100}$ beschrieben. Zusammen mit der
+Anfangsbedingung $(0) = 800$ ergibt sich das entsprechende Anfangswertproblem.
 
 \bsp{Beispiel 2 Bakterienkultur}
 
