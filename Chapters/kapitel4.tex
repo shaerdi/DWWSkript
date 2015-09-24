@@ -10,4 +10,55 @@ Allgemeine Form einer lin. DGL 2. Ordnung mit konst. Koeff:
 \begin{equation*}
     y(x) = y_h(x) + y_p(x)
 \end{equation*}
-Analog zur linearen DGL 1. Ordnung
+Analog zur linearen DGL 1. Ordnung, Lösung in zwei Schritten:
+\begin{outline}
+    \1 $y_h$ finden: Formel aus \ref{algloeshomdgl}
+    \1 $y_p$ finden: Tabelle verwenden (\ref{aufsuchenpartloes})
+\end{outline}
+
+\subsection{Allgemeine Eigenschaften der homogenen DGL}
+\begin{equation*}
+    y'' + a\cdot y' + b\cdot y = 0 \hspace{2em} (*)
+\end{equation*}
+
+\underline{Satz}
+\begin{outline}    
+    \1[\circled{1}] Ist $y(x)$ eine Lösung von (*), dann auch $C\cdot y(x),C\in\mathrm{R}$
+    \1[\circled{2}] Sind $y_1(x)$ und $y_2(x)$ Lösngen von (*), dann auch $y_1(x)+y_2(x)$
+    \1[\circled{3}] Ist $y(x)=u(x)+j\cdot v(x)$ eine \emph{komplexe} Lösung von (*), dann auch $u(x)$ und $v(x)$\end{outline}
+
+\bsp{Beispiel}
+\begin{equation*}
+    y'' + \omega ^2 \cdot y =0, \hspace{2em} (\omega >0)
+\end{equation*}
+
+$y = \sin(\omega x)$ ist Lösung:
+\begin{eqnarr}
+    \left[ \sin(\omega x) \right]'' + \omega ^2 \left[ \sin(\omega x) \right] &=& 0\\
+    -\omega^2\sin(\omega x)  + \omega ^2 \sin(\omega x) &=& 0\\
+\end{eqnarr}
+
+$y = \cos(\omega x)$ ist Lösung:
+\begin{eqnarr}
+    \left[ \sin(\omega x) \right]'' + \omega ^2 \left[ \sin(\omega x) \right] &=& 0\\
+    -\omega^2\sin(\omega x)  + \omega ^2 \sin(\omega x) &=& 0\\
+\end{eqnarr}
+
+Aus \circled{1} folgt, dass $y_1=C_1\cdot\sin(\omega x)$ und $y_2=C_2\cdot\cos(\omega x)$ ebenfalls Lösungen sind.\\
+Aus \circled{2} folgt, dass $y=y_1+y_2$ ebenfalls eine Lösung ist
+
+\begin{equation*}
+    \left[ C_1\cdot\sin(\omega x)+C_2\cos(\omega x) \right]'' + \omega^2\cdot\left[ C_1\cdot\sin(\omega x)+C_2\cos(\omega x) \right] =0
+\end{equation*}
+
+$\Rightarrow y= C_1\cdot\sin(\omega x)+C_2\cos(\omega x) $ hat 2 Parameter ($C_1$ und $C_2$) und ist deshalb nicht nur eine, sondern die allgemeine Lösung.
+
+\bsp{Def} Zwei Funktionen heissen \underline{linear unabhängig}, falls die eine \underline{nicht} vielfaches der anderen ist.
+
+\bsp{Beispiele}
+\begin{outline}
+    \1 $\left.\begin{array}{c}y_1=\sin x\\y_2=\cos x\end{array}\right\}$
+\end{outline}
+
+\subsection{Allgemeine Lösung der homogenen DGL} \label{algloeshomdgl}
+\subsection{Partikuläre Lösung der inhomogenen DGL} \label{aufsuchenpartloes}
