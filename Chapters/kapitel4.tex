@@ -23,7 +23,8 @@ Analog zur linearen DGL 1. Ordnung, Lösung in zwei Schritten:
 
 \underline{Satz}
 \begin{outline}    
-    \1[\circled{1}] Ist $y(x)$ eine Lösung von (*), dann auch $C\cdot y(x),C\in\mathrm{R}$
+    \1[\circled{1}] Ist $y(x)$ eine Lösung von (*), dann auch $C\cdot
+    y(x),C\in\mathbb{R}$
     \1[\circled{2}] Sind $y_1(x)$ und $y_2(x)$ Lösngen von (*), dann auch $y_1(x)+y_2(x)$
     \1[\circled{3}] Ist $y(x)=u(x)+j\cdot v(x)$ eine \emph{komplexe} Lösung von (*), dann auch $u(x)$ und $v(x)$\end{outline}
 
@@ -51,14 +52,70 @@ Aus \circled{2} folgt, dass $y=y_1+y_2$ ebenfalls eine Lösung ist
     \left[ C_1\cdot\sin(\omega x)+C_2\cos(\omega x) \right]'' + \omega^2\cdot\left[ C_1\cdot\sin(\omega x)+C_2\cos(\omega x) \right] =0
 \end{equation*}
 
-$\Rightarrow y= C_1\cdot\sin(\omega x)+C_2\cos(\omega x) $ hat 2 Parameter ($C_1$ und $C_2$) und ist deshalb nicht nur eine, sondern die allgemeine Lösung.
+$\Rightarrow y= C_1\cdot\sin(\omega x)+C_2\cos(\omega x) $ hat 2 Parameter
+($C_1$ und $C_2$) und ist deshalb nicht nur eine, sondern die allgemeine Lösung.
 
-\bsp{Def} Zwei Funktionen heissen \underline{linear unabhängig}, falls die eine \underline{nicht} vielfaches der anderen ist.
+Wenn $\sin(\omega x)$ eine Lösung ist, dann sind auch $C_1\sin(\omega x)$
+und $C_2\sin(\omega x)$ Lösungen. Ist $y = C_1\sin(\omega x)+
+C_2\sin(\omega x)$ die allgemeine Lösung?
+
+\bsp{Def} Zwei Funktionen heissen \underline{linear unabhängig}, falls die eine
+\underline{nicht} vielfaches der anderen ist.
 
 \bsp{Beispiele}
 \begin{outline}
-    \1 $\left.\begin{array}{c}y_1=\sin x\\y_2=\cos x\end{array}\right\}$
+    \1 $\left.\begin{array}{l}y_1=\sin x\\y_2=\cos x\end{array}\right\}$ linear
+        unabhängig
+    \1 $\left.\begin{array}{l}y_1=4 x\\y_2=2 x\end{array}\right\}$ linear
+        abhängig
+    \1 $\left.\begin{array}{l}y_1=\sin^2 x\\y_2=2-2\cdot\cos^2 x\end{array}\right\}$ linear abhängig
 \end{outline}
 
+\underline{Satz}
+
+Für $y''+a\cdot y' +b\cdot y =0$:\\
+Sind $y_1(x)$ und $y_2(x)$ linear unabhängige, partikuläre Lösungen, dann
+ist 
+\begin{equation*}
+    C_1\cdot y_1(x) +C_2\cdot y_2(x), \hspace{2em} (C_1,C_2\in\mathbb{R})
+\end{equation*}
+die allgemeine Lösung.
+
+\bsp{Bsp} $y'' - 4y' -5y=0$ hat die Lösungen
+\begin{eqnarr}
+    y_1(x) &=& e^{5x} \\
+    y_2(x) &=& e^{-x} \\
+\end{eqnarr}
+Die Funktionen $y_1(x)$ und $y_2(x)$ sind linear unabhängig $\Rightarrow$
+\begin{equation*}
+y(x) = C_1\cdot e^{5x}+C_2\cdot e^{-x}
+\end{equation*}
+ist die allgemeine Lösung.
+
 \subsection{Allgemeine Lösung der homogenen DGL} \label{algloeshomdgl}
+Gegeben:
+\begin{equation*}
+    y''+a\cdot y' + b\cdot y = 0
+\end{equation*}
+Gesucht: 2 partikuläre, linear unabhängige Lösungen $y_1$ und $y_2$.
+
+Ansatz: $y=e^{\lambda x}$ ($\lambda$: Parameter $\in\mathbb{C}$)
+
+\begin{eqnarr}
+    \left[e^{\lambda x}\right]'' + a \cdot \left[e^{\lambda x}\right]' + 
+    b\cdot \left[e^{\lambda x}\right] &=& 0 \\
+    \lambda^2e^{\lambda x} + a\cdot \lambda \cdot e^{\lambda x} + 
+    b\cdot e^{\lambda x} &=& 0 \\
+    e^{\lambda x} \cdot \left( \lambda^2+ a\cdot \lambda + b\right) &=& 0 \\
+\end{eqnarr}
+\begin{equation*}
+    \lambda^2+ a\cdot \lambda + b = 0 \hspace{2cm}\mbox{Charakteristische Gleichung der DGL}
+\end{equation*}
+\begin{equation*}
+    \lambda_{1,2} = \frac{-a\pm\sqrt{a^2-4b}}{2}
+\end{equation*}
+
+
+
+
 \subsection{Partikuläre Lösung der inhomogenen DGL} \label{aufsuchenpartloes}
