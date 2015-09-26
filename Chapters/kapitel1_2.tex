@@ -146,6 +146,7 @@ Wichtig: Reibkraft immer der Geschwindigkeit entgegengerichtet.
     \draw (3,1.5) -- ++(0.25,0.5) -- ++(-1,0.5) -- ++(-0.25,-0.5);
     \draw[->] (2.5,2) -- ++(0,-1.75) node[midway,right] {$F_G$};
     \draw[->] (2.5,2) -- ++(-0.8,-1.5) node[midway,left] {$F_\bot$};
+    \draw[->] (2.5,2) -- ++(0.8,1.5) node[midway,right] {$F_N$};
     \draw[->] (2.5,2) -- ++(0.8,-0.4) node[right] {$F_{||}$};
     \draw[->] (2.5,2) -- ++(-1.08,0.54) node[above] {$F_{R}/F_L$};
     \draw (4.5,0) arc (180:180-26.6:1.5);
@@ -156,7 +157,8 @@ Wichtig: Reibkraft immer der Geschwindigkeit entgegengerichtet.
     & F_{||} &=& m\cdot g \cdot \sin\left( \varphi \right)\\
     & F_{\bot} &=& m\cdot g \cdot \cos\left( \varphi \right) \\
     \mbox{Luftreibung:}\hspace{2em} & F_L &=& -k\cdot v^{2}\\
-    \mbox{Haftreibung:}\hspace{2em} & F_R &=& -\mu\cdot F_\bot\\
+    \mbox{Haftreibung:}\hspace{2em} & F_R &=& -\mu\cdot \left|F_N\right|
+                                            = -\mu\cdot \left|F_\bot\right|\\
     & &=& -\mu\cdot m\cdot g\cdot\cos\left( \varphi \right)
 \end{IEEEeqnarray*}
 In die Bewegungsgleichung einsetzen
@@ -173,7 +175,9 @@ In die Bewegungsgleichung einsetzen
      \left( \sin\left( \varphi \right) - 
          \mu\cdot\cos\left( \varphi\right)  \right)
 \end{eqnarr}
-Nichtlineare, nicht Elementar lösbare, inhomogene (mit konstanten Koeffizienten) und gewöhnliche DGL 1. Ordnung.
+
+Nichtlineare, nicht Elementar lösbare, inhomogene (mit konstanten
+Koeffizienten) und gewöhnliche DGL 1. Ordnung.
 
 
 
