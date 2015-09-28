@@ -107,15 +107,95 @@ Ansatz: $y=e^{\lambda x}$ ($\lambda$: Parameter $\in\mathbb{C}$)
     \lambda^2e^{\lambda x} + a\cdot \lambda \cdot e^{\lambda x} + 
     b\cdot e^{\lambda x} &=& 0 \\
     e^{\lambda x} \cdot \left( \lambda^2+ a\cdot \lambda + b\right) &=& 0 \\
+    \lambda^2+ a\cdot \lambda + b &=&  0\\
 \end{eqnarr}
-\begin{equation*}
-    \lambda^2+ a\cdot \lambda + b = 0 \hspace{2cm}\mbox{Charakteristische Gleichung der DGL}
-\end{equation*}
+Charakteristische Gleichung der DGL, mit der Lösung
 \begin{equation*}
     \lambda_{1,2} = \frac{-a\pm\sqrt{a^2-4b}}{2}
 \end{equation*}
+Fall 1: $\boxed{a^2-4b>0}$
 
+$\Rightarrow$ 2 reelle Lösungen:
+\begin{eqnarr}
+    \lambda_1 &=& \frac{-a+\sqrt{a^2-4b}}{2} \\
+    \lambda_2 &=& \frac{-a-\sqrt{a^2-4b}}{2} \\
+\end{eqnarr}
+Zwei Lösungen gemäss Ansatz: 
+\begin{eqnarr}
+    y_1 &=& e^{\lambda_1 \cdot x}\\
+    y_2 &=& e^{\lambda_2 \cdot x}\\
+\end{eqnarr}
+Allgemeine Lösung (\circled{1} und \circled{2})
+\begin{equation*}
+    \boxed{y(x)=C_1\cdot e^{\lambda_1 \cdot x}+C_2\cdot e^{\lambda_2 \cdot x}}
+\end{equation*}
+\bsp{Beispiel}
+\begin{equation*}
+    y''+\tikzmark{a}2y'-\tikzmark{b}8y=0
+\end{equation*}
+\begin{center}
+    \begin{tikzpicture}[overlay,remember picture]
+        \node at (-1,0) (ta) {a=2};
+        \node at (1,0) (tb) {b=-8};
+        \draw[->] (ta) to (a);
+        \draw[->] (tb) to (b);
+    \end{tikzpicture}
+\end{center}
+Charakteristische Gleichung:
+\begin{eqnarr}
+    \lambda^2 +2\lambda -8 &=& 0\\
+    \left( \lambda+4 \right)\left( \lambda-2 \right)&=& 0\\
+    \lambda_1=-4, && \lambda_2 =2\\
+\end{eqnarr}
+\begin{equation*}
+    y(x)=C_1\cdot e^{-4x}+C_2\cdot e^{2x}
+\end{equation*}
 
+Fall 2: $\boxed{a^2-4b=0}$
+\begin{equation*}
+    \lambda = \frac{-a \pm \sqrt{a^2-4b}}{2} = -\frac{a}{2}
+\end{equation*}
+Problem: Nur eine Lösung $y_1(x)=e^{-\frac{a}{2}x}$
 
+\bsp{Behauptung}
+$y_2(x)=x\cdot e^{\lambda x}$ ist auch eine Lösung
 
-\subsection{Partikuläre Lösung der inhomogenen DGL} \label{aufsuchenpartloes}
+\bsp{Beweis:}
+\begin{eqnarr}
+    \left[ x\cdot e^{\lambda x} \right]'' + a\cdot\left[ x\cdot e^{\lambda x}
+    \right]'+b\cdot \left[ x\cdot e^{\lambda x} \right] &=& 0\\
+    \left(1\cdot e^{\lambda x}+\lambda x\cdot e^{\lambda x} \right)' + a\cdot\left(1\cdot e^{\lambda x}+\lambda x\cdot e^{\lambda x} \right)+b\cdot \left( x\cdot e^{\lambda x} \right) &=& 0\\
+    \left(\lambda\cdot e^{\lambda x}+\lambda \cdot e^{\lambda x} +\lambda^2 x \cdot e^{\lambda x} \right) + a\cdot\left(1\cdot e^{\lambda x}+\lambda x\cdot e^{\lambda x} \right)+b\cdot \left( x\cdot e^{\lambda x} \right) &=& 0\\
+    \underbrace{\left( 2\lambda + a \right)}_{=0,\lambda=-a/2}\cdot e^{\lambda x} +
+    \underbrace{\left( \lambda^2+a\lambda
+    +b\right)}_{=0\text{, (Char. Glg)}}\cdot x\cdot e^{\lambda x} &=& 0
+\end{eqnarr}
+Zwei Lösungen $y_1$ und $y_2\Rightarrow$ Allgemeine Lösung
+\begin{equation*}
+    \boxed{y(x)=C_1\cdot e^{\lambda x}+C_2\cdot x\cdot e^{\lambda x}}
+\end{equation*}
+
+\bsp{Beispiel:}
+\begin{equation*}
+    y''-\tikzmark{a}8y'+\tikzmark{b}16y=0
+\end{equation*}
+\begin{center}
+    \begin{tikzpicture}[overlay,remember picture]
+        \node at (-1,0) (ta) {a=-8};
+        \node at (1,0) (tb) {b=16};
+        \draw[->] (ta) to (a);
+        \draw[->] (tb) to (b);
+    \end{tikzpicture}
+\end{center}
+\begin{eqnarr}
+    \lambda_1 &=& \frac{8 + \sqrt{(-8)^2-4\cdot 16}}{2}\\
+    \lambda_2 &=& \frac{8 - \sqrt{(-8)^2-4\cdot 16}}{2}\\
+    \lambda_1 = \lambda_2&=& 4 =\lambda
+\end{eqnarr}
+$\Rightarrow$ Allgemeine Lösung:
+\begin{equation*}
+    y(x)=C_1\cdot e^{4x} + C_2\cdot x\cdot e^{4x}
+\end{equation*}
+
+\subsection{Partikuläre Lösung der inhomogenen DGL}
+\label{aufsuchenpartloes}
