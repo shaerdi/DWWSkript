@@ -197,5 +197,71 @@ $\Rightarrow$ Allgemeine Lösung:
     y(x)=C_1\cdot e^{4x} + C_2\cdot x\cdot e^{4x}
 \end{equation*}
 
+Fall 3: $\boxed{a^2-4b<0}$
+\begin{eqnarr}
+    \lambda_{1,2} &=&  \frac{-a\pm\sqrt{a^2-4b}}{2}\\
+    &=&
+    \underbrace{\frac{-a}{2}}_{\alpha}\pm
+    \sqrt{
+        \vphantom{\frac{a^2}{4}}
+        \smash{\underbrace{\frac{a^2}{4}-b}_{-\omega^2}}
+    }
+\end{eqnarr}
+Zwei komplexe Lösungen
+\begin{equation*}
+    \lambda_{1,2} = \alpha\pm j\cdot\omega
+\end{equation*}
+\begin{equation*}
+    \boxed{\alpha=-\frac{a}{2}} \hspace{2em} 
+    \boxed{\omega=\sqrt{b-\frac{a^2}{4}}}
+\end{equation*}
+\begin{equation*}
+    \tilde{y}_1(x)=e^{\lambda_1\cdot x},\hspace{2em} 
+    \tilde{y}_2(x) = e^{\lambda_2 \cdot x}
+\end{equation*}
+Das sind zwei ireelle Lösungen. Die Kombination $y=C_1\cdot
+\tilde{y}_1+C_2\cdot\tilde{y}_2$ ist die allgemeine Lösung der DGL. Ist es
+möglich, die allgemeine Lösung auch als reelle Lösung zu schreiben?
+\begin{eqnarr}
+    y_1(x) &=&  e^{\left( \alpha+j\omega \right)\cdot x} \\
+    &=& e^{\alpha x}\cdot e^{j\omega x}\\
+    &=& e^{\alpha x}\left( \cos(\omega x)+j\cdot\sin(\omega x) \right)\\
+    \text{Re}\left[ \tilde{y}_1(x) \right] &=& e^{\alpha x}\cdot \cos(\omega x) \\
+    \text{Im}\left[ \tilde{y}_1(x) \right] &=& e^{\alpha x}\cdot \sin(\omega x) \\
+\end{eqnarr}
+$\Rightarrow$ Aus \circled{3} folgt, dass $ y_1=\text{Re}\left[ \tilde{y}_1(x)
+\right]$ und $ y_2=\text{Im}\left[ \tilde{y}_1(x) \right]$ auch Lösungen der 
+DGL sind. $\Rightarrow$
+
+Allgemeine Lösung:
+\begin{equation*}
+    \boxed{
+        y(x) = C_1 \cdot e^{\alpha x}\cdot \cos(\omega x) + 
+             = C_2 \cdot e^{\alpha x}\cdot \sin(\omega x) + 
+    }
+\end{equation*}
+
+\bsp{Beispiel}
+\begin{equation*}
+    y''-\tikzmark{a}4y'+\tikzmark{b}13y=0
+\end{equation*}
+\begin{center}
+    \begin{tikzpicture}[overlay,remember picture]
+        \node at (-1,0) (ta) {a=4};
+        \node at (1,0) (tb) {b=13};
+        \draw[->] (ta) to (a);
+        \draw[->] (tb) to (b);
+    \end{tikzpicture}
+\end{center}
+\begin{eqnarr}
+    a^2 - 4b &=& 16-52\\
+    &=& -36\\
+    &<& 0\Rightarrow \text{ Fall 3}\\
+\end{eqnarr}
+\begin{eqnarr}
+    \alpha &=& -\frac{a}{2}=-2\\
+    \omega &=& \sqrt{b-\frac{a^2}{4}}\\
+    &=& \sqrt{13-\frac{16}{4}} = 3
+\end{eqnarr}
 \subsection{Partikuläre Lösung der inhomogenen DGL}
 \label{aufsuchenpartloes}
