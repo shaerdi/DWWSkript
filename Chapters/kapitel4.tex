@@ -135,8 +135,8 @@ Allgemeine Lösung (\circled{1} und \circled{2})
 \end{equation*}
 \begin{center}
     \begin{tikzpicture}[overlay,remember picture]
-        \node at (-1,0) (ta) {a=2};
-        \node at (1,0) (tb) {b=-8};
+        \node at (-1,0) (ta) {$a=2$};
+        \node at (1,0) (tb) {$b=-8$};
         \draw[->] (ta) to (a);
         \draw[->] (tb) to (b);
     \end{tikzpicture}
@@ -181,8 +181,8 @@ Zwei Lösungen $y_1$ und $y_2\Rightarrow$ Allgemeine Lösung
 \end{equation*}
 \begin{center}
     \begin{tikzpicture}[overlay,remember picture]
-        \node at (-1,0) (ta) {a=-8};
-        \node at (1,0) (tb) {b=16};
+        \node at (-1,0) (ta) {$a=-8$};
+        \node at (1,0) (tb) {$b=16$};
         \draw[->] (ta) to (a);
         \draw[->] (tb) to (b);
     \end{tikzpicture}
@@ -236,8 +236,8 @@ DGL sind. $\Rightarrow$
 Allgemeine Lösung:
 \begin{equation*}
     \boxed{
-        y(x) = C_1 \cdot e^{\alpha x}\cdot \cos(\omega x) + 
-             = C_2 \cdot e^{\alpha x}\cdot \sin(\omega x) + 
+        y(x) = C_1 \cdot e^{\alpha x}\cdot \cos(\omega x)
+             + C_2 \cdot e^{\alpha x}\cdot \sin(\omega x)
     }
 \end{equation*}
 
@@ -247,8 +247,8 @@ Allgemeine Lösung:
 \end{equation*}
 \begin{center}
     \begin{tikzpicture}[overlay,remember picture]
-        \node at (-1,0) (ta) {a=4};
-        \node at (1,0) (tb) {b=13};
+        \node at (-1,0) (ta) {$a=4$};
+        \node at (1,0) (tb) {$b=13$};
         \draw[->] (ta) to (a);
         \draw[->] (tb) to (b);
     \end{tikzpicture}
@@ -263,5 +263,101 @@ Allgemeine Lösung:
     \omega &=& \sqrt{b-\frac{a^2}{4}}\\
     &=& \sqrt{13-\frac{16}{4}} = 3
 \end{eqnarr}
+Die allgemeine Lösung ist also
+\begin{equation*}
+    y(x) = C_1\cdot e^{-2x}\cdot \cos(3x)
+         + C_2\cdot e^{-2x}\cdot \sin(3x)
+\end{equation*}
+
 \subsection{Partikuläre Lösung der inhomogenen DGL}
 \label{aufsuchenpartloes}
+\begin{equation*}
+    y(x)''+a\cdot y(x)'+b\cdot y(x) = g(x)
+\end{equation*}
+Theorie: Ansatz für $y(x)$ aus der Tabelle im Papula S. 276
+
+\bsp{Beispiel}
+\begin{equation*}
+    y''+y'-2y=10x+1
+\end{equation*}
+\underline{homogen}
+\begin{equation*}
+    y''+\tikzmark{a}y'-\tikzmark{b}2y=0
+\end{equation*}
+\begin{center}
+    \begin{tikzpicture}[overlay,remember picture]
+        \node at (-1,0) (ta) {$a=1$};
+        \node at (1,0) (tb) {$b=-2$};
+        \draw[->] (ta) to (a);
+        \draw[->] (tb) to (b);
+    \end{tikzpicture}
+\end{center}
+$a^2-4b=9>0\Rightarrow$ Fall 1
+\begin{equation*}
+    \lambda_{1,2}=\frac{-a\pm\sqrt{a^2-4b}}{2} = \frac{-1\pm\sqrt{9}}{2}
+\end{equation*}
+$\lambda_1 = 1,~\lambda_2=-2$
+\begin{equation*}
+    y_h = C_1 \cdot e^x + C_2\cdot e^{-2x}
+\end{equation*}
+
+\underline{inhomogen}
+Ansatz $(b\neq 0)$: $y_p = A\cdot x+B$
+\begin{eqnarr}
+    \left[ Ax+B \right]''+\left[ Ax+B \right]'-2\left[ Ax+B \right]&=& 10x+1\\
+    A-2Ax-2B&=& 10x+1\\
+    \\
+    \left|\begin{array}{c}
+        -2A=10\\A-2B=1
+    \end{array}\right|
+    &\Rightarrow& A=-5, \hspace{1em} B=-3
+\end{eqnarr}
+$y_p = -5x-3\Rightarrow$
+\begin{equation*}
+    y(x) = y_h+y_p = C_1 \cdot e^x + C_2\cdot e^{-2x} -5x -3
+\end{equation*}
+
+\bsp{Beispiel}
+\begin{equation*}
+    y''+y=\sin(x)
+\end{equation*}
+
+\underline{homogen}
+\begin{equation*}
+    y''\tikzmark{a}+\tikzmark{b}y=0
+\end{equation*}
+\begin{center}
+    \begin{tikzpicture}[overlay,remember picture]
+        \node at (-1,0) (ta) {$a=0$};
+        \node at (0.5,0) (tb) {$b=1$};
+        \draw[->] (ta) to (a);
+        \draw[->] (tb) to (b);
+    \end{tikzpicture}
+\end{center}
+$a^2-4b=-4>0\Rightarrow$ Fall 3
+\begin{eqnarr}
+    \alpha &=&  -\frac{a}{2} = 0\\
+    \omega &=& \sqrt{b-\frac{a^2}{4}} = \sqrt{1-0} = 1\\
+    \lambda_{1,2} &=& \alpha \pm j\omega = \pm j\\
+\end{eqnarr}
+\begin{eqnarr}
+    y_h &=&  C_1 \cdot e^{0\cdot x}\cdot\cos(1\cdot x)
+           + C_2 \cdot e^{0\cdot x}\cdot\sin(1\cdot x)\\
+        &=& C_1\cos(x)+C_2\sin(x)
+\end{eqnarr}
+
+\underline{inhomogen}
+\begin{equation*}
+    g(x) = \sin(\tikzmark{a}x)
+\end{equation*}
+\begin{center}
+    \begin{tikzpicture}[overlay,remember picture]
+        \node at (0,0) (ta) {$\beta=1$};
+        \draw[->] (ta) to (a);
+    \end{tikzpicture}
+\end{center}
+
+$j\beta = j$ \emph{ist} Lösung der charakteristischen Gleichung!! Also Ansatz
+\begin{equation*}
+    y_p(x) = x\cdot \left( A\cdot\sin(x)+B\cdot\cos(x) \right)
+\end{equation*}
