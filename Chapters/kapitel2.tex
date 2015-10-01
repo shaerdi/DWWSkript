@@ -52,20 +52,25 @@ und ausrechnen\ldots\\
 Die Methode ist einfach, schwierig ist das Erkennen der Separierbarkeit (und
 das Integrieren der Funktionen)
 
+\bsp{Spezialfall}
+Achtung, wenn $g(y)^{-1}=0$, dann ist die Operation $\cdot g(y)$ nicht erlaubt
+$\Rightarrow g(y)^{-1}=0$ muss immer separat überprüft werden.
+
 Beispiel 1:
-\begin{eqnarr}
-    y' &=& \frac{3y}{x}\\
-    \frac{dy}{dx} &=& \frac{3y}{x}\\
-    \int\frac{1}{y} \dd{y}&=& \int\frac{3}{x}\dd{x}\\
-    \ln\left( y \right) + C_1 &=& 3\cdot\ln\left( x \right)+C_2\\
-    \ln\left( y \right) &=& 3\cdot\ln\left( x \right)+C_3\\
-    &=& \ln\left( x^3 \right)+C_3\\
-    &\Rightarrow& \\
-    y &=&  e^{\ln(x^3)+C_3}\\
-    &=&  e^{\ln(x^3)}\cdot e^{C_3}\\
-    &=&  x^3 \cdot e^{C_3}\\
-    &=& C \cdot x^3
-\end{eqnarr}
+\begin{IEEEeqnarray*}{rClr}
+    y' &=& \frac{3y}{x}&\\
+    \frac{dy}{dx} &=& \frac{3y}{x}&\\
+    \int\frac{1}{y} \dd{y}&=& \int\frac{3}{x}\dd{x}& y\neq 0\\
+    \ln\left( |y| \right) + C_1 &=& 3\cdot\ln\left( |x| \right)+C_2&
+    \hspace{2em}C_1,C_2\in\mathbb{R}\\
+    \ln\left( |y| \right) &=& 3\cdot\ln\left( |x| \right)+C_3&C_3\in\mathbb{R}\\
+    &=& \ln\left( |x|^3 \right)+C_3&\\
+    |y| &=&  e^{\ln(|x|^3)+C_3}&\\
+    &=&  e^{\ln(|x|^3)}\cdot e^{C_3}&\\
+    &=&  x^3 \cdot e^{C_3}&\\
+    &=& C_4 \cdot x^3&C_4\in\mathbb{R}^+\\
+\end{IEEEeqnarray*}
+Was ist wenn $g(y)^{-1}=0$? Dann ist 
 
 Beispiel 2:
 \begin{equation*}
@@ -82,6 +87,8 @@ Beispiel 3:
     x &=&  e^{-6t+C_1} = e^{-6t}\cdot \underbrace{e^{C_1}}_{C}\\
     x(t) &=& C\cdot e^{-6t}
 \end{eqnarr}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Richtungsfeld}
