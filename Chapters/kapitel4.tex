@@ -99,26 +99,37 @@ Gegeben:
 \end{equation*}
 Gesucht: 2 partikuläre, linear unabhängige Lösungen $y_1$ und $y_2$.
 
+Definition: 
+\begin{equation*}
+    \boxed{\delta = \frac{a}{2}, \hspace{1em} \omega_0 = \sqrt{b}}
+\end{equation*}
+Die DGL mit $\delta$ und $\omega_0$ statt $a$ und $b$:
+\begin{equation*}
+    y''+2\delta\cdot y' + \omega_0^2\cdot y = 0
+\end{equation*}
+
 Ansatz: $y=e^{\lambda x}$ ($\lambda$: Parameter $\in\mathbb{C}$)
 
 \begin{eqnarr}
-    \left[e^{\lambda x}\right]'' + a \cdot \left[e^{\lambda x}\right]' + 
-    b\cdot \left[e^{\lambda x}\right] &=& 0 \\
-    \lambda^2e^{\lambda x} + a\cdot \lambda \cdot e^{\lambda x} + 
-    b\cdot e^{\lambda x} &=& 0 \\
-    e^{\lambda x} \cdot \left( \lambda^2+ a\cdot \lambda + b\right) &=& 0 \\
-    \lambda^2+ a\cdot \lambda + b &=&  0\\
+    \left[e^{\lambda x}\right]'' + 2\delta \cdot \left[e^{\lambda x}\right]' + 
+    \omega_0^2\cdot \left[e^{\lambda x}\right] &=& 0 \\
+    \lambda^2e^{\lambda x} + 2\delta\cdot \lambda \cdot e^{\lambda x} + 
+    \omega_0^2\cdot e^{\lambda x} &=& 0 \\
+    e^{\lambda x} \cdot \left( \lambda^2+ 2\delta\cdot \lambda + \omega_0^2
+    \right) &=& 0 \\
+    \lambda^2+ 2\delta\cdot \lambda + \omega_0^2 &=&  0\\
 \end{eqnarr}
 Charakteristische Gleichung der DGL, mit der Lösung
 \begin{equation*}
-    \lambda_{1,2} = \frac{-a\pm\sqrt{a^2-4b}}{2}
+    \lambda_{1,2} = \frac{-a\pm\sqrt{a^2-4b}}{2} =
+    -\delta\pm\sqrt{\delta^2-\omega_0^2}
 \end{equation*}
-Fall 1: $\boxed{a^2-4b>0}$
+Fall 1: $\boxed{\delta^2>\omega_0^2}$
 
 $\Rightarrow$ 2 reelle Lösungen:
 \begin{eqnarr}
-    \lambda_1 &=& \frac{-a+\sqrt{a^2-4b}}{2} \\
-    \lambda_2 &=& \frac{-a-\sqrt{a^2-4b}}{2} \\
+    \lambda_1 &=& -\delta+\sqrt{\delta^2-\omega_0^2} \\
+    \lambda_2 &=& -\delta-\sqrt{\delta^2-\omega_0^2} \\
 \end{eqnarr}
 Zwei Lösungen gemäss Ansatz: 
 \begin{eqnarr}
@@ -135,39 +146,45 @@ Allgemeine Lösung (\circled{1} und \circled{2})
 \end{equation*}
 \begin{center}
     \begin{tikzpicture}[overlay,remember picture]
-        \node at (-1,0) (ta) {$a=2$};
-        \node at (1,0) (tb) {$b=-8$};
+        \node at (-1,0) (ta) {$\delta=1$};
+        \node at (1,0) (tb) {$\omega_0^2=-8$};
         \draw[->] (ta) to (a);
         \draw[->] (tb) to (b);
     \end{tikzpicture}
 \end{center}
 Charakteristische Gleichung:
+\begin{equation*}
+    \lambda^2 +2\lambda -8 = 0
+\end{equation*}
 \begin{eqnarr}
-    \lambda^2 +2\lambda -8 &=& 0\\
-    \left( \lambda+4 \right)\left( \lambda-2 \right)&=& 0\\
-    \lambda_1=-4, && \lambda_2 =2\\
+    \lambda_{1,2} &=& -\delta\pm\sqrt{\delta^2-\omega_0^2}\\
+    &=& -1 \pm\sqrt{1-(-8)}\\
+    &&\\
+    \lambda_1&=& -4 \\
+    \lambda_2 &=& 2\\
 \end{eqnarr}
 \begin{equation*}
     y(x)=C_1\cdot e^{-4x}+C_2\cdot e^{2x}
 \end{equation*}
 
-Fall 2: $\boxed{a^2-4b=0}$
+Fall 2: $\boxed{\delta^2-\omega_0^2=0}$
 \begin{equation*}
-    \lambda = \frac{-a \pm \sqrt{a^2-4b}}{2} = -\frac{a}{2}
+    \lambda = -\delta\pm\sqrt{\delta^2-\omega_0^2} = -\delta
 \end{equation*}
-Problem: Nur eine Lösung $y_1(x)=e^{-\frac{a}{2}x}$
+Problem: Nur eine Lösung $y_1(x)=e^{-\delta\cdot x}$
 
 \bsp{Behauptung}
 $y_2(x)=x\cdot e^{\lambda x}$ ist auch eine Lösung
 
 \bsp{Beweis:}
 \begin{eqnarr}
-    \left[ x\cdot e^{\lambda x} \right]'' + a\cdot\left[ x\cdot e^{\lambda x}
+    \left[ x\cdot e^{\lambda x} \right]'' + \delta\cdot\left[ x\cdot e^{\lambda x}
     \right]'+b\cdot \left[ x\cdot e^{\lambda x} \right] &=& 0\\
-    \left(1\cdot e^{\lambda x}+\lambda x\cdot e^{\lambda x} \right)' + a\cdot\left(1\cdot e^{\lambda x}+\lambda x\cdot e^{\lambda x} \right)+b\cdot \left( x\cdot e^{\lambda x} \right) &=& 0\\
-    \left(\lambda\cdot e^{\lambda x}+\lambda \cdot e^{\lambda x} +\lambda^2 x \cdot e^{\lambda x} \right) + a\cdot\left(1\cdot e^{\lambda x}+\lambda x\cdot e^{\lambda x} \right)+b\cdot \left( x\cdot e^{\lambda x} \right) &=& 0\\
-    \underbrace{\left( 2\lambda + a \right)}_{=0,\lambda=-a/2}\cdot e^{\lambda x} +
-    \underbrace{\left( \lambda^2+a\lambda
+    \left(1\cdot e^{\lambda x}+\lambda x\cdot e^{\lambda x} \right)' + \delta\cdot\left(1\cdot e^{\lambda x}+\lambda x\cdot e^{\lambda x} \right)+b\cdot \left( x\cdot e^{\lambda x} \right) &=& 0\\
+    \left(\lambda\cdot e^{\lambda x}+\lambda \cdot e^{\lambda x} +\lambda^2 x
+    \cdot e^{\lambda x} \right) + \delta\cdot\left(1\cdot e^{\lambda x}+\lambda x\cdot e^{\lambda x} \right)+b\cdot \left( x\cdot e^{\lambda x} \right) &=& 0\\
+    \underbrace{\left( 2\lambda + \delta \right)}_{=0,\lambda=-\delta}\cdot e^{\lambda x} +
+    \underbrace{\left( \lambda^2+2\delta\lambda
     +b\right)}_{=0\text{, (Char. Glg)}}\cdot x\cdot e^{\lambda x} &=& 0
 \end{eqnarr}
 Zwei Lösungen $y_1$ und $y_2\Rightarrow$ Allgemeine Lösung
