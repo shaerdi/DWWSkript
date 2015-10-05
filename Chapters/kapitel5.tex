@@ -39,5 +39,48 @@ Lösung:
 \end{equation*}
 \begin{eqnarr}
     \delta^2 - \omega_0^2 &=&  \left( \frac{r}{2m} \right)^2-\frac{k}{m}\\
-    &=& todo
+    &>& 0 \Rightarrow \text{Fall 1 (Kriechfall)} \\
+    &=& 0 \Rightarrow \text{Fall 2 (aperiodischer Grenzfall)} \\
+    &<& 0 \Rightarrow \text{Fall 3 (Schwingungsfall)} \\
+\end{eqnarr}
+
+\subsection*{a) Starke Dämpfung (Kriechfall)}
+\begin{equation*}
+    \boxed{\delta>\omega_0}
+\end{equation*}
+\begin{equation*}
+    \lambda_{1,2} = -\delta\pm\underbrace{\sqrt{\delta^2-\omega_0^2}}_
+    {>0 \text{ und }<\delta}<0
+\end{equation*}
+Lösung: \begin{equation*}
+    x(t) = C_1\cdot e^{\lambda_1\cdot t} + C_2\cdot e^{\lambda_2\cdot t}
+\end{equation*}
+
+\subsection*{b) Aperiodischer Grenzfall}
+\begin{equation*}
+    \boxed{\delta=\omega_0}
+\end{equation*}
+\begin{equation*}
+    \lambda = -\delta
+\end{equation*}
+Lösung: \begin{equation*}
+    x(t) = C_1\cdot e^{-\delta\cdot t} + C_2\cdot t\cdot e^{-\delta\cdot t}
+\end{equation*}
+
+\subsection*{c) Schwache Dämpfung}
+\begin{equation*}
+    \boxed{\delta<\omega_0}
+\end{equation*}
+\begin{equation*}
+    \omega = \sqrt{\omega_0^2-\delta^2}<\omega_0
+\end{equation*}
+Lösung: \begin{eqnarr}
+    x(t)&=&  e^{-\delta \cdot t}\cdot \left[
+        C_1\cdot\sin(\omega_d \cdot t) +
+        C_2\cdot\cos(\omega_d \cdot t) 
+        \right]\\
+        &=& C\cdot e^{-\delta \cdot t} \cdot
+        \sin\left( \omega_d\cdot t+\phi_d \right)\\
+        &=& C\cdot e^{-\delta \cdot t} \cdot
+        \cos\left( \omega_d\cdot t+\varphi_d \right)
 \end{eqnarr}

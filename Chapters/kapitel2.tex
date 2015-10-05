@@ -64,13 +64,20 @@ Beispiel 1:
     \ln\left( |y| \right) + C_1 &=& 3\cdot\ln\left( |x| \right)+C_2&
     \hspace{2em}C_1,C_2\in\mathbb{R}\\
     \ln\left( |y| \right) &=& 3\cdot\ln\left( |x| \right)+C_3&C_3\in\mathbb{R}\\
-    &=& \ln\left( |x|^3 \right)+C_3&\\
-    |y| &=&  e^{\ln(|x|^3)+C_3}&\\
-    &=&  e^{\ln(|x|^3)}\cdot e^{C_3}&\\
-    &=&  x^3 \cdot e^{C_3}&\\
-    &=& C_4 \cdot x^3&C_4\in\mathbb{R}^+\\
+    &=& \ln\left( |x|^3 \right)+\ln(|C_4|)& C_4\in\mathbb{R}\setminus\left\{0\right\}\\
+    &=& \ln\left( |x|^3\cdot |C_4| \right)& \\
+    &=& \ln\left( \left|x^3\cdot C_4\right| \right)& \\
+    |y|&=& e^{\ln\left( \left|x^3\cdot C_4\right| \right)}& \\
+    &=&\left|x^3\cdot C_4\right| & \\
+    y&=& \pm C_4\cdot x^3 &\\
+    &=& C_5 \cdot x^3&C_5\in\mathbb{R}\setminus\left\{ 0 \right\}\\
 \end{IEEEeqnarray*}
-Was ist wenn $g(y)^{-1}=0$? Dann ist 
+Was ist wenn $y=0$? Dann ist $y'=0=\frac{3\cdot 0}{x}\Rightarrow y=0$ ist auch
+eine Lösung.
+\begin{eqnarr}
+    \mathbb{L} &=&  \left\{ C_5\cdot x^3,~0 \right\}\\
+    \mathbb{L} &=& C\cdot x^3 \hspace{3em} C\in \mathbb{R}\\
+\end{eqnarr}
 
 Beispiel 2:
 \begin{equation*}
@@ -87,8 +94,22 @@ Beispiel 3:
     x &=&  e^{-6t+C_1} = e^{-6t}\cdot \underbrace{e^{C_1}}_{C}\\
     x(t) &=& C\cdot e^{-6t}
 \end{eqnarr}
+Achtung, hier die ganze Geschichte mit Betrag $x$ und Lösungsmenge
+weggelassen.
 
-
+Beispiel 4:
+\begin{IEEEeqnarray*}{rClr}
+    y' &=& 2x(y-1) &\\
+    \frac{dy}{dx} &=& 2x(y-1) &\\
+    \frac{1}{y-1} dy &=&  2x dx&\hspace{3em} y-1\neq 0\\
+    \int\frac{1}{y-1} dy &=&  \int 2x dx\\
+    \ln|y-1| &=&  x^2 +C_1& C_1 \in \mathbb{R}\\
+    |y-1| &=& e^{ x^2 +C_1}& \\
+    &=& C_2\cdot e^{ x^2}& C_2\in\mathbb{R}^+\\
+    y-1 &=& \pm C_2\cdot e^{ x^2}& \\
+    y-1 &=& C_3\cdot e^{ x^2} &C_3\in\mathbb{R}\setminus\left\{ 0 \right\}\\
+    y &=& C_3\cdot e^{ x^2} + 1&\\
+\end{IEEEeqnarray*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Richtungsfeld}
