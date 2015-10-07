@@ -221,16 +221,16 @@ Fall 3: $\boxed{\delta^2-\omega_0^2<0}$
 \begin{eqnarr}
     \lambda_{1,2} &=&  -\delta \pm
     \sqrt{
-        \vphantom{\omega^2}
-        \smash{\underbrace{\delta^2-\omega_0^2}_{-\omega^2}}
+        \vphantom{\omega_d^2}
+        \smash{\underbrace{\delta^2-\omega_0^2}_{-\omega_d^2}}
     }\\
 \end{eqnarr}
 \begin{equation*}
-    \boxed{\omega^2 = \omega_0^2 - \delta^2}
+    \boxed{\omega_d^2 = \omega_0^2 - \delta^2}
 \end{equation*}
 Zwei komplexe Lösungen
 \begin{equation*}
-    \lambda_{1,2} = -\delta\pm j\cdot\omega
+    \lambda_{1,2} = -\delta\pm j\cdot\omega_d
 \end{equation*}
 \begin{equation*}
     \tilde{y}_1(x)=e^{\lambda_1\cdot x},\hspace{2em} 
@@ -240,11 +240,11 @@ Das sind zwei ireelle Lösungen. Die Kombination $y=\tilde{C}_1\cdot
 \tilde{y}_1+\tilde{C}_2\cdot\tilde{y}_2$ ist die allgemeine Lösung der DGL. Ist es
 möglich, die allgemeine Lösung auch als reelle Lösung zu schreiben?
 \begin{eqnarr}
-    y_1(x) &=&  e^{\left( -\delta+j\omega \right)\cdot x} \\
-    &=& e^{-\delta x}\cdot e^{j\omega x}\\
-    &=& e^{-\delta x}\left( \cos(\omega x)+j\cdot\sin(\omega x) \right)\\
-    \text{Re}\left[ \tilde{y}_1(x) \right] &=& e^{-\delta x}\cdot \cos(\omega x) \\
-    \text{Im}\left[ \tilde{y}_1(x) \right] &=& e^{-\delta x}\cdot \sin(\omega x) \\
+    y_1(x) &=&  e^{\left( -\delta+j\omega_d \right)\cdot x} \\
+    &=& e^{-\delta x}\cdot e^{j\omega_d x}\\
+    &=& e^{-\delta x}\left( \cos(\omega_d x)+j\cdot\sin(\omega_d x) \right)\\
+    \text{Re}\left[ \tilde{y}_1(x) \right] &=& e^{-\delta x}\cdot \cos(\omega_d x) \\
+    \text{Im}\left[ \tilde{y}_1(x) \right] &=& e^{-\delta x}\cdot \sin(\omega_d x) \\
 \end{eqnarr}
 $\Rightarrow$ Aus \circled{3} folgt, dass $ y_1=\text{Re}\left[ \tilde{y}_1(x)
 \right]$ und $ y_2=\text{Im}\left[ \tilde{y}_1(x) \right]$ auch Lösungen der 
@@ -253,8 +253,8 @@ DGL sind. $\Rightarrow$
 Allgemeine Lösung:
 \begin{equation*}
     \boxed{
-        y(x) = C_1 \cdot e^{-\delta x}\cdot \cos(\omega x)
-             + C_2 \cdot e^{-\delta x}\cdot \sin(\omega x)
+        y(x) = C_1 \cdot e^{-\delta x}\cdot \cos(\omega_d x)
+             + C_2 \cdot e^{-\delta x}\cdot \sin(\omega_d x)
     }
 \end{equation*}
 
@@ -354,8 +354,8 @@ $y_p = -5x-3\Rightarrow$
 \end{center}
 $\delta^2-\omega_0^2=-1>0\Rightarrow$ Fall 3
 \begin{eqnarr}
-    \omega &=& \sqrt{\omega_0^2-\delta^2} = \sqrt{1-0} = 1\\
-    \lambda_{1,2} &=& -\delta \pm j\omega = \pm j\\
+    \omega_d &=& \sqrt{\omega_0^2-\delta^2} = \sqrt{1-0} = 1\\
+    \lambda_{1,2} &=& -\delta \pm j\omega_d = \pm j\\
 \end{eqnarr}
 \begin{eqnarr}
     y_h &=&  C_1 \cdot e^{0\cdot x}\cdot\cos(1\cdot x)
