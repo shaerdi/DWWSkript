@@ -184,3 +184,68 @@ $\Rightarrow$
         {\sqrt{\left( \omega_0^2-\omega^2 \right)^2+4\delta^2\omega^2}}
     }
 \end{equation*}
+Phase:
+\begin{equation*}
+    \tan\varphi = \frac{2\delta\omega}{\omega_0^2-\omega^2}
+\end{equation*}
+\begin{equation*}
+    \boxed{
+        \phi = \phi(\omega) = \left\{
+            \begin{array}{lc}
+            \arctan\left( \frac{2\delta\omega}{\omega_0^2-\omega^2} \right)
+                & \omega<\omega_0 \\
+            \frac{\pi}{2} & \omega=\omega_0\\
+            \arctan\left( \frac{2\delta\omega}{\omega_0^2-\omega^2}+\pi \right)
+                & \omega>\omega_0 \\
+            \end{array}
+        \right.
+    }
+\end{equation*}
+
+\subsection*{Amplitudengang}
+\begin{tikzpicture}
+    \begin{axis}[
+            axis lines = middle,
+            %clip = false,
+            xmin = 0,
+            ymin = 0,
+            ymax = 2,
+            %xticklabels = \empty,
+            %yticklabels = \empty,
+            xlabel = $x$,
+            ylabel = $y$,
+        ]
+    \foreach \d in {1,...,2}
+    \addplot+[mark=none,samples=200,unbounded coords=jump,domain=0:2]
+    {
+        1.0 / (sqrt( (1.0-x^2)^2*+4.0*\d^2*x^2 ))
+    };
+    \end{axis}
+\end{tikzpicture}
+\subsection*{Phasengang}
+\begin{tikzpicture}
+    \begin{axis}[
+            axis lines = middle,
+            %clip = false,
+            %xmin = 0,
+            %ymin = 0,
+            %ymax = 2,
+            %xticklabels = \empty,
+            %yticklabels = \empty,
+            xlabel = $x$,
+            ylabel = $y$,
+        ]
+        \addplot[mark=none,samples=100,unbounded coords=jump,domain=0:0.5]
+    {
+        atan(rad(2.0*x/(1-x^2)))
+    };
+    \end{axis}
+\end{tikzpicture}
+
+\begin{outline}
+    \1 Eigenfrequenz des ungedämpften Systems: $\omega_0$
+    \1 Eigenfrequenz des gedämpften Systems:
+    $\omega_d=\sqrt{\omega_0^2-\delta^2}$
+    \1 Resonanzfrequenz:
+    $\omega_r=\sqrt{\omega_0^2-2\delta^2}$
+\end{outline}
