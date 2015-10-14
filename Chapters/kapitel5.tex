@@ -203,44 +203,87 @@ Phase:
 \end{equation*}
 
 \subsection*{Amplitudengang}
+\begin{center}
 \begin{tikzpicture}
     \begin{axis}[
+            width = \linewidth,
+            height = 7cm,
             axis lines = middle,
-            %clip = false,
+            clip = false,
             xmin = 0,
             ymin = 0,
-            ymax = 2,
-            %xticklabels = \empty,
-            %yticklabels = \empty,
-            xlabel = $x$,
-            ylabel = $y$,
+            ymax = 0.2, 
+            restrict y to domain=0:0.2,
+            ticks=none,
+            xlabel = $\omega$,
+            ylabel = $A$,
         ]
-    \foreach \d in {1,...,2}
-    \addplot+[mark=none,samples=200,unbounded coords=jump,domain=0:2]
-    {
-        1.0 / (sqrt( (1.0-x^2)^2*+4.0*\d^2*x^2 ))
-    };
+
+    \newcommand\OMEGA{3.8}
+    \pgfmathdeclarefunction{A}{2}{%
+        \pgfmathparse{%
+            1 / sqrt( (\OMEGA^2-#1^2)^2 + 4*#2^2*#1^2 )%
+        }%
+    }
+    \pgfmathdeclarefunction{wr}{1}{%
+        \pgfmathparse{%
+            sqrt(\OMEGA^2-2*#1^2)
+        }%
+    }
+
+    \pgfplotsinvokeforeach {0,...,2} {
+        \addplot+[mark=none,samples=150,unbounded coords=jump,domain=0:7 ] (
+           {x},
+           {A(x,#1)}
+        )
+        [yshift=8pt]
+        node [pos=0.57,right] { $\delta = #1$ }
+        ;
+        \coordinate (omegaR#1) at (axis cs:{wr(#1)},0);
+    }
+    \node[below] at (omegaR0) {$\omega_0$};
+    \node[below] at (omegaR1) {$\underset{\delta=1}{\omega_r}$};
+    \node[below] at (omegaR2) {$\underset{\delta=2}{\omega_r}$};
+    
+    \draw[dotted] (omegaR0) -- ++ (axis cs:0, 0.2);
+    \draw[dotted] (omegaR1) -- ++ (axis cs:0, {A(wr(1),1});
+    \draw[dotted] (omegaR2) -- ++ (axis cs:0, {A(wr(2),2});
+    
     \end{axis}
 \end{tikzpicture}
+\end{center}
 \subsection*{Phasengang}
+\begin{center}
 \begin{tikzpicture}
     \begin{axis}[
+            width = \linewidth,
+            height = 7cm,
             axis lines = middle,
-            %clip = false,
+            clip = false,
             %xmin = 0,
             %ymin = 0,
-            %ymax = 2,
-            %xticklabels = \empty,
-            %yticklabels = \empty,
-            xlabel = $x$,
-            ylabel = $y$,
-        ]
-        \addplot[mark=none,samples=100,unbounded coords=jump,domain=0:0.5]
-    {
-        atan(rad(2.0*x/(1-x^2)))
-    };
+            %ymax = pi, 
+            %restrict y to domain=0:pi,
+            %ticks=none,
+            xlabel = $\omega$,
+            ylabel = $\varphi$, 
+            use fpu=false,
+    ]
+
+        \newcommand\DELTA{1}
+    
+        \pgfmathdeclarefunction{phiF}{2}{%
+            \pgfmathparse{%
+                rad(atan2(2*\DELTA*#1, #2^2-#1^2))
+            }%
+        }
+        \addplot[mark=none,samples=100,domain=-1:1] (
+            {x},
+            {phiF(x,1)}
+        );
     \end{axis}
 \end{tikzpicture}
+\end{center}
 
 \begin{outline}
     \1 Eigenfrequenz des ungedämpften Systems: $\omega_0$
