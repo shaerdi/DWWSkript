@@ -202,24 +202,25 @@ Phase:
     }
 \end{equation*}
 
-\subsection*{Amplitudengang}
+\subsubsection*{Amplitudengang}
 \begin{center}
 \begin{tikzpicture}
-    \begin{axis}[
-            width = \linewidth,
-            height = 7cm,
-            axis lines = middle,
-            clip = false,
-            xmin = 0,
-            ymin = 0,
-            ymax = 0.2, 
-            restrict y to domain=0:0.2,
-            ticks=none,
-            xlabel = $\omega$,
-            ylabel = $A$,
-        ]
+\begin{axis}[
+        width = \linewidth,
+        height = 7cm,
+        axis lines = middle,
+        clip = false,
+        xmin = 0,
+        ymin = 0,
+        ymax = 0.2, 
+        restrict y to domain=0:0.2,
+        ticks=none,
+        xlabel = $\omega$,
+        ylabel = $A$,
+    ]
 
     \newcommand\OMEGA{3.8}
+
     \pgfmathdeclarefunction{A}{2}{%
         \pgfmathparse{%
             1 / sqrt( (\OMEGA^2-#1^2)^2 + 4*#2^2*#1^2 )%
@@ -241,18 +242,17 @@ Phase:
         ;
         \coordinate (omegaR#1) at (axis cs:{wr(#1)},0);
     }
-    \node[below] at (omegaR0) {$\omega_0$};
-    \node[below] at (omegaR1) {$\underset{\delta=1}{\omega_r}$};
-    \node[below] at (omegaR2) {$\underset{\delta=2}{\omega_r}$};
     
-    \draw[dotted] (omegaR0) -- ++ (axis cs:0, 0.2);
-    \draw[dotted] (omegaR1) -- ++ (axis cs:0, {A(wr(1),1});
-    \draw[dotted] (omegaR2) -- ++ (axis cs:0, {A(wr(2),2});
+    \draw[dotted] (omegaR0) node[below] {$\omega_0$} -- ++ (axis cs:0, 0.2);
+    \draw[dotted] (omegaR1) node[below] {$\underset{\delta=1}{\omega_r}$} 
+        -- ++ (axis cs:0, {A(wr(1),1});
+    \draw[dotted] (omegaR2) node[below] {$\underset{\delta=2}{\omega_r}$} 
+        -- ++ (axis cs:0, {A(wr(2),2});
     
-    \end{axis}
+\end{axis}
 \end{tikzpicture}
 \end{center}
-\subsection*{Phasengang}
+\subsubsection*{Phasengang}
 \begin{center}
 \begin{tikzpicture}
     \begin{axis}[
@@ -262,28 +262,53 @@ Phase:
             clip = false,
             %xmin = 0,
             %ymin = 0,
-            %ymax = pi, 
+            ymax = 1.2*pi, 
             %restrict y to domain=0:pi,
-            %ticks=none,
+            ticks=none,
             xlabel = $\omega$,
             ylabel = $\varphi$, 
             use fpu=false,
     ]
 
-        \newcommand\DELTA{1}
+        \newcommand\DELTA{0.2}
     
-        \pgfmathdeclarefunction{phiF}{2}{%
+        \pgfmathdeclarefunction{phiF}{1}{%
             \pgfmathparse{%
-                rad(atan2(2*\DELTA*#1, #2^2-#1^2))
+                %rad(atan2(2*x, (#1^2-x^2)))
+                rad(atan2((#1^2-x^2),2*\DELTA*x )) % Wieso Argumente gedreht..??
             }%
         }
-        \addplot[mark=none,samples=100,domain=-1:1] (
-            {x},
-            {phiF(x,1)}
-        );
+        \addplot[mark=none,samples=150,domain=0:3] {phiF(1)} 
+        node[pos=0.85,below] {$\delta=0.2$};
+
+        \draw[dotted] (axis cs:1,0) node[below] {$\omega_0$} 
+        -- (axis cs:1,pi/2) -- (axis cs:0,pi/2) node[left] {$\frac{\pi}{2}$};
+        \draw[dotted] (axis cs:0,pi) node[left] {$\pi$} -- (axis cs:3,pi);
     \end{axis}
 \end{tikzpicture}
 \end{center}
+
+\subsubsection*{Berechnung von $\omega_r$}
+$A(\omega)$ hat Maximum bei $w_r$, also gilt 
+$\left.\frac{\partial}{\partial\omega} A(\omega)\right|_{\omega=\omega_r}=0$
+    \begin{equation*}
+        A(\omega) = \frac{K_0}
+        {\sqrt{\left( \omega_0^2-\omega^2 \right)^2 + 4\delta^2\omega^2}}
+    \end{equation*}
+Wenn $A(\omega)$ Maximum hat, dann auch $A^2(\omega)$.\\
+Wenn $A^2(\omega)$ Maximum hat, dann hat $\frac{1}{A^2(\omega)}$ ein Minimum.\\
+Löse also 
+\begin{eqnarr}
+    0 &=& \frac{\partial}{\partial\omega} \frac{1}{A^2(\omega)} \\
+      &=& \frac{\partial}{\partial\omega} 
+        \frac{\left( \omega_0^2-\omega^2 \right)^2+4\delta^2\omega^2}{K_0^2} \\
+      &=& \frac{1}{K_0}\left( 
+        2\left(\omega_0^2-\omega^2\right)\left(-2\omega\right)+8\delta^2\omega
+        \right)\\
+    0 &=& 4\omega \left( \omega^2 - \omega_0^2 + 2 \delta^2 \right) \\
+    0 &=& \omega^2 - \omega_0^2 + 2 \delta^2 \\
+    \omega &=& \sqrt{\omega_0^2-2\delta^2}
+\end{eqnarr}
 
 \begin{outline}
     \1 Eigenfrequenz des ungedämpften Systems: $\omega_0$
