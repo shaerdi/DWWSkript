@@ -25,5 +25,14 @@ Annahme: Funktionen $f(t)$ sind so, dass
 Schreibweise:
 \begin{eqnarr}
     F(s) &=&  \L (f(t)) \\
-    %F(s) &\multimapdotbothA& f(t)
+    F\tikzmark{a}(s) &\multimapdotbothA& f\tikzmark{b}(t)
 \end{eqnarr}
+\begin{center}
+    \begin{tikzpicture}[overlay,remember picture]
+        \node at (-2,0) (ta) {Bildfunktion};
+        \node at (2,0) (tb) {Originalfunktion};
+        \draw[->,thick] (ta) to (a);
+        \draw[->,thick] (tb) to (b);
+    \end{tikzpicture}
+\end{center}
+
