@@ -30,15 +30,11 @@ gebracht werden.
 
 \textbf{Spezialfall:} Eine lineare Differentialgleichung ist
 \underline{homogen}, wenn der Anregungsterm $g(x)=0$ \\
-(D.h. die Funktion oder deren Ableitungen in allen Summentermen vorkommt).
+(Die Funktion oder deren Ableitungen kommt in allen Summentermen vor).
 
 \textbf{Spezialfall:} Eine lineare Differentialgleichung hat \underline{%
 konstante Koeffizienten}, wenn alle Koeffizienten $a,b,c\ldots$ nicht von der
 Funktionsvariablen abhängen.
-
-\subsubsection*{d) Ableitungen}
-\definition{Gewöhnliche DGL (ODE)}{Hat nur Ableitungen nach einer Variablen.}
-\definition{Partielle DGL (PDE)}{Hat Ableitungen nach mehreren Variablen.}
 
 \bsp{Beispiele}
 \begin{equation*}
@@ -46,51 +42,46 @@ Funktionsvariablen abhängen.
 \end{equation*}
 
 \begin{outline}
-    \1 Es ist nicht möglich, die Gleichung als $y''=f(x)$ zu schreiben, sie
-    ist nicht elementar lösbar.
-    \1 Die maximale auftretende Ableitung ist $y''\Rightarrow$ Ordnung 2.
-    \1 Die Ableitung $y''$ hat die Potenz 4 $\Rightarrow$ nichtlinear.
-    \1 nicht-linear $\Rightarrow$ nicht auf Homogenität prüfen.
-    \1 Es wird nur nach $x$ abgeleitet $\Rightarrow$ ODE.
+    \1[a)] Es ist nicht möglich, die Gleichung als $y''=f(x)$ zu schreiben, sie
+           ist nicht elementar lösbar.
+    \1[b)] Die maximale auftretende Ableitung ist $y''\Rightarrow$ Ordnung 2.
+        \2 Ordnung 2 $\Rightarrow$ nicht auf Separierbarkeit prüfen.
+    \1[c)] Die Ableitung $y''$ hat die Potenz 4 $\Rightarrow$ nichtlinear.
+        \2 nicht-linear $\Rightarrow$ nicht auf Homogenität oder konstante
+           Koeffizienten prüfen.
 \end{outline}
 
 \begin{equation*}
-    \frac{d^2x}{\left( d t \right)^{2}} + 2
-    \frac{d x}{\left( d t \right)} = x\left( t \right)
+    \frac{\text{d}^2x}{ \text{d} t ^{2}} + 2
+    \frac{\text{d} x}{ \text{d} t } = x\left( t \right)
 \end{equation*}
 
 \begin{outline}
-    \1 Es ist nicht möglich, die Gleichung als $\ddot{x}=f(t)$ zu schreiben, sie
-    ist nicht elementar lösbar.
-    \1 Die maximale auftretende Ableitung ist $\ddot{x}\Rightarrow$ Ordnung 2.
-    \1 Alle Ableitungen von $x$ kommen nur mit der Potenz 1 vor $\Rightarrow$ linear.
-    \1 Die Funktion $x$ oder Ableitungen davon kommen in allen Termen vor $\Rightarrow$ Homogen.
-    \1 Es wird nur nach $t$ abgeleitet $\Rightarrow$ ODE.
+    \1[a)] Es ist nicht möglich, die Gleichung als $\ddot{x}=f(t)$ zu 
+           schreiben, sie ist nicht elementar lösbar.
+    \1[b)] Die maximale auftretende Ableitung ist $\ddot{x}\Rightarrow$ 
+           Ordnung~2.
+        \2 Ordnung~2 $\Rightarrow$ nicht auf Separierbarkeit prüfen.
+    \1[c)] Alle Ableitungen von $x$ kommen nur mit der Potenz~1 vor
+           $\Rightarrow$ linear.
+        \2 Die Funktion $x$ oder Ableitungen davon kommt in allen Termen 
+           vor $\Rightarrow$ Homogen.
+        \2 Die Funktionsvariable $t$ kommt nicht in den Koeffizienten vor
+           $\Rightarrow$ konstante Koeffizienten.
 \end{outline}
 
 \begin{equation*}
-    \frac{\partial f}{\left( \partial x \right)} - 
-    \frac{\partial f}{\left( \partial t \right)} = t^{2} 
+    3y^{(1)} y= \frac{x}{y}
 \end{equation*}
 
 \begin{outline}
-    \1 Es ist nicht möglich, die Gleichung als $f=g(t,x)$ zu schreiben, sie
-    ist nicht elementar lösbar.
-    \1 Die maximale auftretende Ableitung ist $f'$ bzw $\dot{f}\Rightarrow$ Ordnung 1.
-    \1 Alle Ableitungen von $f$ kommen nur mit der Potenz 1 vor $\Rightarrow$ linear.
-    \1 Die Funktion $f$ kommt nicht in allen Termen vor $\Rightarrow$ inhomogen.\\
-       (Anregungsterm $g(t)=t^{2}$)
-    \1 Es wird nach $t$ und nach $x$ abgeleitet $\Rightarrow$ PDE.
+    \1[a)] Es ist nicht möglich, die Gleichung als $y=f(x)$ zu schreiben, sie
+       ist nicht elementar lösbar.
+    \1[b)] Die maximale auftretende Ableitung ist $y^{(1)} \Rightarrow$ 
+           Ordnung~1.
+        \2 Die Funktion lässt sich als $y' = \frac{x}{3y^2}=\frac{g(x)}{f(y}$
+            schreiben $\Rightarrow$ separierbar.
+    \1[c)] $y^2 \Rightarrow$ nicht-linear.
+        \2 nicht-linear $\Rightarrow$ nicht auf Homogenität oder konstante
+           Koeffizienten prüfen.
 \end{outline}
-%\begin{IEEEeqnarray*}{rCl}
-    %\left( y'' \right)^{4} &=& 5\\% \label{eq:exampleKlass:1}\\
-    %\frac{d^2x}{\left( d t \right)^{2}} + 2
-    %\frac{d x}{\left( d t \right)} &=& x\left( t \right)\\
-    %%\label{eq:exampleKlass:2} \\
-    %\frac{\partial f}{\left( \partial x \right)} - 
-    %\frac{\partial f}{\left( \partial t \right)} &=& t^{2} 
-    %%\label{eq:exampleKlass:3}
-%\end{IEEEeqnarray*}
-
-
-
