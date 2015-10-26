@@ -349,3 +349,71 @@ $\Rightarrow$
 \end{eqnarr}
 
 \subsubsection*{Ableitungssatz}
+\begin{eqnarr}
+    f(t)&\multimapdotbothA&F(s)\\
+    f'(t)&\multimapdotbothA&sF(s)-f(0)\\
+    f''(t)&\multimapdotbothA&s^2F(s)-sf(0)-f'(0)\\
+    f'''(t)&\multimapdotbothA&s^2F(s)-s^2f(0)-sf'(0)-f''(0)\\
+    &\vdots&\\
+    f^{(n)}(t)&\multimapdotbothA&s^nF(s)-s^{n-1}f(0)-s^{n-2}f'(0)
+    \ldots -f^{(n-1)}(0)
+\end{eqnarr}
+\underline{Beweis} (für 1. Ableitung)
+\begin{eqnarr}
+    \L\left[ f'(t) \right] &=& \int_0^\infty \underbrace{f'(t)}_{u'}
+    \underbrace{e^{-st}}_{v} \text{d}t \\
+    &=& -\int_0^\infty f(t)(-s)e^{-st}\text{d}t+\left.f(t)\right|_0^\infty\\
+    &=& s\int_0^\infty f(t)e^{-st}\text{d}t-f(0)\\
+    &=& sF(s)-f(0)\\
+\end{eqnarr}
+
+\bsp{Beispiel}
+
+Cosinusfunktion: $f(t)=\sin(t)$
+\begin{equation*}
+    \L[\cos(t)] = \L[f'(t)]=s\cdot \L[\sin(t)]-\underbrace{f(0)}_{=0}=
+    \frac{s}{s^2+1}
+\end{equation*}
+
+\bsp{Beispiel}
+
+Anfangswertproblem:
+\begin{eqnarr}
+    y'(t)+2y(t)&=& \sin(t), \hspace{1em} y(0)=1\\
+    &&\\
+    sY(s)-y(0)+2Y(s)&=& \frac{1}{s^2+1}\\
+    Y(s)\left( s+2 \right)-1&=& \frac{1}{s^2+1}\\
+    Y(s)\left( s+2 \right)&=& \frac{1}{s^2+1}+1\\
+    Y(s)&=& \frac{1}{\left( s^2+1 \right)\left( s+2 \right)}+\frac{1}{s+2}\\
+\end{eqnarr}
+PBZ:
+\begin{eqnarr}
+    \frac{1}{\left( s^2+1 \right)\left( s+2 \right)} &=& 
+      \frac{A}{s+2}+\frac{Bs+C}{s^2+1}\\
+    1&=& As^2+A+Bs^2+2B+Cs+C\\
+    \begin{array}{c} A+B\\C\\C+A \end{array} &=& 
+    \begin{array}{c} 0\\0\\1 \end{array} \\
+    &\Rightarrow& A=1,~B=-1,~C=0
+\end{eqnarr}
+\begin{eqnarr}
+    Y(s)&=& \frac{1}{s+2}+\frac{-s}{s^2+1}+\frac{1}{s+2}\\
+    &\Rightarrow&\\
+    y(t)&=& e^{-2t}-\cos(t)+e^{-2t}\\
+    &=& 2e^{-2t}-\cos(t)\\
+\end{eqnarr}
+
+\subsubsection*{Integralsatz}
+\begin{equation*}
+    \boxed{
+        \L\left[ \int_0^t f(\tau)\text{d}\tau \right] = \frac{1}{s} F(s)
+        \text{ mit } f(t)\multimapdotbothA F(s)
+    }
+\end{equation*}
+\bsp{Beispiel}
+
+Bekannt: $t\multimapdotbothA\frac{1}{s^2}$, gesucht: $\L\left[ t^2 \right]$
+\begin{eqnarr}
+    \L\left[ t^2 \right] &=& \L\left[ \int_0^t 2\tau\text{d}\tau \right]\\
+    &=& \frac{1}{s}\L\left[ 2t \right]\\
+    &=& \frac{2}{s^3}
+\end{eqnarr}
