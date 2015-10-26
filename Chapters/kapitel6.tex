@@ -390,16 +390,18 @@ PBZ:
 \begin{eqnarr}
     \frac{1}{\left( s^2+1 \right)\left( s+2 \right)} &=& 
       \frac{A}{s+2}+\frac{Bs+C}{s^2+1}\\
-    1&=& As^2+A+Bs^2+2B+Cs+C\\
-    \begin{array}{c} A+B\\C\\C+A \end{array} &=& 
-    \begin{array}{c} 0\\0\\1 \end{array} \\
-    &\Rightarrow& A=1,~B=-1,~C=0
+    1&=& As^2+A+Bs^2+2Bs+Cs+2C\\
+    &&\\
+    &&\left|
+    \begin{array}{ccc} A+B&=& 0\\2B+C&=& 0\\2C+A&=& 1 \end{array}\right| \\
+    &&\\
+    &\Rightarrow& A=\frac{1}{5},~B=-\frac{1}{5},~C=\frac{2}{5}
 \end{eqnarr}
 \begin{eqnarr}
-    Y(s)&=& \frac{1}{s+2}+\frac{-s}{s^2+1}+\frac{1}{s+2}\\
+    Y(s)&=& \frac{0.2}{s+2}+\frac{-0.2s+0.4}{s^2+1}+\frac{1}{s+2}\\
+    &=& \frac{1.2}{s+2}+\frac{-0.2s}{s^2+1}+\frac{0.4}{s^2+1}\\
     &\Rightarrow&\\
-    y(t)&=& e^{-2t}-\cos(t)+e^{-2t}\\
-    &=& 2e^{-2t}-\cos(t)\\
+    y(t)&=& 1.2e^{-2t}-0.2\cos(t)+0.4\sin(t)\\
 \end{eqnarr}
 
 \subsubsection*{Integralsatz}
@@ -416,4 +418,44 @@ Bekannt: $t\multimapdotbothA\frac{1}{s^2}$, gesucht: $\L\left[ t^2 \right]$
     \L\left[ t^2 \right] &=& \L\left[ \int_0^t 2\tau\text{d}\tau \right]\\
     &=& \frac{1}{s}\L\left[ 2t \right]\\
     &=& \frac{2}{s^3}
+\end{eqnarr}
+
+\subsection{Lösungen von DGL mit Laplace-Transformation}
+\begin{outline}
+    \1 Nur linear mit konstanten Koeffizienten. (Ordnung egal)
+    \1 Mit Anfangswerten
+\end{outline}
+
+Idee:
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (1,0) rectangle ++(2,1) node[midway] {DGL};
+    \draw (0,-3) rectangle ++(4,1) node[midway] {Algebr. Gleichung};
+    \draw (6,0) rectangle ++(4,1) node[midway] {Spezielle Lösung};
+    \draw (6,-3.1) rectangle ++(4,1.2)
+        node[midway,align=center] {Lösung der \\algebr. Gleichung};
+
+    \draw[->] (2,0) -- ++(0,-2) node[midway,right] {Laplace Transformation};
+    \draw[->] (4,-2.5) --++ (2,0);
+    \draw[->] (8,-1.9) --++ (0,1.9) node[midway,right] {Rücktransformation};
+    \draw[dashed,->] (3,0.5) --++ (3,0);
+\end{tikzpicture}
+\end{center}
+
+\bsp{Beispiel}
+\begin{equation*}
+    y''+2y'+y=9e^{2t}, \hspace{1em} y(0)=0,~y'(0)=1
+\end{equation*}
+Lösen mit Laplace:
+\begin{eqnarr}
+    \left[ s^2Y(s)-s\cdot 0-1 \right]+2\left[ sY(s)-0 \right] + Y(s)
+    &=& \frac{9}{s-2}\\
+    Y(s)\left[ s^2+2s+1 \right] &=& \frac{9}{s-2}+1\\
+    Y(s)&=& \frac{s+7}{\left( s-2 \right)\left( s^2+2s+1 \right)}\\
+\end{eqnarr}
+PBZ:
+\begin{eqnarr}
+     \frac{s+7}{\left( s-2 \right)\left( s^2+2s+1 \right)}
+     &=& \frac{A}{s+1}+\frac{B}{\left( s+1 \right)^2}+\frac{C}{s-2}\\
 \end{eqnarr}
