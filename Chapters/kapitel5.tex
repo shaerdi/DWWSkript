@@ -1,4 +1,5 @@
-\subsection{Freie Schwingung}
+\subsection{Schwingungen}
+\subsubsection{Freie Schwingung}
 \bsp{Beispiel}
 
 \begin{minipage}{0.47\textwidth}
@@ -43,7 +44,7 @@ Lösung:
     &<& 0 \Rightarrow \text{Fall 3 (Schwingungsfall)} \\
 \end{eqnarr}
 
-\subsubsection*{a) Starke Dämpfung (Kriechfall)}
+\underline{a) Starke Dämpfung (Kriechfall)}
 \begin{equation*}
     \boxed{\delta>\omega_0}
 \end{equation*}
@@ -55,7 +56,7 @@ Lösung: \begin{equation*}
     x(t) = C_1\cdot e^{\lambda_1\cdot t} + C_2\cdot e^{\lambda_2\cdot t}
 \end{equation*}
 
-\subsubsection*{b) Aperiodischer Grenzfall}
+\underline{b) Aperiodischer Grenzfall}
 \begin{equation*}
     \boxed{\delta=\omega_0}
 \end{equation*}
@@ -66,7 +67,7 @@ Lösung: \begin{equation*}
     x(t) = C_1\cdot e^{-\delta\cdot t} + C_2\cdot t\cdot e^{-\delta\cdot t}
 \end{equation*}
 
-\subsubsection*{c) Schwache Dämpfung}
+\underline{c) Schwache Dämpfung}
 \begin{equation*}
     \boxed{\delta<\omega_0}
 \end{equation*}
@@ -84,8 +85,19 @@ Lösung: \begin{eqnarr}
         \cos\left( \omega_d\cdot t+\varphi_d \right)
 \end{eqnarr}
 
+\underline{Spezialfall $\delta=0$}
+\begin{equation*}
+    \omega_d = \sqrt{\omega_0^2}=\omega_0
+\end{equation*}
+Lösung: \begin{equation*}
+    x(t)=  
+        C_1\cdot\sin(\omega_0 \cdot t) +
+        C_2\cdot\cos(\omega_0 \cdot t) 
+\end{equation*}
+$\omega_0$ ist die Frequenz des ungedämpften Systems.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Erzwungene Schwingung}
+\subsubsection{Erzwungene Schwingung}
 Erzwungene Schwingung bedeutet:
 \begin{outline}
     \1 Schwach gedämpftes System ($\delta<\omega_0$)
