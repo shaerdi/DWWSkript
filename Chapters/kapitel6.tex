@@ -453,9 +453,28 @@ Lösen mit Laplace:
     &=& \frac{9}{s-2}\\
     Y(s)\left[ s^2+2s+1 \right] &=& \frac{9}{s-2}+1\\
     Y(s)&=& \frac{s+7}{\left( s-2 \right)\left( s^2+2s+1 \right)}\\
+        &=& \frac{s+7}{\left( s-2 \right)\left( s+1 \right)^2}\\
 \end{eqnarr}
 PBZ:
 \begin{eqnarr}
-     \frac{s+7}{\left( s-2 \right)\left( s^2+2s+1 \right)}
+     \frac{s+7}{\left( s-2 \right)\left( s+1 \right)^2}
      &=& \frac{A}{s+1}+\frac{B}{\left( s+1 \right)^2}+\frac{C}{s-2}\\
+     s+7&=& A\left( s+1 \right)\left( s-2 \right)+B(s-2)+C\left( s+1 \right)^2\\
+      &=& As^2-As-2A + Bs-2B+Cs^2+2Cs+C\\
+      &&\\
+    &&\left|
+    \begin{array}{ccc} A+C&=& 0\\-A+B+2C&=& 1\\-2A-2B+C&=& 7 \end{array}
+    \right| \\
+    &&\\
+    && A=-1,~B=-2,~C=1
+\end{eqnarr}
+Rücktransformieren:
+\begin{eqnarr}
+    \frac{s+7}{\left( s-2 \right)\left( s+1 \right)^2} &=& 
+        -\frac{1}{s+2}-\frac{2}{\left( s+1 \right)^2}+\frac{1}{s-2}\\
+    y(t)&=& \L^{-1}\left[-\frac{1}{s+2}-\frac{2}{\left( s+1
+    \right)^2}+\frac{1}{s-2}\right]\\
+    &=& -\L^{-1}\left[\frac{1}{s+2}\right]-2\L^{-1}\left[\frac{1}{\left( s+1
+    \right)^2}\right]+\L^{-1}\left[\frac{1}{s-2}\right]\\
+        &=& -e^{-t}-2te^{-t}+e^{2t}
 \end{eqnarr}
