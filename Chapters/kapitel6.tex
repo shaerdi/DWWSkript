@@ -483,3 +483,47 @@ Rücktransformieren:
     \right)^2}\right]+\L^{-1}\left[\frac{1}{s-2}\right]\\
         &=& -e^{-t}-2te^{-t}+e^{2t}
 \end{eqnarr}
+
+\bsp{Allgemein}
+\begin{equation*}
+    a_nx^{(n)} + a_{n-1}x^{(n-1)}+\ldots+a_0x = u(t) 
+    \hspace{1em} \text{mit } x(0)=x_0,\ldots
+\end{equation*}
+Transformation:
+\begin{equation*}
+    \left[ a_ns^n+a_{n-1}s^{n-1}+\ldots+a_0 \right]Y(s) = U(s) 
+        - \L\left[ f(s,x_0,\ldots) \right]
+\end{equation*}
+Spezialfall: Ruhendes / Leeres System, i.e. $x_0=0,\ldots x_n=0\Rightarrow$
+\begin{equation*}
+    Y(s) = \frac{1}{a_ns^n+a_{n-1}s^{n-1}+\ldots+a_0}U(s) 
+\end{equation*}
+System im Zeitbereich:
+\begin{center}
+    \begin{tikzpicture}
+        \draw[->] (0,0) -- ++(1,0) node[midway,above] {$u(t)$};
+        \draw[->] (1,-0.5) rectangle ++(2,1) ;
+        \draw[->] (3,0) -- ++(1,0) node[midway,above] {$x(t)$};
+    \end{tikzpicture}
+\end{center}
+System im Laplace-Bereich:
+\begin{center}
+    \begin{tikzpicture}
+        \draw[->] (0,0) -- ++(1,0) node[midway,above] {$U(s)$};
+        \draw[->] (1,-0.5) rectangle ++(2,1) node[midway] {$G(s)$} ;
+        \draw[->] (3,0) -- ++(1,0) node[midway,above] {$X(s)$};
+        \node at (2,-1.5) {$X(s)=G(s)\cdot U(s)$};
+    \end{tikzpicture}
+\end{center}
+wobei $G(s) = \dfrac{1}{a_ns^n+a_{n-1}s^{n-1}+\ldots+a_0}$
+
+Spezielle Anregungsfunktionen:
+\begin{outline}
+    \1 $u(t) = \delta$ (Einheitsimpuls) $\Rightarrow U(s)=1$
+    \2[] Lösung: $X(s) = 1\cdot G(s)\Rightarrow x(t)=\L^{-1}\left[ G(s) \right]$
+        (Impulsantwort)
+    \1 $u(t) = \sigma(t)$ (Sprungfunktion) $\Rightarrow U(s) = \frac{1}{s}$
+    \2[] Lösung: $X(x) = \frac{1}{s} G(s)\Rightarrow x(t)=\L^{-1}\left[
+        \frac{G(s)}{s} \right]$ (Sprungantwort)
+\end{outline}
+
