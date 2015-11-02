@@ -327,17 +327,43 @@ $\Rightarrow$
     \L\left[ \sin(t-a) \right] = \frac{e^{-as}}{s^2+1}
 \end{equation*}
 
-\subsubsection{Dämpfungssatz}
+\subsubsection{Multiplikationssatz}
 \begin{equation*}
     \boxed{
-        \L\left[ e^{-at}f(t) \right] = F(s+a),
+        \L\left[ t\cdot f(t) \right] = -\frac{\text{d}}{\text{d}s}F(s),
         \hspace{1em} \text{wobei }, f(t)\multimapdotbothA F(s)
     }
 \end{equation*}
 \underline{Beweis}
 \begin{eqnarr}
+    \L\left[ t\cdot f(t) \right] &=& 
+        \int_0^\infty tf(t) e^{-st}\text{d}t\\
+        &=& \int_0^\infty f(t) \left(   -\frac{\text{d}}{\text{d}s}e^{-st}
+        \right)\text{d}t\\
+        &=& -\frac{\text{d}}{\text{d}s}\int_0^\infty f(t)  e^{-st} \text{d}t\\
+        &=& -\frac{\text{d}}{\text{d}s}F(s)\\
+\end{eqnarr}
+
+\bsp{Beispiel}
+\begin{eqnarr}
+    e^{3t}&\multimapdotbothA & \frac{1}{s-3}\\
+    &\Rightarrow&\\
+    t\cdot e^{3t}&\multimapdotbothA& -\frac{\text{d}}{\text{d}s}\frac{1}{s-3}\\
+    &=& -\frac{-1}{\left( s-3 \right)^2}\\
+    &=& \frac{1}{\left( s-3 \right)^2}\\
+\end{eqnarr}
+
+\subsubsection{Dämpfungssatz}
+\begin{equation*}
+    \boxed{
+        \L\left[ e^{-at}f(t) \right] = F(s+a),
+        \hspace{1em} \text{wobei } f(t)\multimapdotbothA F(s)
+    }
+\end{equation*}
+\underline{Beweis}
+\begin{eqnarr}
     \L\left[ e^{-at}f(t) \right] &=& 
-        e^{-at} \int_0^\infty f(t) e^{-st}\text{d}t\\
+        \int_0^\infty e^{-at} f(t) e^{-st}\text{d}t\\
     &=& \int_0^\infty f(t) e^{-(s+a)t}\text{d}t\\
     &=& F(s+a)
 \end{eqnarr}
