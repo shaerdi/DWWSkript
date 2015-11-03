@@ -1,4 +1,49 @@
 \section{Numerisches Lösen von DGL}
+
 \subsection{Das Euler Verfahren}
+DGL 1. Ordnung mit Anfangswert:
+\begin{equation*}
+    \tikzmark{a}\dot{x} = f(\tikzmark{b}t,x), \hspace{1em} x(0)=x_0
+\end{equation*}
+\begin{center}
+    \begin{tikzpicture}[overlay,remember picture]
+        \node at (-4,0) (ta) {Steigung};
+        \node[right] at (-2,0) (tb) {Entspricht Funktion $f$ der gesuchten Variable $x$};
+        \draw[->] (ta) [in=-90]to (a);
+        \draw[->] (tb) [in=-90,out=100]to (b);
+    \end{tikzpicture}
+\end{center}
+Idee: Immer nur ein Schritt auf einmal.
+\begin{center}
+    \begin{tikzpicture}
+        \draw (-1,0) -- (0,0) -- (0,-1);
+        \draw[<->] (6,0) node[below] {$t$} -- (0,0) -- (0,3) node[left] {$x$};
+        \draw[thick] (0,1) node[left] {$x_0$} -- ++ (3,0) -- ++ (0,1)
+        node[midway, right] {$\Delta x$}   -- (0,1);
+        \draw (3,-0.1) node[below] {$t_1$} -- (3,0.1);
+        \draw (0.1,2)  -- (-0.1,2) node[left] {$x_1$};
+        \node[below] at (1.5,0) {$\Delta t = h$};
+        \node at ( 7,2) {$\dfrac{\Delta x}{h} = f(t,x_0)$};
+    \end{tikzpicture}
+\end{center}
+Explizites Euler Verfahren:
+\begin{equation*}
+    \boxed{
+        x_{n+1} = x_n + h\cdot f\left( t_n,x_n \right)
+    }
+\end{equation*}
+Implizites Euler Verfahren:
+\begin{equation*}
+    \boxed{
+        x_{n+1} = x_n + h\cdot f\left( t+h,x_{n+1} \right)
+    }
+\end{equation*}
+
+\bsp{Beispiel:}
+
+
+
+
 \subsection{Runge-Kutta Verfahren}
+\subsection{Differentialgleichungssysteme}
 \subsection{Matlab ode}
