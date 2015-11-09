@@ -219,7 +219,7 @@ Was passiert wenn $t\rightarrow \infty$?
         C_1\sin\left( \omega_d t \right)+C_2\cos\left( \omega_d t \right)
 \right)
     }_{\rightarrow 0}
-    +A \sin\left( \omega t+\varphi \right)
+    +A \sin\left( \omega t-\varphi \right)
 \end{equation*}
 
 Die stationäre Lösung ist 
@@ -300,7 +300,7 @@ Phase:
             \arctan\left( \frac{2\delta\omega}{\omega_0^2-\omega^2} \right)
                 & \omega<\omega_0 \\
             \frac{\pi}{2} & \omega=\omega_0\\
-            \arctan\left( \frac{2\delta\omega}{\omega_0^2-\omega^2}+\pi \right)
+            \arctan\left( \frac{2\delta\omega}{\omega_0^2-\omega^2}\right)+\pi
                 & \omega>\omega_0 \\
             \end{array}
         \right.
@@ -404,15 +404,17 @@ Wenn $A(\omega)$ Maximum hat, dann auch $A^2(\omega)$.\\
 Wenn $A^2(\omega)$ Maximum hat, dann hat $\frac{1}{A^2(\omega)}$ ein Minimum.\\
 Löse also 
 \begin{eqnarr}
-    0 &=& \frac{\partial}{\partial\omega} \frac{1}{A^2(\omega)} \\
-      &=& \frac{\partial}{\partial\omega} 
-        \frac{\left( \omega_0^2-\omega^2 \right)^2+4\delta^2\omega^2}{K_0^2} \\
-      &=& \frac{1}{K_0}\left( 
-        2\left(\omega_0^2-\omega^2\right)\left(-2\omega\right)+8\delta^2\omega
-        \right)\\
-    0 &=& 4\omega \left( \omega^2 - \omega_0^2 + 2 \delta^2 \right) \\
-    0 &=& \omega^2 - \omega_0^2 + 2 \delta^2 \\
-    \omega &=& \sqrt{\omega_0^2-2\delta^2}
+    0 &=& \left.\frac{\partial}{\partial\omega}
+        \frac{1}{A^2(\omega)}\right|_{\omega=\omega_r} \\
+        &=& \left.\frac{\partial}{\partial\omega} 
+        \frac{\left( \omega_0^2-\omega^2
+        \right)^2+4\delta^2\omega^2}{K_0^2}\right|_{\omega=\omega_r} \\
+      &=& \frac{1}{K_0^2}\left( 
+        2\left(\omega_0^2-\omega_r^2\right)\left(-2\omega_r\right)+8\delta^2
+        \omega_r \right)\\
+    0 &=& 4\omega_r \left( \omega_r^2 - \omega_0^2 + 2 \delta^2 \right) \\
+    0 &=& \omega_r^2 - \omega_0^2 + 2 \delta^2 \\
+    \omega_r &=& \sqrt{\omega_0^2-2\delta^2}
 \end{eqnarr}
 
 \underline{Begriffe}
