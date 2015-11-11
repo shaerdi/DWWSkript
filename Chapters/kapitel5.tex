@@ -377,15 +377,18 @@ Phase:
 
         \newcommand\DELTA{0.2}
     
-        \pgfmathdeclarefunction{phiF}{1}{%
+        \pgfmathdeclarefunction{phiF}{2}{%
             \pgfmathparse{%
                 %rad(atan2(2*x, (#1^2-x^2)))
-                rad(atan2((#1^2-x^2),2*\DELTA*x )) % Wieso Argumente gedreht..??
+                rad(atan2((#2^2-x^2),2*#1*x )) % Wieso Argumente gedreht..??
             }%
         }
-        \addplot[mark=none,samples=150,domain=0:3] {phiF(1)} 
-        node[pos=0.85,below] {$\delta=0.2$};
 
+        \pgfplotsinvokeforeach {0.01,0.3,0.8} {
+            \addplot+[mark=none,samples=150,domain=0:3] {phiF(#1,1)} 
+            node[pos=0.7,below] {$\delta=#1$};
+        }
+    
         \draw[dotted] (axis cs:1,0) node[below] {$\omega_0$} 
         -- (axis cs:1,pi/2) -- (axis cs:0,pi/2) node[left] {$\frac{\pi}{2}$};
         \draw[dotted] (axis cs:0,pi) node[left] {$\pi$} -- (axis cs:3,pi);
@@ -417,15 +420,20 @@ Löse also
     \omega_r &=& \sqrt{\omega_0^2-2\delta^2}
 \end{eqnarr}
 
-\underline{Begriffe}
-\begin{outline}
-    \1 Kreisfrequenz des ungedämpften Systems: $\omega_0$
-    \1 Kreisfrequenz des gedämpften Systems:
-    $\omega_d=\sqrt{\omega_0^2-\delta^2}$
-    \1 Frequenz des Systems:
-    $f = \frac{\omega}{2\pi}$
-    \1 Periodendauer:
-    $T = f^{-1}$
-    \1 Resonanzfrequenz:
-    $\omega_r=\sqrt{\omega_0^2-2\delta^2}$
-\end{outline}
+\begin{center}
+    \begin{tabular}{lcc}
+        \toprule
+        \multicolumn{3}{c}{\textbf{Begriffe}}\\
+        \midrule
+        Name & Symbol & Formel \\
+        \midrule
+        Kreisfrequenz des ungedämpften Systems & $\omega_0$ & \\ \addlinespace
+        Kreisfrequenz des gedämpften Systems & $\omega_d$ &
+        $\sqrt{\omega_0^2-\delta^2}$ \\ \addlinespace
+        Kreisresonanzfrequenz & $\omega_r$ & $\sqrt{\omega_0^2-2\delta^2}$
+        \\\addlinespace
+        Frequenz & $f$ & $\frac{\omega}{2\pi}$ \\\addlinespace
+        Periodendauer & $T$ & $\frac{1}{f}$ \\\addlinespace
+        \bottomrule
+    \end{tabular}
+\end{center}
