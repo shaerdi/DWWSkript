@@ -76,29 +76,35 @@ Expliziter Euler mit Schrittweite $h=1$:
         axis lines = middle,
         clip = false,
         xmin = 0,
+        xmax = 6,
         ymin = 0,
-        ymax = 4, 
-        restrict y to domain=0:4,
+        ymax = 6, 
+        restrict y to domain=0:6,
         ticks=none,
         xlabel = $t$,
         ylabel = $x$,
     ]
 
-    \addplot+[mark=none,samples=150,domain=0:6 ] {x^2/4};
+    \addplot+[mark=none,samples=50,domain=0:6 ] {x^2/3}
+    node[pos=0.9,below right] {$x=\dfrac{1}{3}t^2$};
+    \addplot[mark=none,samples=5,domain=1.5:2.5 ] {4*x/3-4/3};
+    \addplot[mark=none,samples=5,domain=0:6 ] {4*x/3};
 
     \draw (axis cs:2,0.1) -- ++(axis cs:0,-0.2) node[below] {$t_{n+\frac{1}{2}}$};
     \draw (axis cs:4,0.1) -- ++(axis cs:0,-0.2) node[below] {$t_n$};
     
-    %\draw[dotted] (omegaR0) node[below] {$\omega_0$} -- ++ (axis cs:0, 0.2);
-    %\draw[dotted] (omegaR1) node[below] {$\underset{\delta=1}{\omega_r}$} 
-        %-- ++ (axis cs:0, {A(wr(1),1});
-    %\draw[dotted] (omegaR2) node[below] {$\underset{\delta=2}{\omega_r}$} 
-        %-- ++ (axis cs:0, {A(wr(2),2});
-    
 \end{axis}
-        %\draw (2,0.1) -- ++(0,-0.2) node[below] {$t_{n+\frac{1}{2}}$};
-        %\draw (4,0.1) -- ++(0,-0.2) node[below] {$t_n$};
     \end{tikzpicture}
 \end{center}
+
+\subsubsection{Runge Kutta 4}
+(Klassisches Runge Kutta)
+\begin{eqnarr}
+    x_{A} &=&  x_n + \frac{h}{2}\cdot f\left( t_n,x_{n} \right)\\
+    x_{B} &=&  x_n + \frac{h}{2}\cdot f\left( t_n+\frac{h}{2},x_{A} \right)\\
+    x_{C} &=&  x_n + h\cdot f\left( t_n+\frac{h}{2},x_{B} \right)\\
+    x_{n+1} &=& x_n + \frac{h}{6}\cdot 
+\end{eqnarr}
+
 \subsection{Differentialgleichungssysteme}
 \subsection{Matlab ode}
