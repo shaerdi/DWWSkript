@@ -71,7 +71,7 @@ Lösung: \begin{equation*}
         ylabel = $x$,
     ]
 
-    \addplot+[mark=none,samples=150,unbounded coords=jump,domain=0:7 ]
+    \addplot+[mark=none,samples=50,unbounded coords=jump,domain=0:7 ]
     {1*exp(-0.4*x)+2*exp(-x)}
     [yshift=8pt] node [pos=0.27,right] { $x=e^{-0.4t}+2e^{-t} $ } ;
 \end{axis}
@@ -105,7 +105,7 @@ Lösung: \begin{equation*}
         ylabel = $x$,
     ]
 
-    \addplot+[mark=none,samples=150,unbounded coords=jump,domain=0:4 ]
+    \addplot+[mark=none,samples=50,unbounded coords=jump,domain=0:4 ]
     {1*exp(-2*x)-6*x*exp(-2*x)}
     [yshift=8pt] node [pos=0.15,right] { $x=e^{-2t}-6e^{-2t} $ } ;
 \end{axis}
@@ -144,13 +144,18 @@ Lösung: \begin{eqnarr}
         restrict y to domain=-1:2,
         ticks=none,
         xlabel = $t$,
-        ylabel = $x$,
+        ylabel = $x$, 
+        y label style={at={(-0.1,1)}},
     ]
 
-    \addplot+[mark=none,samples=150,unbounded coords=jump,domain=0:5 ]
+    \addplot+[mark=none,samples=50,unbounded coords=jump,domain=0:5 ]
     {exp(-0.5*x)*cos(deg(3*x))}
     node [pos=0.5,above right]
-    { $x=e^{-\frac{t}{2}}\cdot \cos\left(3t\right)$};
+    { $x=e^{-t}\cdot \cos\left(t\right)$};
+    %{ $x=e^{-\frac{t}{2}}\cdot \cos\left(3t\right)$};
+
+    \addplot[dashed,mark=none,samples=50,domain=0:5 ] {exp(-0.5*x)};
+    \addplot[dashed,mark=none,samples=50,domain=0:5 ] {-exp(-0.5*x)};
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -180,12 +185,15 @@ Lösung: \begin{equation*}
         ticks=none,
         xlabel = $t$,
         ylabel = $x$,
+        y label style={at={(-0.1,1)}},
     ]
 
-    \addplot+[mark=none,samples=150,unbounded coords=jump,domain=0:5 ]
+    \addplot+[mark=none,samples=50,unbounded coords=jump,domain=0:5 ]
     {cos(deg(3*x))}
     node [pos=0.4,above right]
-    { $x=\cos\left(3t\right)$};
+    { $x=\cos\left(t\right)$};
+    \addplot[dashed,mark=none,samples=50,domain=0:5 ] {1};
+    \addplot[dashed,mark=none,samples=50,domain=0:5 ] {-1};
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -338,7 +346,7 @@ Phase:
     }
 
     \pgfplotsinvokeforeach {0,...,2} {
-        \addplot+[mark=none,samples=150,unbounded coords=jump,domain=0:7 ] (
+        \addplot+[mark=none,samples=50,unbounded coords=jump,domain=0:7 ] (
            {x},
            {A(x,#1)}
         )
@@ -385,7 +393,7 @@ Phase:
         }
 
         \pgfplotsinvokeforeach {0.01,0.3,0.8} {
-            \addplot+[mark=none,samples=150,domain=0:3] {phiF(#1,1)} 
+            \addplot+[mark=none,samples=50,domain=0:3] {phiF(#1,1)} 
             node[pos=0.7,below] {$\delta=#1$};
         }
     
