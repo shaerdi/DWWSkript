@@ -89,7 +89,7 @@ Schreibweise:
 
 \underline{Lineare Funktion}
 \begin{equation*}
-    \sigma (t) = \left\{ \begin{array}{c} 
+    f (t) = \left\{ \begin{array}{c} 
             0 \text{ für } t<0\\
             t \text{ für } t\geq0\\
     \end{array} \right.
@@ -98,11 +98,11 @@ Schreibweise:
     \begin{tikzpicture}
         \draw[->] (0,2) -- (0,0) -- (4,0) node[below] {$t$};
         \draw[ultra thick] (-2,0) -- (0,0) -- (3,1.5)
-            node[pos=0.8,above left] {$\sigma(t)$};
+            node[pos=0.8,above left] {$f(t)$};
     \end{tikzpicture}
 \end{center}
 \begin{eqnarr}
-    \L \left( \sigma(t) \right) &=& \int_0^\infty te^{-st}dt \\
+    \L \left( f(t) \right) &=& \int_0^\infty te^{-st}dt \\
     &=&  \left. \left(  -\frac{-st-1}{s^2}\right) e^{-st}\right|_0^\infty \\
         &=& \frac{1}{s^2}
 \end{eqnarr}
@@ -114,7 +114,7 @@ Schreibweise:
 
 \underline{Kosinus}
 \begin{equation*}
-    \sigma (t) = \left\{ \begin{array}{c} 
+    f (t) = \left\{ \begin{array}{c} 
             0 \text{ für } t<0\\
             \cos(\alpha t) \text{ für } t\geq0\\
     \end{array} \right.
@@ -133,13 +133,13 @@ Schreibweise:
             xlabel = $t$,
     ]
         \addplot[mark=none,samples=100,domain=0:10,ultra thick] {cos(deg(x))}
-            node[pos=0.9,below left] {$\sigma(t)$};
+            node[pos=0.9,below left] {$f(t)$};
         \draw[ultra thick] (axis cs:-2,0) -- (axis cs:0,0) ;
     \end{axis}
     \end{tikzpicture}
 \end{center}
 \begin{eqnarr}
-    \L \left( \sigma(t) \right) &=& \int_0^\infty \cos(\alpha t)e^{-st}dt \\
+    \L \left( f(t) \right) &=& \int_0^\infty \cos(\alpha t)e^{-st}dt \\
     &\underset{\tiny{(324)}}{=}&  \left.   
         \frac{e^{-st}}{s^2+\alpha^2} \left[ -s \cos(\alpha t) + \alpha
         \sin(\alpha t) \right]
@@ -274,8 +274,9 @@ Was ist $\L \left[ \sin(at) \right]$?
 \end{equation*}
 \underline{Beweis}
 \begin{eqnarr}
-    \L \left[ f(t-a) \right] &=& \L\left[ \sigma(t-a) f(t-a)\right]\\
-    &=& \int_a^\infty f(t-a)e^{-st}\text{d}t \hspace{2em} u=t-a\\
+    \L \left[ f(t-a) \right] 
+    &=&  \int_0^\infty f(t-a)e^{-st}\text{d}t\\
+    &=&  \int_a^\infty f(t-a)e^{-st}\text{d}t \hspace{2em} u=t-a\\
     &=& \int_0^\infty f(u) e^{-s(u+a)}\text{d}u\\
     &=& \int_0^\infty f(u) e^{-su}e^{-sa}\text{d}u\\
     &=& e^{-as}F(s)
