@@ -207,9 +207,89 @@ Numerische Verfahren sind \underline{immer} Fehlerbehaftet
 Ein Verfahren besitzt Konvergenzordnung $n$, wenn der Fehler $e =
 \mathcal{O}\left( h^n \right)$ ist.
 
-\bsp{Euler Verfahren}
+\bsp{Euler Verfahren:}\\
 Das Euler Verfahren besitzt Ordnung 1 $\Rightarrow$ Schrittweite halbieren
 $\Leftrightarrow$ Fehler halbieren.
 
 \subsection{Differentialgleichungssysteme}
+Bis jetzt immer nur DGL 1.Ordnung. Was, wenn die DGL eine höhere Ordnung hat?
+
+\bsp{Satz:}
+
+Jede DGL n-ter Ordnung kann in ein System von n DGL 1.Ordnung umgeformt werden.
+
+Vorgehen:
+\begin{equation*}
+\begin{array}{c}
+    x^{(0)}\rightarrow x_0\\
+    x^{(1)}\rightarrow x_1\\
+    x^{(2)}\rightarrow x_2\\
+    \vdots\\
+    x^{(n)}\rightarrow x_n\\
+\end{array}
+\Rightarrow
+\begin{array}{c}
+    \dot{x}_0 = x_1\\
+    \dot{x}_1 = x_2\\
+    \dot{x}_2 = x_3\\
+    \vdots\\
+    \dot{x}_{n-1} = x_n\\
+\end{array}
+\Rightarrow
+\begin{cases}
+    \dot{\x} = A\x+\b, & \text{(Gleichungen linear)}\\
+    \dot{\x} = f(\x),  & \text{(Gleichungen nicht-linear)}\\
+\end{cases}
+\end{equation*}
+
+\bsp{Beispiel:}
+\begin{equation*}
+    \ddot{x}+8\dot{x}+25x=0
+\end{equation*}
+Schritt 1: Umbenennen
+\begin{equation*}
+    \begin{array}{c}
+        x\rightarrow x_0\\
+        \dot{x} \rightarrow x_1
+    \end{array}
+    \Rightarrow
+    \begin{array}{l}
+        \dot{x}_0 = \dot{x} = x_1\\
+        \dot{x}_1 = \ddot{x}
+    \end{array}
+\end{equation*}
+Schritt 2: In DGL einsetzen
+\begin{eqnarr}
+    \ddot{x}+8\dot{x}+25x&=& 0\\
+    \dot{x_1}+8x_1+25x_0&=& 0\\
+    \dot{x_1}&=& -8x_1-25x_0\\
+\end{eqnarr}
+Schritt 3: Als System von DGL schreiben:
+\begin{equation*}
+    \underbrace{
+        \left[\begin{array}{c}
+            \dot{x}_0\\
+            \dot{x}_1
+        \end{array}\right]
+    }_{\dot{\x}}
+    =
+    \left[\begin{array}{c}
+            x_1\\
+            -8x_1-25x_0
+    \end{array}\right]
+    =
+    \underbrace{
+        \left[\begin{array}{cc}
+                0 & 1\\
+                -25 & -8
+        \end{array}\right]
+    }_{A}
+    \underbrace{
+        \left[\begin{array}{c}
+                x_0\\
+                x_1
+        \end{array}\right]
+    }_{\x}
+\end{equation*}
+
 \subsection{Matlab ode}
