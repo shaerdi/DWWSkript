@@ -171,16 +171,6 @@ Numerische Verfahren sind \underline{immer} Fehlerbehaftet
     \1 Rundungsfehler (z.B. Maschinenzahlen)
     \1 Diskretisierungsfehler
 \end{outline}
-\textbf{Absoluter Fehler:}
-\begin{equation*}
-    e_{\text{abs}} = \left| x_{\text{num}} - x_{\text{exakt}} \right|
-\end{equation*}
-\textbf{Relativer Fehler:}
-\begin{equation*}
-    e_{\text{rel}} = \left| \frac{x_{\text{num}} - x_{\text{exakt}}}
-                            {x_{\text{num}}}\right|
-\end{equation*}
-\bsp{Beispiel Euler Verfahren}
 \begin{center}
 \begin{tikzpicture}
     \draw (-1,0) -- (0,0) -- (0,-1);
@@ -193,15 +183,26 @@ Numerische Verfahren sind \underline{immer} Fehlerbehaftet
                 to[out=10,in=160] (2,0.5) 
                 to[out=-20,in=180] (3,1)
                 to[out=0,in=180] (4,0.4)
-                to[out=0,in=200] (6,2) ;
+                to[out=0,in=200] (6,2) 
+                node[right] {exakt}
+                ;
 
-    \draw (0,1) -- (2.5,2) -- (5,2.5) -- (6,3);
+    \draw (0,1) -- (2.5,2) -- (5,2.5) -- (6,3) node[right] {approx.};
 
     \draw[|-|] (2.5,2) -- ++ (0,-1.3) node[midway,left] {$e_1$};
     \draw[|-|] (5,2.5) -- ++ (0,-1.5) node[midway,left] {$e_2$};
 \end{tikzpicture}
 \end{center}
 
+\textbf{Absoluter Fehler:}
+\begin{equation*}
+    e_{\text{abs}} = \left| x_{\text{num}} - x_{\text{exakt}} \right|
+\end{equation*}
+\textbf{Relativer Fehler:}
+\begin{equation*}
+    e_{\text{rel}} = \left| \frac{x_{\text{num}} - x_{\text{exakt}}}
+                            {x_{\text{num}}}\right|
+\end{equation*}
 \textbf{Konvergenzordnung:}
 
 Ein Verfahren besitzt Konvergenzordnung $n$, wenn der Fehler $e =
@@ -293,3 +294,9 @@ Schritt 3: Als System von DGL schreiben:
 \end{equation*}
 
 \subsection{Matlab ode}
+Das Lösen von DGL in Matlab geschieht numerisch, zum Beispiel mithilfe obiger 
+Verfahren.
+
+Eine mögliche Implementation des expliziten Euler-Verfahrens ist sehr
+einfach:
+\lstinputlisting{codes/explicitEuler.m}
