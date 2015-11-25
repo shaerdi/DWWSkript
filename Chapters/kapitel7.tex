@@ -297,6 +297,38 @@ Schritt 3: Als System von DGL schreiben:
 Das Lösen von DGL in Matlab geschieht numerisch, zum Beispiel mithilfe obiger 
 Verfahren.
 
-Eine mögliche Implementation des expliziten Euler-Verfahrens ist sehr
-einfach:
+Eine mögliche Implementation des expliziten Euler-Verfahrens
+(sehr einfach gehalten):
 \lstinputlisting{codes/explicitEuler.m}
+
+Durch die Verwendung einer Matlab for-Schleife ist die benötigte Rechenzeit
+relativ hoch. Matlab besitzt auch bereits vorprogrammierte Löser, die
+einerseits sehr viel bessere Algorithmen (inklusive Schrittweitensteuerung) und
+andererseits extra optimierte Programmierbefehle benützen.
+
+Die Matlab DGL-Löser beginnen alle mit den drei Buchstaben \codeemph{ode}.
+Die Löser unterscheiden sich in Genauigkeit, Geschwindigkeit und Probleme,
+für die sie geeignet sind.
+
+Die Syntax ist für alle Befehle gleich:
+\begin{lstlisting}
+    [t,x] = ode45(fun,[t0,tend],x0)
+\end{lstlisting}
+Dabei ist \codeemph{fun} die Funktion $f(t,x)=\dot{x}$
+
+Ein Beispiel für das Lösen eines System von DGL mit \codeemph{ode45}:
+\begin{equation*}
+    \dot{\x}= \left( \begin{array}{c}
+        \dot{x}_1 \\
+        \dot{x}_2 \\
+        \dot{x}_3 
+    \end{array}\right)
+    =
+    \left( \begin{array}{c}
+            x_2\cdot x_3\\ 
+           -x_1\cdot x_3\\
+           -0.51\cdot x_1\cdot x_2
+    \end{array}\right)
+\end{equation*}
+
+\lstinputlisting{codes/exampleOde45.m}
