@@ -8,12 +8,13 @@ Benötigte Bauteile:
         \node[right] at (6,5) { $U_R =R\cdot i=R\cdot\dot{q}$};
 
         \draw (0,2.5) to [C, l_=$C$] +(4.5,0);
-        \node[right] at (6,2.5+0.7) { $U_R = R\cdot i=R\cdot\dot{q}$};
+        \node[right] at (6,2.5+0.7) { $U_C = \dfrac{1}{C}\displaystyle\int
+        i\,\mathrm{d}t=\dfrac{1}{C}q$};
         \node[right] at (6,2.5) {oder};
-        \node[right] at (6,2.5-0.7) { $\dot{U_C}= \dfrac{1}{C}i$};
+        \node[right] at (6,2.5-0.7) { $\dot{U}_C= \dfrac{1}{C}i$};
 
         \draw (0,0) to [L, l=$L$] +(4.5,0);
-        \node[right] at (6,0) {$U_L = L\cdot \dfrac{di}{dt}=L\ddot{q}$};
+        \node[right] at (6,0) {$U_L = L\dfrac{\mathrm{d}i}{\mathrm{d}t}=L\ddot{q}$};
     \end{circuitikz}
 \end{center}
 
