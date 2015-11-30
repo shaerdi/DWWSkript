@@ -9,7 +9,7 @@ Benötigte Bauteile:
 
         \draw (0,2.5) to [C, l_=$C$] +(4.5,0);
         \node[right] at (6,2.5+0.7) { $U_C = \dfrac{1}{C}\displaystyle\int
-        i\,\mathrm{d}t=\dfrac{1}{C}q$};
+        i\dd{t}=\dfrac{1}{C}q$};
         \node[right] at (6,2.5) {oder};
         \node[right] at (6,2.5-0.7) { $\dot{U}_C= \dfrac{1}{C}i$};
 
@@ -56,8 +56,9 @@ Es gibt 3 Möglichkeiten, die DGL aufzustellen:
     \begin{eqnarr}
         U_R + U_C &=& 0 \\
         &\Rightarrow&\\ 
-        R\cdot i + \frac{1}{C}\int i dt &=& 0\hspace{2em}\left|\frac{d}{dt}\right.\\
-        R\frac{\partial i}{\partial t} + \frac{1}{C} i &=& 0,\hspace{2em} i\left( 0 \right) = \frac{1}{R}U_0
+        R\cdot i + \frac{1}{C}\int i \dd{t} &=&
+        0\hspace{2em}\left|\frac{\mathrm{d}}{\dd{t}}\right.\\
+        R\frac{\dd{i}}{\dd{t}} + \frac{1}{C} i &=& 0,\hspace{2em} i\left( 0 \right) = \frac{1}{R}U_0
     \end{eqnarr}
 
     \1[b)] Ladung
