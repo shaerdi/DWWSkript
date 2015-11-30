@@ -576,3 +576,85 @@ Spezielle Anregungsfunktionen:
         \frac{G(s)}{s} \right]$ (Sprungantwort)
 \end{outline}
 
+\subsection{Impuls- und Sprungantwort}
+In den meisten Anwendungsbereichen von DGL ist das Vorgehen beim Lösen der
+Gleichungen Nebensache, von Interesse ist hauptsächlich wie ein System, das
+durch eine DGL beschrieben wird, auf eine Störfunktion reagiert.
+
+Entsprechend ist auch die Terminologie anders:
+\begin{outline}
+    \1 Homogene DGL $\Rightarrow$ System
+    \1 Störfunktion $\Rightarrow$ Anregungsfunktion
+    \1 Lösung eines AWP $\Rightarrow$ Systemantwort
+\end{outline}
+Beispiel Schaltung:
+\begin{center} \begin{circuitikz}[american voltages]
+        \draw
+       (0,0) to (6,0)
+       %to (6,0)
+       to [C,l=$C$] (6,3)
+       to [R,l_=$R$,-*] (0,3)
+       (0,0) to [open, v^>=$u_{\text{in}}$] (0,3);
+       \draw
+       (6,0) to [short,*-] (8,0) 
+       to [voltmeter,l_=$u_{out}$] (8,3)
+       to [short,-*] (6,3)
+       ;
+\end{circuitikz} \end{center}
+\begin{equation*}
+    \Rightarrow
+\end{equation*}
+\begin{center} \begin{tikzpicture} 
+    \draw[thick, ->] (0,0) -- (2,0) node[midway, above] {$u_{\text{in}}$};
+    \draw[thick] (2,-1) rectangle ++(4,2) node[midway] {System};
+    \draw[thick, ->] (6,0) -- ++(2,0) node[midway, above] {$u_{\text{out}}$};
+\end{tikzpicture} \end{center}
+Systembeschreibung: DGL mit Anfangsbedingung
+\begin{equation*}
+    RC\dot{u} + u= u_{\text{in}}, \hspace{2em} u(0) = 0
+\end{equation*}
+
+Als Laplace Transformation:
+\begin{eqnarr}
+    RC(sU-u(0)) + U &=& \L\left[ u_{\text{in}} \right] \\
+    &\Rightarrow& \\
+    U = \underbrace{\frac{1}{RCs+1}}_{G(s)}
+    \cdot \L\left[ u_{\text{in}} \right] \\
+\end{eqnarr}
+\begin{outline}
+    \1 $u_{\text{in}}(t)$: Input, Anregungsfunktion
+    \1 $G(s)$: Übertragungsfunktion, beschreibt das System
+    \1 $u_{\text{out}}(t) = \L^{-1} \left[ U(s) \right]$: Lösung, Antwort des Systems
+\end{outline}
+
+\textbf{Spezielle Anregungsfunktionen}
+
+Sprungfunktion $\sigma(t)$:
+\begin{center}
+    \begin{tikzpicture}
+        \draw[->] (0,-1) -- (0,2);
+        \draw[->] (-4,0) -- (4,0);
+        \draw[ultra thick] (-4,0) -- (0,0) -- (0,1) -- (4,1);
+    \end{tikzpicture}
+\end{center}
+
+Die Antwort auf die Sprungfunktion heisst \underline{Sprungantwort}.
+
+\bsp{Beispiel:} S5 A17b
+
+Impulsfunktion $\delta(t)$:
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,-1) -- (0,0);
+        \draw[ultra thick] (-4,0) -- (0,0) -- (0,2) + (0,-2) -- (4,0);
+    \end{tikzpicture}
+\end{center}
+Definition (nicht ganz korrekt):
+\begin{equation*}
+    \int _{-\infty}^{\infty} \delta(x)f(x) \text{d}x = f(0)
+\end{equation*}
+$\Rightarrow \delta(t) \multimapdotbothA 1$ 
+
+Die Antwort auf die Impulsfunktion heisst \underline{Impulsantwort}.
+
+\bsp{Beispiel:} S5 A17c
