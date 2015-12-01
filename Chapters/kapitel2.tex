@@ -39,9 +39,9 @@ geschrieben werden kann.
 
 Lösungsverfahren:
 \begin{IEEEeqnarray*}{rCll}
-    y' &=& \frac{\dd{y}}{\dd{x}} = \frac{f(x)}{g(y)} &\hspace{3em}\left| 
+    y' &=& \diff{y}{x} = \frac{f(x)}{g(y)} &\hspace{3em}\left| 
     \begin{array}{c}
-    \cdot dx\\
+    \cdot \mathrm{d}x\\
     \cdot g(y)\\
     \end{array} \right.\\
     &\Rightarrow& & \\
@@ -59,7 +59,7 @@ $\Rightarrow g(y)^{-1}=0$ muss immer separat überprüft werden.
 Beispiel 1:
 \begin{IEEEeqnarray*}{rClr}
     y' &=& \frac{3y}{x}&\\
-    \frac{\dd{y}}{\dd{x}} &=& \frac{3y}{x}&\\
+    \diff{y}{x} &=& \frac{3y}{x}&\\
     \int\frac{1}{y} \dd{y}&=& \int\frac{3}{x}\dd{x}& y\neq 0\\
     \ln\left( |y| \right) + C_1 &=& 3\ln\left( |x| \right)+C_2&
     \hspace{2em}C_1,C_2\in\mathbb{R}\\
@@ -88,7 +88,7 @@ Ist nicht separierbar.
 Beispiel 3:
 \begin{eqnarr}
     \dot{x} &=& -6x\\
-    \frac{\dd{x}}{\dd{t}} &=& -6x\\
+    \diff{y}{x} &=& -6x\\
     \int \frac{1}{x} \dd{x} &=&  \int -6 \dd{t}\\
     \ln x &=&  -6t+C_1 \\
     x &=&  e^{-6t+C_1} = e^{-6t} \underbrace{e^{C_1}}_{C}\\
@@ -98,7 +98,7 @@ Beispiel 3:
 Beispiel 4:
 \begin{IEEEeqnarray*}{rClr}
     y' &=& 2x(y-1) &\\
-    \frac{\dd{y}}{\dd{x}} &=& 2x(y-1) &\\
+    \diff{y}{x} &=& 2x(y-1) &\\
     \frac{1}{y-1} \dd{y} &=&  2x \dd{x}&\hspace{3em} y-1\neq 0\\
     \int\frac{1}{y-1} \dd{y} &=&  \int 2x \dd{x}\\
     \ln|y-1| &=&  x^2 +C_1& C_1 \in \mathbb{R}\\
