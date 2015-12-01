@@ -4,16 +4,16 @@ Problemlösungen, indem das Problem in einem anderen 'Raum' gelöst wird.}
 
 Beispiel:
 \begin{equation*}
-    \int \frac{x}{x^2+1} \text{d}x
+    \int \frac{x}{x^2+1} \dd{x}
 \end{equation*}
 Transformation: 
 \begin{equation*}
-    u = x^2 + 1 \Rightarrow \frac{\text{d}u}{\text{d}x}=2x\Rightarrow
-    \text{d}x = \frac{\text{d}u}{2x}
+    u = x^2 + 1 \Rightarrow \diff{u}{x}=2x\Rightarrow
+    \mathrm{d}x = \frac{\mathrm{d}u}{2x}
 \end{equation*}
 Lösen:
 \begin{equation*}
-    \int \frac{1}{2u} \text{d}u = \frac{1}{2} \ln u
+    \int \frac{1}{2u} \dd{u} = \frac{1}{2} \ln u
 \end{equation*}
 Rücktransformation:
 \begin{equation*}
@@ -42,7 +42,7 @@ Annahme: Funktionen $f(t)$ sind so, dass
 \definition{Definition}{Laplace Transformation von $f(t)$}
 \begin{equation*}
     \boxed{
-        F(s) = \int_0^\infty f(t) e^{-st}\text{d}t
+        F(s) = \int_0^\infty f(t) e^{-st}\dd{t}
     }
 \end{equation*}
 
@@ -77,7 +77,7 @@ Schreibweise:
     \end{tikzpicture}
 \end{center}
 \begin{eqnarr}
-    \L \left( \sigma(t) \right) &=& \int_0^\infty e^{-st}dt \\
+    \L \left( \sigma(t) \right) &=& \int_0^\infty e^{-st}\dd{t} \\
     &=&  \left. -\frac{1}{s} e^{-st}\right|_0^\infty \\
         &=& \frac{1}{s} \hspace{4em} \text{(falls Re} (s)>0)
 \end{eqnarr}
@@ -102,7 +102,7 @@ Schreibweise:
     \end{tikzpicture}
 \end{center}
 \begin{eqnarr}
-    \L \left( f(t) \right) &=& \int_0^\infty te^{-st}dt \\
+    \L \left( f(t) \right) &=& \int_0^\infty te^{-st}\dd{t} \\
     &=&  \left. \left(  -\frac{-st-1}{s^2}\right) e^{-st}\right|_0^\infty \\
         &=& \frac{1}{s^2}
 \end{eqnarr}
@@ -139,8 +139,8 @@ Schreibweise:
     \end{tikzpicture}
 \end{center}
 \begin{eqnarr}
-    \L \left( f(t) \right) &=& \int_0^\infty \cos(\alpha t)e^{-st}dt \\
-    &\underset{\tiny{(324)}}{=}&  \left.   
+    \L \left( f(t) \right) &=& \int_0^\infty \cos(\alpha t)e^{-st}\dd{t} \\
+    &\overset{\tiny{(324)}}{=}&  \left.   
         \frac{e^{-st}}{s^2+\alpha^2} \left[ -s \cos(\alpha t) + \alpha
         \sin(\alpha t) \right]
         \right|_0^\infty \\
@@ -226,9 +226,9 @@ Schreibweise:
 
 \underline{Beweis}
 \begin{eqnarr}
-    \L\left[ f(at) \right] &=& \int_0^\infty f(at) e^{-st}\text{d}t \\
+    \L\left[ f(at) \right] &=& \int_0^\infty f(at) e^{-st}\dd{t} \\
     &=& \int_0^\infty f(u) e^{-\frac{s}{a}u}\frac{\text{d}u}{a} 
-    \hspace{2em} \text{mit } u=at,~\frac{\text{d}u}{\text{d}t}=a\\
+    \hspace{2em} \text{mit } u=at,~\diff{u}{t}=a\\
     &=& \frac{1}{a} F\left( \frac{s}{a} \right)
 \end{eqnarr}
 
@@ -275,10 +275,10 @@ Was ist $\L \left[ \sin(at) \right]$?
 \underline{Beweis}
 \begin{eqnarr}
     \L \left[ f(t-a) \right] 
-    &=&  \int_0^\infty f(t-a)e^{-st}\text{d}t\\
-    &=&  \int_a^\infty f(t-a)e^{-st}\text{d}t \hspace{2em} u=t-a\\
-    &=& \int_0^\infty f(u) e^{-s(u+a)}\text{d}u\\
-    &=& \int_0^\infty f(u) e^{-su}e^{-sa}\text{d}u\\
+    &=&  \int_0^\infty f(t-a)e^{-st}\dd{t}\\
+    &=&  \int_a^\infty f(t-a)e^{-st}\dd{t} \hspace{2em} u=t-a\\
+    &=& \int_0^\infty f(u) e^{-s(u+a)}\dd{u}\\
+    &=& \int_0^\infty f(u) e^{-su}e^{-sa}\dd{u}\\
     &=& e^{-as}F(s)
 \end{eqnarr}
 
@@ -331,18 +331,18 @@ $\Rightarrow$
 \subsubsection{Multiplikationssatz}
 \begin{equation*}
     \boxed{
-        \L\left[ t\cdot f(t) \right] = -\frac{\text{d}}{\text{d}s}F(s),
-        \hspace{1em} \text{wobei }, f(t)\multimapdotbothA F(s)
+        \L\left[ t\cdot f(t) \right] = -\diff{}{s}F(s),
+        \hspace{1em} \text{wobei } f(t)\multimapdotbothA F(s)
     }
 \end{equation*}
 \underline{Beweis}
 \begin{eqnarr}
     \L\left[ t\cdot f(t) \right] &=& 
-        \int_0^\infty tf(t) e^{-st}\text{d}t\\
-        &=& \int_0^\infty f(t) \left(   -\frac{\text{d}}{\text{d}s}e^{-st}
-        \right)\text{d}t\\
-        &=& -\frac{\text{d}}{\text{d}s}\int_0^\infty f(t)  e^{-st} \text{d}t\\
-        &=& -\frac{\text{d}}{\text{d}s}F(s)\\
+        \int_0^\infty tf(t) e^{-st}\dd{t}\\
+        &=& \int_0^\infty f(t) \left(   -\diff{}{s}e^{-st}
+        \right)\dd{t}\\
+        &=& -\diff{}{s}\int_0^\infty f(t)  e^{-st} \dd{t}\\
+        &=& -\diff{}{s}F(s)\\
 \end{eqnarr}
 
 \bsp{Beispiel}
@@ -364,8 +364,8 @@ $\Rightarrow$
 \underline{Beweis}
 \begin{eqnarr}
     \L\left[ e^{-at}f(t) \right] &=& 
-        \int_0^\infty e^{-at} f(t) e^{-st}\text{d}t\\
-    &=& \int_0^\infty f(t) e^{-(s+a)t}\text{d}t\\
+    \int_0^\infty e^{-at} f(t) e^{-st}\dd{t}\\
+    &=& \int_0^\infty f(t) e^{-(s+a)t}\dd{t}\\
     &=& F(s+a)
 \end{eqnarr}
 
@@ -379,7 +379,7 @@ $\Rightarrow$
 \subsubsection{Integralsatz}
 \begin{equation*}
 \boxed{
-    \int_0^t f(u) \text{d}u \multimapdotbothA \frac{F(s)}{s}, \hspace{1em}
+    \int_0^t f(u) \dd{u} \multimapdotbothA \frac{F(s)}{s}, \hspace{1em}
     \text{wobei } f(t) \multimapdotbothA F(s)
 }
 \end{equation*}
@@ -392,7 +392,7 @@ Bekannt:
 \end{equation*}
 $\Rightarrow$
 \begin{eqnarr}
-    \L\left[ t^2 \right] &=& \L\left[ \int_0^t 2u\text{d}u \right]\\
+    \L\left[ t^2 \right] &=& \L\left[ \int_0^t 2u\dd{u} \right]\\
     &=& \frac{1}{s}\L\left[ 2t \right]\\
     &=& \frac{2}{s^3}
 \end{eqnarr}
@@ -410,9 +410,9 @@ $\Rightarrow$
 \underline{Beweis} (für 1. Ableitung)
 \begin{eqnarr}
     \L\left[ f'(t) \right] &=& \int_0^\infty \underbrace{f'(t)}_{u'}
-    \underbrace{e^{-st}}_{v} \text{d}t \\
-    &=& -\int_0^\infty f(t)(-s)e^{-st}\text{d}t+\left.f(t)\right|_0^\infty\\
-    &=& s\int_0^\infty f(t)e^{-st}\text{d}t-f(0)\\
+    \underbrace{e^{-st}}_{v} \dd{t} \\
+    &=& -\int_0^\infty f(t)(-s)e^{-st}\dd{t}+\left.f(t)\right|_0^\infty\\
+    &=& s\int_0^\infty f(t)e^{-st}\dd{t}-f(0)\\
     &=& sF(s)-f(0)\\
 \end{eqnarr}
 
@@ -651,7 +651,7 @@ Impulsfunktion $\delta(t)$:
 \end{center}
 Definition (nicht ganz korrekt):
 \begin{equation*}
-    \int _{-\infty}^{\infty} \delta(x)f(x) \text{d}x = f(0)
+    \int _{-\infty}^{\infty} \delta(x)f(x) \dd{x} = f(0)
 \end{equation*}
 $\Rightarrow \delta(t) \multimapdotbothA 1$ 
 

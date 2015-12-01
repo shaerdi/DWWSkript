@@ -3,7 +3,7 @@
 
 Allgemeine Form einer lin. DGL 2. Ordnung mit konst. Koeff:
 \begin{equation*}
-    y'' + a \cdot y' + b\cdot y = g(x)
+    y'' + a  y' + b y = g(x)
 \end{equation*}
 
 \textbf{Satz}
@@ -18,21 +18,21 @@ Analog zur linearen DGL 1. Ordnung, Lösung in zwei Schritten:
 
 \subsection{Allgemeine Eigenschaften der homogenen DGL}
 \begin{equation*}
-    y'' + a\cdot y' + b\cdot y = 0 \hspace{2em} (*)
+    y'' + a y' + b y = 0 \hspace{2em} (*)
 \end{equation*}
 
 \underline{Satz}
 \begin{outline}    
-    \1[\circled{1}] Ist $y(x)$ eine Lösung von $(*)$, dann auch $C\cdot
+    \1[\circled{1}] Ist $y(x)$ eine Lösung von $(*)$, dann auch $C
     y(x),C\in\mathbb{R}$
     \1[\circled{2}] Sind $y_1(x)$ und $y_2(x)$ Lösngen von $(*)$, dann auch
     $y_1(x)+y_2(x)$
-    \1[\circled{3}] Ist $y(x)=u(x)+j\cdot v(x)$ eine \emph{komplexe} Lösung von
+    \1[\circled{3}] Ist $y(x)=u(x)+j v(x)$ eine \emph{komplexe} Lösung von
 $(*)$, dann sind auch $u(x)$ und $v(x)$ Lösungen von $(*)$\end{outline}
 
 \bsp{Beispiel}
 \begin{equation*}
-    y'' + \omega ^2 \cdot y =0, \hspace{2em} (\omega >0)
+    y'' + \omega ^2  y =0, \hspace{2em} (\omega >0)
 \end{equation*}
 
 $y = \sin(\omega x)$ ist Lösung:
@@ -47,22 +47,22 @@ $y = \cos(\omega x)$ ist Lösung:
     -\omega^2\sin(\omega x)  + \omega ^2 \sin(\omega x) &=& 0\\
 \end{eqnarr}
 
-Aus \circled{1} folgt, dass $y_1=C_1\cdot\sin(\omega x)$ und $y_2=C_2\cdot\cos(\omega x)$ ebenfalls Lösungen sind.\\
+Aus \circled{1} folgt, dass $y_1=C_1\sin(\omega x)$ und $y_2=C_2\cos(\omega x)$ ebenfalls Lösungen sind.\\
 Aus \circled{2} folgt, dass $y=y_1+y_2$ ebenfalls eine Lösung ist
 
 \begin{equation*}
-    \left[ C_1\cdot\sin(\omega x)+C_2\cos(\omega x) \right]'' + \omega^2\cdot\left[ C_1\cdot\sin(\omega x)+C_2\cos(\omega x) \right] =0
+    \left[ C_1\sin(\omega x)+C_2\cos(\omega x) \right]'' + \omega^2\left[ C_1\sin(\omega x)+C_2\cos(\omega x) \right] =0
 \end{equation*}
 
-$\Rightarrow y= C_1\cdot\sin(\omega x)+C_2\cos(\omega x) $ hat 2 Parameter
+$\Rightarrow y= C_1\sin(\omega x)+C_2\cos(\omega x) $ hat 2 Parameter
 ($C_1$ und $C_2$) und ist deshalb nicht nur eine, sondern die allgemeine Lösung.
 
 Wenn $\sin(\omega x)$ eine Lösung ist, dann sind auch $C_1\sin(\omega x)$
 und $C_2\sin(\omega x)$ Lösungen. Ist $y = C_1\sin(\omega x)+
 C_2\sin(\omega x)$ die allgemeine Lösung?
 
-\definition{Definition}{Zwei Funktionen heissen \underline{linear unabhängig}, falls die eine
-\underline{nicht} vielfaches der anderen ist.}
+\definition{Definition}{Zwei Funktionen heissen \underline{linear unabhängig},
+falls die eine \underline{nicht} Vielfaches der anderen ist.}
 
 \bsp{Beispiele}
 \begin{outline}
@@ -70,16 +70,16 @@ C_2\sin(\omega x)$ die allgemeine Lösung?
         unabhängig
     \1 $\left.\begin{array}{l}y_1=4 x\\y_2=2 x\end{array}\right\}$ linear
         abhängig
-    \1 $\left.\begin{array}{l}y_1=\sin^2 x\\y_2=2-2\cdot\cos^2 x\end{array}\right\}$ linear abhängig
+    \1 $\left.\begin{array}{l}y_1=\sin^2 x\\y_2=2-2\cos^2 x\end{array}\right\}$ linear abhängig
 \end{outline}
 
 \underline{Satz}
 
-Für $y''+a\cdot y' +b\cdot y =0$:\\
+Für $y''+a y' +b y =0$:\\
 Sind $y_1(x)$ und $y_2(x)$ linear unabhängige, partikuläre Lösungen, dann
 ist 
 \begin{equation*}
-    C_1\cdot y_1(x) +C_2\cdot y_2(x), \hspace{2em} (C_1,C_2\in\mathbb{R})
+    C_1 y_1(x) +C_2 y_2(x), \hspace{2em} (C_1,C_2\in\mathbb{R})
 \end{equation*}
 die allgemeine Lösung.
 
@@ -90,14 +90,14 @@ die allgemeine Lösung.
 \end{eqnarr}
 Die Funktionen $y_1(x)$ und $y_2(x)$ sind linear unabhängig $\Rightarrow$
 \begin{equation*}
-y(x) = C_1\cdot e^{5x}+C_2\cdot e^{-x}
+y(x) = C_1 e^{5x}+C_2 e^{-x}
 \end{equation*}
 ist die allgemeine Lösung.
 
 \subsection{Allgemeine Lösung der homogenen DGL} \label{algloeshomdgl}
 Gegeben:
 \begin{equation*}
-    y''+a\cdot y' + b\cdot y = 0
+    y''+a y' + b y = 0
 \end{equation*}
 Gesucht: 2 partikuläre, linear unabhängige Lösungen $y_1$ und $y_2$.
 
@@ -107,19 +107,19 @@ Definition:
 \end{equation*}
 Die DGL mit $\delta$ und $\omega_0$ statt $a$ und $b$:
 \begin{equation*}
-    y''+2\delta\cdot y' + \omega_0^2\cdot y = 0
+    y''+2\delta y' + \omega_0^2 y = 0
 \end{equation*}
 
 Ansatz: $y=e^{\lambda x}$ ($\lambda$: Parameter $\in\mathbb{C}$)
 
 \begin{eqnarr}
-    \left[e^{\lambda x}\right]'' + 2\delta \cdot \left[e^{\lambda x}\right]' + 
-    \omega_0^2\cdot \left[e^{\lambda x}\right] &=& 0 \\
-    \lambda^2e^{\lambda x} + 2\delta\cdot \lambda \cdot e^{\lambda x} + 
-    \omega_0^2\cdot e^{\lambda x} &=& 0 \\
-    e^{\lambda x} \cdot \left( \lambda^2+ 2\delta\cdot \lambda + \omega_0^2
+    \left[e^{\lambda x}\right]'' + 2\delta  \left[e^{\lambda x}\right]' + 
+    \omega_0^2 \left[e^{\lambda x}\right] &=& 0 \\
+    \lambda^2e^{\lambda x} + 2\delta \lambda  e^{\lambda x} + 
+    \omega_0^2 e^{\lambda x} &=& 0 \\
+    e^{\lambda x}  \left( \lambda^2+ 2\delta \lambda + \omega_0^2
     \right) &=& 0 \\
-    \lambda^2+ 2\delta\cdot \lambda + \omega_0^2 &=&  0\\
+    \lambda^2+ 2\delta \lambda + \omega_0^2 &=&  0\\
 \end{eqnarr}
 Charakteristische Gleichung der DGL, mit der Lösung
 \begin{equation*}
@@ -135,12 +135,12 @@ $\Rightarrow$ 2 reelle Lösungen:
 \end{eqnarr}
 Zwei Lösungen gemäss Ansatz: 
 \begin{eqnarr}
-    y_1 &=& e^{\lambda_1 \cdot x}\\
-    y_2 &=& e^{\lambda_2 \cdot x}\\
+    y_1 &=& e^{\lambda_1  x}\\
+    y_2 &=& e^{\lambda_2  x}\\
 \end{eqnarr}
 Allgemeine Lösung (\circled{1} und \circled{2})
 \begin{equation*}
-    \boxed{y(x)=C_1\cdot e^{\lambda_1 \cdot x}+C_2\cdot e^{\lambda_2 \cdot x}}
+    \boxed{y(x)=C_1 e^{\lambda_1  x}+C_2 e^{\lambda_2  x}}
 \end{equation*}
 \bsp{Beispiel}
 \begin{equation*}
@@ -166,35 +166,35 @@ Charakteristische Gleichung:
     \lambda_2 &=& 2\\
 \end{eqnarr}
 \begin{equation*}
-    y(x)=C_1\cdot e^{-4x}+C_2\cdot e^{2x}
+    y(x)=C_1 e^{-4x}+C_2 e^{2x}
 \end{equation*}
 
 Fall 2: $\boxed{\delta^2-\omega_0^2=0}$
 \begin{equation*}
     \lambda = -\delta\pm\sqrt{\delta^2-\omega_0^2} = -\delta
 \end{equation*}
-Problem: Nur eine Lösung $y_1(x)=e^{-\delta\cdot x}$
+Problem: Nur eine Lösung $y_1(x)=e^{-\delta x}$
 
 \bsp{Behauptung}
-$y_2(x)=x\cdot e^{\lambda x}$ ist auch eine Lösung
+$y_2(x)=x e^{\lambda x}$ ist auch eine Lösung
 
 \bsp{Beweis:}
 \begin{eqnarr}
-    \left[ x\cdot e^{\lambda x} \right]'' + 2\delta\cdot\left[ x\cdot e^{\lambda x}
-    \right]'+\omega_0^2\cdot \left[ x\cdot e^{\lambda x} \right] &=& 0\\
-    \left(1\cdot e^{\lambda x}+\lambda x\cdot e^{\lambda x} \right)' +
-    2\delta\cdot\left(1\cdot e^{\lambda x}+\lambda x\cdot e^{\lambda x}
-    \right)+\omega_0^2\cdot \left( x\cdot e^{\lambda x} \right) &=& 0\\
-    \left(\lambda\cdot e^{\lambda x}+\lambda \cdot e^{\lambda x} +\lambda^2 x
-    \cdot e^{\lambda x} \right) + 2\delta\cdot\left(1\cdot e^{\lambda x}+\lambda
-    x\cdot e^{\lambda x} \right)+\omega_0^2\cdot \left( x\cdot e^{\lambda x} \right) &=& 0\\
-    \underbrace{\left( 2\lambda + 2\delta \right)}_{=0,~\lambda=-\delta}\cdot e^{\lambda x} +
+    \left[ x e^{\lambda x} \right]'' + 2\delta\left[ x e^{\lambda x}
+    \right]'+\omega_0^2 \left[ x e^{\lambda x} \right] &=& 0\\
+    \left(1 e^{\lambda x}+\lambda x e^{\lambda x} \right)' +
+    2\delta\left(1 e^{\lambda x}+\lambda x e^{\lambda x}
+    \right)+\omega_0^2 \left( x e^{\lambda x} \right) &=& 0\\
+    \left(\lambda e^{\lambda x}+\lambda  e^{\lambda x} +\lambda^2 x
+     e^{\lambda x} \right) + 2\delta\left(1 e^{\lambda x}+\lambda
+    x e^{\lambda x} \right)+\omega_0^2 \left( x e^{\lambda x} \right) &=& 0\\
+    \underbrace{\left( 2\lambda + 2\delta \right)}_{=0,~\lambda=-\delta} e^{\lambda x} +
     \underbrace{\left( \lambda^2+2\delta\lambda
-    +\omega_0^2\right)}_{=0\text{, (Char. Glg)}}\cdot x\cdot e^{\lambda x} &=& 0
+    +\omega_0^2\right)}_{=0\text{, (Char. Glg)}} x e^{\lambda x} &=& 0
 \end{eqnarr}
 Zwei Lösungen $y_1$ und $y_2\Rightarrow$ Allgemeine Lösung
 \begin{equation*}
-    \boxed{y(x)=C_1\cdot e^{\lambda x}+C_2\cdot x\cdot e^{\lambda x}}
+    \boxed{y(x)=C_1 e^{\lambda x}+C_2 x e^{\lambda x}}
 \end{equation*}
 
 \bsp{Beispiel:}
@@ -216,7 +216,7 @@ Zwei Lösungen $y_1$ und $y_2\Rightarrow$ Allgemeine Lösung
 \end{eqnarr}
 $\Rightarrow$ Allgemeine Lösung:
 \begin{equation*}
-    y(x)=C_1\cdot e^{4x} + C_2\cdot x\cdot e^{4x}
+    y(x)=C_1 e^{4x} + C_2 x e^{4x}
 \end{equation*}
 
 Fall 3: $\boxed{\delta^2-\omega_0^2<0}$
@@ -232,21 +232,21 @@ Fall 3: $\boxed{\delta^2-\omega_0^2<0}$
 \end{equation*}
 Zwei komplexe Lösungen
 \begin{equation*}
-    \lambda_{1,2} = -\delta\pm j\cdot\omega_d
+    \lambda_{1,2} = -\delta\pm j\omega_d
 \end{equation*}
 \begin{equation*}
-    \tilde{y}_1(x)=e^{\lambda_1\cdot x},\hspace{2em} 
-    \tilde{y}_2(x) = e^{\lambda_2 \cdot x}
+    \tilde{y}_1(x)=e^{\lambda_1 x},\hspace{2em} 
+    \tilde{y}_2(x) = e^{\lambda_2  x}
 \end{equation*}
-Das sind zwei ireelle Lösungen. Die Kombination $y=\tilde{C}_1\cdot
-\tilde{y}_1+\tilde{C}_2\cdot\tilde{y}_2$ ist die allgemeine Lösung der DGL. Ist es
+Das sind zwei ireelle Lösungen. Die Kombination $y=\tilde{C}_1
+\tilde{y}_1+\tilde{C}_2\tilde{y}_2$ ist die allgemeine Lösung der DGL. Ist es
 möglich, die allgemeine Lösung auch als reelle Lösung zu schreiben?
 \begin{eqnarr}
-    y_1(x) &=&  e^{\left( -\delta+j\omega_d \right)\cdot x} \\
-    &=& e^{-\delta x}\cdot e^{j\omega_d x}\\
-    &=& e^{-\delta x}\left( \cos(\omega_d x)+j\cdot\sin(\omega_d x) \right)\\
-    \text{Re}\left[ \tilde{y}_1(x) \right] &=& e^{-\delta x}\cdot \cos(\omega_d x) \\
-    \text{Im}\left[ \tilde{y}_1(x) \right] &=& e^{-\delta x}\cdot \sin(\omega_d x) \\
+    y_1(x) &=&  e^{\left( -\delta+j\omega_d \right) x} \\
+    &=& e^{-\delta x} e^{j\omega_d x}\\
+    &=& e^{-\delta x}\left( \cos(\omega_d x)+j\sin(\omega_d x) \right)\\
+    \text{Re}\left[ \tilde{y}_1(x) \right] &=& e^{-\delta x} \cos(\omega_d x) \\
+    \text{Im}\left[ \tilde{y}_1(x) \right] &=& e^{-\delta x} \sin(\omega_d x) \\
 \end{eqnarr}
 $\Rightarrow$ Aus \circled{3} folgt, dass $ y_1=\text{Re}\left[ \tilde{y}_1(x)
 \right]$ und $ y_2=\text{Im}\left[ \tilde{y}_1(x) \right]$ auch Lösungen der 
@@ -255,8 +255,8 @@ DGL sind. $\Rightarrow$
 Allgemeine Lösung:
 \begin{equation*}
     \boxed{
-        y(x) = C_1 \cdot e^{-\delta x}\cdot \cos(\omega_d x)
-             + C_2 \cdot e^{-\delta x}\cdot \sin(\omega_d x)
+        y(x) = C_1  e^{-\delta x} \cos(\omega_d x)
+             + C_2  e^{-\delta x} \sin(\omega_d x)
     }
 \end{equation*}
 
@@ -284,14 +284,14 @@ Allgemeine Lösung:
 \end{eqnarr}
 Die allgemeine Lösung ist also
 \begin{equation*}
-    y(x) = C_1\cdot e^{-2x}\cdot \cos(3x)
-         + C_2\cdot e^{-2x}\cdot \sin(3x)
+    y(x) = C_1 e^{-2x} \cos(3x)
+         + C_2 e^{-2x} \sin(3x)
 \end{equation*}
 
 \subsection{Partikuläre Lösung der inhomogenen DGL}
 \label{aufsuchenpartloes}
 \begin{equation*}
-    y(x)''+2\delta\cdot y(x)'+\omega_0^2\cdot y(x) = g(x)
+    y(x)''+2\delta y(x)'+\omega_0^2 y(x) = g(x)
 \end{equation*}
 Theorie: Ansatz für $y(x)$ aus der Tabelle im Papula S. 276
 
@@ -318,11 +318,11 @@ $\delta^2-\omega_0^2=\frac{9}{4}>0\Rightarrow$ Fall 1
 \end{equation*}
 $\lambda_1 = 1,~\lambda_2=-2$
 \begin{equation*}
-    y_h = C_1 \cdot e^x + C_2\cdot e^{-2x}
+    y_h = C_1  e^x + C_2 e^{-2x}
 \end{equation*}
 
 \underline{inhomogen}
-Ansatz $(b\neq 0)$: $y_p = A\cdot x+B$
+Ansatz $(b\neq 0)$: $y_p = A x+B$
 \begin{eqnarr}
     \left[ Ax+B \right]''+\left[ Ax+B \right]'-2\left[ Ax+B \right]&=& 10x+1\\
     A-2Ax-2B&=& 10x+1\\
@@ -334,7 +334,7 @@ Ansatz $(b\neq 0)$: $y_p = A\cdot x+B$
 \end{eqnarr}
 $y_p = -5x-3\Rightarrow$
 \begin{equation*}
-    y(x) = y_h+y_p = C_1 \cdot e^x + C_2\cdot e^{-2x} -5x -3
+    y(x) = y_h+y_p = C_1  e^x + C_2 e^{-2x} -5x -3
 \end{equation*}
 
 \bsp{Beispiel}
@@ -360,8 +360,8 @@ $\delta^2-\omega_0^2=-1>0\Rightarrow$ Fall 3
     \lambda_{1,2} &=& -\delta \pm j\omega_d = \pm j\\
 \end{eqnarr}
 \begin{eqnarr}
-    y_h &=&  C_1 \cdot e^{0\cdot x}\cdot\cos(1\cdot x)
-           + C_2 \cdot e^{0\cdot x}\cdot\sin(1\cdot x)\\
+    y_h &=&  C_1  e^{0 \cdot x}\cos(1 x)
+           + C_2  e^{0 \cdot x}\sin(1 x)\\
         &=& C_1\cos(x)+C_2\sin(x)
 \end{eqnarr}
 
@@ -378,7 +378,7 @@ $\delta^2-\omega_0^2=-1>0\Rightarrow$ Fall 3
 
 $j\beta = j$ \emph{ist} Lösung der charakteristischen Gleichung! Also Ansatz
 \begin{equation*}
-    y_p(x) = x\cdot \left( A\cdot\sin(x)+B\cdot\cos(x) \right)
+    y_p(x) = x \left( A\sin(x)+B\cos(x) \right)
 \end{equation*}
 \begin{eqnarr}
     [\ldots]''+[\ldots] &=& \sin(x)\\
@@ -386,10 +386,10 @@ $j\beta = j$ \emph{ist} Lösung der charakteristischen Gleichung! Also Ansatz
     A=0 && B = -\frac{1}{2}
 \end{eqnarr}
 \begin{eqnarr}
-    y_p(x) &=&  x\cdot \left( 0-\frac{1}{2}\cdot\cos(x) \right)\\
-    &=& -\frac{1}{2}\cdot x\cdot \cos(x)
+    y_p(x) &=&  x \left( 0-\frac{1}{2}\cos(x) \right)\\
+    &=& -\frac{1}{2} x \cos(x)
 \end{eqnarr}
 Also
 \begin{equation*}
-    y(x) = y_h+y_p = C_1\cos(x)+C_2\sin(x) -\frac{1}{2}\cdot x\cdot \cos(x)
+    y(x) = y_h+y_p = C_1\cos(x)+C_2\sin(x) -\frac{1}{2} x \cos(x)
 \end{equation*}

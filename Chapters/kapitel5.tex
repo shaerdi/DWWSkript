@@ -26,16 +26,16 @@
     \end{circuitikz}
 \end{minipage}
 
-DGL: $F=a\cdot m = -k\cdot x-r\cdot \dot{x}$
+DGL: $F=a m = -k x-r \dot{x}$
 \begin{equation*}
-\boxed{\ddot{x} + \frac{r}{m}\cdot\dot{x}+\frac{k}{m}\cdot x=0}
+\boxed{\ddot{x} + \frac{r}{m}\dot{x}+\frac{k}{m} x=0}
 \end{equation*}
 Freie, gedämpfte Schwingung
 
 Lösung:
 \begin{equation*}
-    \ddot{x} + \underbrace{\frac{r}{m}}_{2\delta}\cdot\dot{x}+
-    \underbrace{\frac{k}{m}}_{\omega_0^2}\cdot x=0
+    \ddot{x} + \underbrace{\frac{r}{m}}_{2\delta}\dot{x}+
+    \underbrace{\frac{k}{m}}_{\omega_0^2} x=0
 \end{equation*}
 \begin{eqnarr}
     \delta^2 - \omega_0^2 &=&  \left( \frac{r}{2m} \right)^2-\frac{k}{m}\\
@@ -53,7 +53,7 @@ Lösung:
     {>0 \text{ und }<\delta}<0
 \end{equation*}
 Lösung: \begin{equation*}
-    x(t) = C_1\cdot e^{\lambda_1\cdot t} + C_2\cdot e^{\lambda_2\cdot t}
+    x(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}
 \end{equation*}
 \begin{center}
 \begin{tikzpicture}
@@ -86,7 +86,7 @@ Lösung: \begin{equation*}
     \lambda = -\delta
 \end{equation*}
 Lösung: \begin{equation*}
-    x(t) = C_1\cdot e^{-\delta\cdot t} + C_2\cdot t\cdot e^{-\delta\cdot t}
+    x(t) = C_1 e^{-\delta t} + C_2 t e^{-\delta t}
 \end{equation*}
 \begin{center}
 \begin{tikzpicture}
@@ -120,14 +120,14 @@ Lösung: \begin{equation*}
     \omega_d = \sqrt{\omega_0^2-\delta^2}<\omega_0
 \end{equation*}
 Lösung: \begin{eqnarr}
-    x(t)&=&  e^{-\delta \cdot t}\cdot \left[
-        C_1\cdot\sin(\omega_d \cdot t) +
-        C_2\cdot\cos(\omega_d \cdot t) 
+    x(t)&=&  e^{-\delta  t} \left[
+        C_1\sin(\omega_d  t) +
+        C_2\cos(\omega_d  t) 
         \right]\\
-        &=& C\cdot e^{-\delta \cdot t} \cdot
-        \sin\left( \omega_d\cdot t+\phi_d \right)\\
-        &=& C\cdot e^{-\delta \cdot t} \cdot
-        \cos\left( \omega_d\cdot t+\varphi_d \right)
+        &=& C e^{-\delta  t} 
+        \sin\left( \omega_d t+\phi_d \right)\\
+        &=& C e^{-\delta  t} 
+        \cos\left( \omega_d t+\varphi_d \right)
 \end{eqnarr}
 
 \begin{center}
@@ -151,8 +151,8 @@ Lösung: \begin{eqnarr}
     \addplot+[mark=none,samples=50,unbounded coords=jump,domain=0:5 ]
     {exp(-0.5*x)*cos(deg(3*x))}
     node [pos=0.5,above right]
-    { $x=e^{-t}\cdot \cos\left(t\right)$};
-    %{ $x=e^{-\frac{t}{2}}\cdot \cos\left(3t\right)$};
+    { $x=e^{-t} \cos\left(t\right)$};
+    %{ $x=e^{-\frac{t}{2}} \cos\left(3t\right)$};
 
     \addplot[dashed,mark=none,samples=50,domain=0:5 ] {exp(-0.5*x)};
     \addplot[dashed,mark=none,samples=50,domain=0:5 ] {-exp(-0.5*x)};
@@ -166,8 +166,8 @@ Lösung: \begin{eqnarr}
 \end{equation*}
 Lösung: \begin{equation*}
     x(t)=  
-        C_1\cdot\sin(\omega_0 \cdot t) +
-        C_2\cdot\cos(\omega_0 \cdot t) 
+        C_1\sin(\omega_0  t) +
+        C_2\cos(\omega_0  t) 
 \end{equation*}
 
 \begin{center}
@@ -206,10 +206,10 @@ Erzwungene Schwingung bedeutet:
     \1 Periodische Anregung
 \end{outline}
 \begin{eqnarr}
-    m\cdot \ddot{x}+r\cdot\dot{x}+k\cdot x&=& F_0\cdot\sin( \omega t)\\
-    \ddot{x}+\underbrace{\frac{r}{m}}_{2\delta} \cdot\dot{x}
-                  +\underbrace{\frac{k}{m}}_{\omega_0^2}\cdot x
-                  &=& \underbrace{\frac{F_0}{m}}_{k_0}\cdot\sin( \omega t)\\
+    m \ddot{x}+r\dot{x}+k x&=& F_0\sin( \omega t)\\
+    \ddot{x}+\underbrace{\frac{r}{m}}_{2\delta} \dot{x}
+                  +\underbrace{\frac{k}{m}}_{\omega_0^2} x
+                  &=& \underbrace{\frac{F_0}{m}}_{k_0}\sin( \omega t)\\
 \end{eqnarr}
 
 Lösung:
@@ -232,7 +232,7 @@ Was passiert wenn $t\rightarrow \infty$?
 
 Die stationäre Lösung ist 
 \begin{equation*}
-    \boxed{x_p = A\cdot \sin(\omega t - \varphi)}
+    \boxed{x_p = A \sin(\omega t - \varphi)}
 \end{equation*}
 
 \begin{outline}
@@ -393,13 +393,13 @@ Phase:
         }
 
         \pgfplotsinvokeforeach {0.01,0.3,0.8} {
-            \addplot+[mark=none,samples=50,domain=0:3] {phiF(#1,1)} 
+            \addplot+[mark=none,samples=100,domain=0:2] {phiF(#1,1)} 
             node[pos=0.7,below] {$\delta=#1$};
         }
     
         \draw[dotted] (axis cs:1,0) node[below] {$\omega_0$} 
         -- (axis cs:1,pi/2) -- (axis cs:0,pi/2) node[left] {$\frac{\pi}{2}$};
-        \draw[dotted] (axis cs:0,pi) node[left] {$\pi$} -- (axis cs:3,pi);
+        \draw[dotted] (axis cs:0,pi) node[left] {$\pi$} -- (axis cs:2,pi);
     \end{axis}
 \end{tikzpicture}
 \end{center}

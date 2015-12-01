@@ -29,34 +29,34 @@ Idee: Immer nur ein Schritt auf einmal.
 Explizites Euler Verfahren:
 \begin{equation*}
     \boxed{
-        x_{n+1} = x_n + h\cdot f\left( t_n,x_n \right)
+        x_{n+1} = x_n + h f\left( t_n,x_n \right)
     }
 \end{equation*}
 Implizites Euler Verfahren:
 \begin{equation*}
     \boxed{
-        x_{n+1} = x_n + h\cdot f\left( t+h,x_{n+1} \right)
+        x_{n+1} = x_n + h f\left( t+h,x_{n+1} \right)
     }
 \end{equation*}
 
 \bsp{Beispiel:}
 Gegeben ist die DGL
 \begin{equation*}
-    \dot{x} = x^2+2t\cdot x, \hspace{1em} x_0 = 2
+    \dot{x} = x^2+2t x, \hspace{1em} x_0 = 2
 \end{equation*}
 Nicht linear und nicht separierbar $\Rightarrow$ numerisch lösen.
 
 Expliziter Euler mit Schrittweite $h=1$:
 \begin{eqnarr}
     \dot{x} &=&  f(t,x) \\
-    &=&  x^2+2t\cdot x\\
+    &=&  x^2+2t x\\
     &\Rightarrow&\\
-    x_{n+1} &=& x_n + h\cdot \left( x_n^2+2t_n\cdot x_n \right)\\
-    x_{1} &=& x_0 + h\cdot \left( x_0^2+2t_0\cdot x_0 \right)\\
-    &=& 2 + 1\cdot \left( 2^2+2\cdot 0 \cdot 2 \right)\\
+    x_{n+1} &=& x_n + h \left( x_n^2+2t_n x_n \right)\\
+    x_{1} &=& x_0 + h \left( x_0^2+2t_0 x_0 \right)\\
+    &=& 2 + 1 \left( 2^2+2\cdot 0 \cdot 2 \right)\\
     &=& 6\\
-    x_2 &=&  x_1 + h\cdot \left( x_1^2+2t_1\cdot x_1 \right)\\
-    &=& 6 + 1\cdot\left( 6^2+2\cdot 1\cdot 6 \right)\\
+    x_2 &=&  x_1 + h \left( x_1^2+2t_1 x_1 \right)\\
+    &=& 6 + 1\left( 6^2+2\cdot 1\cdot 6 \right)\\
     &=& 54\\
     \text{usw.}&&\\
 \end{eqnarr}
@@ -65,8 +65,8 @@ Expliziter Euler mit Schrittweite $h=1$:
 \subsubsection{Runge-Kutta 2}
 (Mittelpunktsregel)
 \begin{eqnarr}
-    x_{n+\frac{1}{2}} &=&  x_n + \frac{h}{2}\cdot f\left( t_n,x_{n} \right)\\
-    x_{n+1} &=& x_n + h\cdot f\left(t_n+\frac{h}{2},x_{n+\frac{1}{2}}\right)\\
+    x_{n+\frac{1}{2}} &=&  x_n + \frac{h}{2} f\left( t_n,x_{n} \right)\\
+    x_{n+1} &=& x_n + h f\left(t_n+\frac{h}{2},x_{n+\frac{1}{2}}\right)\\
 \end{eqnarr}
 \begin{center}
     \begin{tikzpicture}
@@ -100,16 +100,16 @@ Expliziter Euler mit Schrittweite $h=1$:
 \subsubsection{Runge Kutta 4}
 (Klassisches Runge Kutta)
 \begin{eqnarr}
-    x_{A} &=&  x_n + \frac{h}{2}\cdot f\left( t_n,x_{n} \right)\\
-    x_{B} &=&  x_n + \frac{h}{2}\cdot f\left( t_n+\frac{h}{2},x_{A} \right)\\
-    x_{C} &=&  x_n + h\cdot f\left( t_n+\frac{h}{2},x_{B} \right)\\
-    x_{n+1} &=& x_n + \frac{h}{6}\cdot \left( 
-        f\left( t_n,x_{n} \right) + 2\cdot \left( 
+    x_{A} &=&  x_n + \frac{h}{2} f\left( t_n,x_{n} \right)\\
+    x_{B} &=&  x_n + \frac{h}{2} f\left( t_n+\frac{h}{2},x_{A} \right)\\
+    x_{C} &=&  x_n + h f\left( t_n+\frac{h}{2},x_{B} \right)\\
+    x_{n+1} &=& x_n + \frac{h}{6} \left[ 
+        f\left( t_n,x_{n} \right) + 2 \left( 
         f\left( t_n+\frac{h}{2},x_{A} \right) \right.\right. +\\
         && \left.\left.   f\left( t_n+\frac{h}{2},x_{B} \right)
         \right) +
             f\left( t_n+h,x_{C} \right)
-    \right)
+    \right]
 \end{eqnarr}
 
 \bsp{Beispiel:}
@@ -325,9 +325,9 @@ Ein Beispiel für das Lösen eines System von DGL mit \codeemph{ode45}:
     \end{array}\right)
     =
     \left( \begin{array}{c}
-            x_2\cdot x_3\\ 
-           -x_1\cdot x_3\\
-           -0.51\cdot x_1\cdot x_2
+            x_2 x_3\\ 
+           -x_1 x_3\\
+           -0.51 x_1 x_2
     \end{array}\right)
 \end{equation*}
 
