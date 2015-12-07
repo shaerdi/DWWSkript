@@ -4,7 +4,7 @@ h = 1e-3;   % Schrittweite
 x0 = 2;     % Startwert
 
 % DGL in der Form dx/dt = f(t,x)
-f = @(t,x) 5x^2-1;
+f = @(t,x) -5*x^2-1;
 
 % Schleife 
 x = x0;
